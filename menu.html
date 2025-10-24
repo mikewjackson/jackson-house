@@ -4,13 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Jackson House - Menus - Opening October 22nd, 2025</title>
-    <link rel="icon" href="full_logo.png">
+    <title>Jackson House - Menus - Now Open</title>
+    <link rel="icon" href="images/full_logo.png">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/menu.css">
     <meta name="description"
-        content="Jackson House - Opening October 22nd, 2025. An elevated restaurant and craft cocktail bar in Woodinville serving mocktails, craft cocktails, and seasonal fare.">
-    <meta property="og:title" content="Jackson House - Opening October 22nd, 2025">
+        content="Jackson House - Now Open. An elevated restaurant and craft cocktail bar in Woodinville serving mocktails, craft cocktails, and seasonal fare.">
+    <meta property="og:title" content="Jackson House - Now Open">
     <meta property="og:description" content="An elevated restaurant and craft cocktail bar Woodinville.">
     <meta property="og:image" content="logod.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -52,10 +52,10 @@
                 <li><a href="mailto:club@jacksonhousewoodinville.com">Contact</a></li>
             </ul>
             <div class="mobile-socials">
-                <a href="https://x.com/jacksonhousewa" target="_blank" rel="noopener noreferrer" aria-label="Follow on X"><img src="css/icons/x.svg" alt="X" class="social-icon"></a>
-                <a href="https://www.facebook.com/profile.php?id=61578115657924" target="_blank" rel="noopener noreferrer" aria-label="Follow on Facebook"><img src="css/icons/facebook.svg" alt="Facebook" class="social-icon"></a>
-                <a href="https://www.tiktok.com/@jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on TikTok"><img src="css/icons/tiktok.svg" alt="TikTok" class="social-icon"></a>
-                <a href="https://www.instagram.com/jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram"><img src="css/icons/instagram.svg" alt="Instagram" class="social-icon"></a>
+                <a href="https://x.com/jacksonhousewa" target="_blank" rel="noopener noreferrer" aria-label="Follow on X"><img src="css/icons/x.svg" alt="X" class="social-icon" loading="lazy"></a>
+                <a href="https://www.facebook.com/profile.php?id=61578115657924" target="_blank" rel="noopener noreferrer" aria-label="Follow on Facebook"><img src="css/icons/facebook.svg" alt="Facebook" class="social-icon" loading="lazy"></a>
+                <a href="https://www.tiktok.com/@jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on TikTok"><img src="css/icons/tiktok.svg" alt="TikTok" class="social-icon" loading="lazy"></a>
+                <a href="https://www.instagram.com/jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram"><img src="css/icons/instagram.svg" alt="Instagram" class="social-icon" loading="lazy"></a>
             </div>
         </div>
     </div>
@@ -65,8 +65,11 @@
     <main id="main" class="container">
         <div class="menu-page" role="application">
             <div class="menu-tabs" role="tablist" aria-label="Menus">
-                <button id="tab-food" class="menu-tab" role="tab" aria-selected="true" aria-controls="food-panel">Food Menu</button>
-                <!--<button id="tab-cocktail" class="menu-tab" role="tab" aria-selected="false" aria-controls="cocktail-panel">Cocktail Menu</button>-->
+                <button id="tab-food" class="menu-tab" role="tab" aria-selected="true" aria-controls="food-panel">Food</button>
+                <button id="tab-cocktail" class="menu-tab" role="tab" aria-selected="false" aria-controls="cocktail-panel">Cocktails</button>
+                <button id="tab-mocktail" class="menu-tab" role="tab" aria-selected="false" aria-controls="mocktail-panel">Low & No</button>
+                <button id="tab-beer" class="menu-tab" role="tab" aria-selected="false" aria-controls="beer-panel">Beer & Cider</button>
+                <button id="tab-wine" class="menu-tab" role="tab" aria-selected="false" aria-controls="wine-panel">Wine</button>
             </div>
 
             <div class="menu-panels">
@@ -77,7 +80,7 @@
                     </header>
 
                     <ul class="menu-list">
-                        <li><span class="dish">sausage rolls - veal, puff pastry, an aussie delicacy</span><span class="price">10</span></li>
+                        <li><span class="dish">sausage rolls - veal, puff pastry, an aussie delicacy</span><span class="price">16</span></li>
                         <li><span class="dish">feta damper - compound butter + onion jam</span><span class="price">8</span></li>
                         <li><span class="dish">poutine - hand cut fries, house gravy, fried cheese curds</span><span class="price">16</span></li>
                         <li><span class="dish">smoked black cod dip - pnw black cod, creme fraiche, house crisps</span><span class="price">16</span></li>
@@ -112,20 +115,72 @@
 
                 </section>
 
-                <!--
                 <section id="cocktail-panel" class="menu-panel" role="tabpanel" aria-labelledby="tab-cocktail" hidden>
                     <header class="menu-header">
-                        <h1 class="menu-title">C O C K T A I L S</h1>
-                        <p class="menu-sub">craft pours and seasonal signatures</p>
+                        <h1 class="menu-title"><span>FIELD NOTES</span></h1>
+                        <p class="menu-sub">seasonal & locally sourced</p>
+                    </header>
+                    <ul class="menu-list">
+                        <li><span class="dish">squashbuckler - rhum barbancourt, blue glass squash maceration, canton ginger, house orgeat, lemon</span><span class="price">16</span></li>
+                        <li><span class="dish">bitter patter - house bitter blend, aviation gin, luxardo syrup, lemon, blood orange bitters, brovo curacao</span><span class="price">16</span></li>
+                        <li><span class="dish">doc's orders - doc swinsons bourbon, ginger + honey syrup, lemon, ardbeg uigeadail float</span><span class="price">16</span></li>
+                        <li><span class="dish">velveteen rabbit - elijah craig toasted barrel, amaricano, lemon, brovo chocolate, carrot cake rooibos syrup, bitters</span><span class="price">16</span></li>
+                    </ul>
+                    <header class="menu-header">
+                        <h1 class="menu-title"><span>ROOTS</span></h1>
+                        <p class="menu-sub">our mainstays</p>
+                    </header>
+                    <ul class="menu-list">
+                        <li><span class="dish">sage against the ravine - big gin peated, green chartreuse, gentian amaro, brovo douglas fir, mezcal union, lime, sage syrup</span><span class="price">16</span></li>
+                        <li><span class="dish">violet fog - house gin blend, lemon, egg white, butterfly pea, earl grey syrup</span><span class="price">16</span></li>
+                        <li><span class="dish">jackson house old fashioned - woodinville rye, muscavado simple, house bitters</span><span class="price">16</span></li>
+                        <li><span class="dish">espresso martini - wohlfert espresso liqueur, outfitters vodka, local bean espresso pulled-to-order</span><span class="price">16</span></li>
+                    </ul>
+
+                </section>
+
+                <section id="mocktail-panel" class="menu-panel" role="tabpanel" aria-labelledby="tab-cocktail" hidden>
+                    <header class="menu-header">
+                        <h1 class="menu-title"><span>LOW&NO</span></h1>
+                        <p class="menu-sub">zero proof or lightly proofed</p>
                     </header>
 
                     <ul class="menu-list">
-                        <li><span class="dish">The Jackson Old Fashioned - house bourbon, bitters</span><span class="price">16</span></li>
-                        <li><span class="dish">Pear &amp; Thyme Sour - pear, lemon, thyme</span><span class="price">15</span></li>
-                        <li><span class="dish">Smoky Negroni - mezcal, campari, vermouth</span><span class="price">17</span></li>
+                        <li><span class="dish">ella spritzgerald - red wine redux, tiridis sparkling, lemon</span><span class="price">10</span></li>
+                        <li><span class="dish">calla lily - white wine redux, chamomile syrup, tonic, lemon</span><span class="price">10</span></li>
                     </ul>
                 </section>
-                -->
+
+                <section id="beer-panel" class="menu-panel" role="tabpanel" aria-labelledby="tab-cocktail" hidden>
+                    <header class="menu-header">
+                        <h1 class="menu-title"><span>BEER &amp; CIDER</span></h1>
+                        <p class="menu-sub">craft pours and local favorites</p>
+                    </header>
+
+                    <ul class="menu-list">
+                        <li><span class="dish">stone brewing pilsner - 12oz</span><span class="price">10</span></li>
+                        <li><span class="dish">chuckanut fest beer - 12oz</span><span class="price">10</span></li>
+                        <li><span class="dish">mirrored realities wc ipa - 16oz</span><span class="price">10</span></li>
+                        <li><span class="dish">crikey ipa - 16oz</span><span class="price">10</span></li>
+                        <li><span class="dish">boundary bay scotch ale - 12oz</span><span class="price">10</span></li>
+                        <li><span class="dish">westmalle trappist - 11.2oz</span><span class="price">10</span></li>
+                        <li><span class="dish">douglas lager - 12oz</span><span class="price">10</span></li>
+                    </ul>
+                </section>
+
+                <section id="wine-panel" class="menu-panel" role="tabpanel" aria-labelledby="tab-cocktail" hidden>
+                    <header class="menu-header">
+                        <h1 class="menu-title"><span>WINE</span></h1>
+                        <p class="menu-sub">celebrating the old & new worlds</p>
+                    </header>
+
+                    <ul class="menu-list">
+                        <li><span class="dish">valdemar estates - french creek chardonnay - 2022 - wa</span><span class="price">16 - 50</span></li>
+                        <li><span class="dish">big table farm - pinot noir - 2023 - willamette valley, or</span><span class="price">16 - 50</span></li>
+                        <li><span class="dish">crozes-hermitage “la croix du verre” - syrah - 2022 - rhône, fr</span><span class="price">16 - 50</span></li>
+                        <li><span class="dish">tirriddis blanc de gris - sparkling pinto gris - n/v - wa</span><span class="price">16 - 50</span></li>
+                    </ul>
+                </section>
             </div>
         </div>
     </main>
@@ -145,10 +200,10 @@
                 Located at street level of District Flats Apts</span></p>
             </div>
             <div class="socials" aria-label="social links">
-                <a href="https://x.com/jacksonhousewa" target="_blank" rel="noopener noreferrer" aria-label="Follow on X"><img src="css/icons/x.svg" alt="X" class="social-icon"></a>
-                <a href="https://www.facebook.com/profile.php?id=61578115657924" target="_blank" rel="noopener noreferrer" aria-label="Follow on Facebook"><img src="css/icons/facebook.svg" alt="Facebook" class="social-icon"></a>
-                <a href="https://www.tiktok.com/@jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on TikTok"><img src="css/icons/tiktok.svg" alt="TikTok" class="social-icon"></a>
-                <a href="https://www.instagram.com/jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram"><img src="css/icons/instagram.svg" alt="Instagram" class="social-icon"></a>
+                <a href="https://x.com/jacksonhousewa" target="_blank" rel="noopener noreferrer" aria-label="Follow on X"><img src="css/icons/x.svg" alt="X" class="social-icon" loading="lazy"></a>
+                <a href="https://www.facebook.com/profile.php?id=61578115657924" target="_blank" rel="noopener noreferrer" aria-label="Follow on Facebook"><img src="css/icons/facebook.svg" alt="Facebook" class="social-icon" loading="lazy"></a>
+                <a href="https://www.tiktok.com/@jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on TikTok"><img src="css/icons/tiktok.svg" alt="TikTok" class="social-icon" loading="lazy"></a>
+                <a href="https://www.instagram.com/jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram"><img src="css/icons/instagram.svg" alt="Instagram" class="social-icon" loading="lazy"></a>
             </div>
         </div>
     </footer>

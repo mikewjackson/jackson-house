@@ -2,11 +2,14 @@
 (function(){
   const tabFood = document.getElementById('tab-food');
   const tabCocktail = document.getElementById('tab-cocktail');
-  const foodPanel = document.getElementById('food-panel');
-  const cocktailPanel = document.getElementById('cocktail-panel');
-  const tabs = [tabFood, tabCocktail];
+  const tabMocktail = document.getElementById('tab-mocktail');
+  const tabBeer = document.getElementById('tab-beer');
+  const tabWine = document.getElementById('tab-wine');
+  const tabs = [tabFood, tabCocktail, tabMocktail, tabBeer, tabWine];
 
-  if (!tabFood || !tabCocktail || !foodPanel || !cocktailPanel) return;
+  if (!tabs.every(element => element !== null)) {
+    return;
+  }
 
   function activate(selected){
     tabs.forEach(tab => {
@@ -20,8 +23,9 @@
     selected.focus();
   }
 
-  tabFood.addEventListener('click', ()=> activate(tabFood));
-  tabCocktail.addEventListener('click', ()=> activate(tabCocktail));
+  tabs.forEach(tab => {
+    tab.addEventListener('click', ()=> activate(tab));
+  });
 
   // keyboard navigation between tabs
   tabs.forEach((tab, idx) => {
