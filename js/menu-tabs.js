@@ -1,11 +1,13 @@
 // Simple accessible tabs for the menu page
 (function(){
-  const tabFood = document.getElementById('tab-food');
-  const tabCocktail = document.getElementById('tab-cocktail');
-  const tabMocktail = document.getElementById('tab-mocktail');
-  const tabBeer = document.getElementById('tab-beer');
-  const tabWine = document.getElementById('tab-wine');
-  const tabs = [tabFood, tabCocktail, tabMocktail, tabBeer, tabWine];
+  const tabs = [
+    document.getElementById('tab-food'),
+    document.getElementById('tab-cocktail'),
+    document.getElementById('tab-mocktail'),
+    document.getElementById('tab-beer'),
+    document.getElementById('tab-wine'),
+    document.getElementById('tab-happy-hour'),
+  ];
 
   if (!tabs.every(element => element !== null)) {
     return;
