@@ -1,0 +1,39 @@
+<header class="site-header" role="banner" aria-label="Primary site header">
+    <div class="site-header-inner container">
+    <div class="site-left">
+        <a href="index.html" class="site-logo-link" aria-label="Jackson House home">
+            <img src="images/logo.png" alt="Jackson House" class="header-logo">
+        </a>
+    </div>
+        <nav id="sitePrimaryNav" class="site-primary-nav" role="navigation" aria-label="Primary navigation">
+            <ul class="site-primary-list">
+                {%- for item in site.nav %}
+                  <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+                {%- endfor %}
+            </ul>
+        </nav>
+        <div class="site-right">
+            <a class="reservations-cta" href="https://www.exploretock.com/jacksonhousewoodinville/" aria-label="Make a reservation">Reservations</a>
+            <button id="siteNavToggle" class="site-nav-toggle" aria-label="Open navigation" aria-controls="siteMobileNav" aria-expanded="false">☰</button>
+        </div>
+    </div>
+</header>
+
+<div id="siteMobileNav" class="site-mobile-nav" aria-hidden="true">
+    <div class="site-mobile-inner">
+        <button id="siteMobileClose" class="site-mobile-close" aria-label="Close navigation">✕</button>
+        <ul class="site-mobile-list">
+            {%- for item in site.nav %}
+              <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+            {%- endfor %}
+        </ul>
+        <div class="mobile-socials">
+            <a href="https://x.com/jacksonhousewa" target="_blank" rel="noopener noreferrer" aria-label="Follow on X"><img src="css/icons/x.svg" alt="X" class="social-icon" loading="lazy"></a>
+            <a href="https://www.facebook.com/jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on Facebook"><img src="css/icons/facebook.svg" alt="Facebook" class="social-icon" loading="lazy"></a>
+            <a href="https://www.tiktok.com/@jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on TikTok"><img src="css/icons/tiktok.svg" alt="TikTok" class="social-icon" loading="lazy"></a>
+            <a href="https://www.instagram.com/jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram"><img src="css/icons/instagram.svg" alt="Instagram" class="social-icon" loading="lazy"></a>
+        </div>
+    </div>
+</div>
+
+<div id="siteMobileOverlay" class="site-mobile-overlay" aria-hidden="true"></div>

@@ -1,0 +1,53 @@
+{
+  "title": "Membership",
+  "hero": {
+    "title": "Membership at Jackson House",
+    "paragraphs": [
+      "Membership at Jackson House isn't just about perks - it's about belonging to a community that celebrates craft, connection, and discovery. From the moment you walk through our doors, you're part of something bigger: a shared journey of taste, tradition, and togetherness.",
+      "We'd love to share our journey. Whether you are a seasoned whiskey sipper or exploring craft cocktails for the first time, we want to join your exploration!",
+      "Membership is important because it transforms visits into experiences. It ensures you're not just attending events - you're part of them. It gives you priority access, special discounts, and insider previews, but more than that, it gives you a seat at the table where stories are shared, friendships are made, and traditions are born."
+    ]
+  },
+  "memberships": [
+    {
+      "name": "Founder's Club",
+      "image": "images/founders_club.avif",
+      "benefits": [
+        "Early access",
+        "Exclusive events",
+        "Special pours",
+        "10% food discounts",
+        "Priority access to reservations and ticketed events"
+      ],
+      "price": "$3500 one time",
+      "link": "/docs/founders_club_application.pdf"
+    },
+    {
+      "name": "Top Shelf Club",
+      "image": "images/top_shelf.avif",
+      "benefits": [
+        "Curated tastings and elevated experiences",
+        "Rare and local spirits",
+        "5% food discounts",
+        "Priority access to reservations and ticketed events"
+      ],
+      "price": "$250 quarterly",
+      "link": "/docs/founders_club_application.pdf"
+    },
+    {
+      "name": "Cocktail Club",
+      "image": "images/club.avif",
+      "benefits": [
+        "Perks and previews for regulars",
+        "Craft cocktails and seasonal menus",
+        "Exclusive cocktail menu access",
+        "Priority access to reservations and ticketed events"
+      ],
+      "price": "$150 quarterly",
+      "link": "/docs/founders_club_application.pdf"
+    }
+  ],
+  "extra_styles": [
+    "css/membership.css"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "title": "Private Events",
+  "hero": {
+    "title": "Private Events at Jackson House",
+    "paragraphs": [
+      "At Jackson House, we believe gatherings should feel personal, memorable, and effortless. Whether you're celebrating a milestone, hosting colleagues, or planning an elevated evening, our spaces and hospitality team are here to make it special."
+    ]
+  },
+  "events": [
+    {
+      "type": "Private Gatherings",
+      "best_for": "Birthdays, business dinners, and social gatherings that want a private touch within regular service hours.",
+      "location_capacity": [
+        "Indoor Dining Room - up to 30 guests",
+        "Patio - up to 40 guests"
+      ],
+      "highlights": [
+        "Dedicated hospitality team member(s)",
+        "2.5 hour reservation window",
+        "Full access to our seasonal dining menus"
+      ],
+      "pricing": [
+        "No room rental fees",
+        "$65 per guest minimum",
+        "$1000 total event minimum"
+      ],
+      "notes": [
+        "One check per group",
+        "Pricing does not reflect tax + gratuity",
+        "For larger or customized experiences, see our Curated Events"
+      ],
+      "link": "mailto:info@jacksonhousewoodinville.com?subject=Private%20Gatherings%20Inquiry"
+    },
+    {
+      "type": "Curated Gatherings",
+      "best_for": "Chef-driven, elevated formats designed for memorable evenings - from refined multi-course dinners to lively social experiences.",
+      "location_capacity": [
+        "Indoor Dining Room - up to 30 guests",
+        "Patio - up to 40 guests",
+        "Entire Restaurant - up to 100 guests"
+      ],
+      "highlights": [
+        "Chef-curated, fully customized menu",
+        "Dedicated event planning support",
+        "Dedicated hospitality team members"
+      ],
+      "pricing": [
+        "Plated + Coursed - $125-$175 per guest (refined multi-course seated dinner)",
+        "Social + Shareables - starting at $105 per guest (reception-style gathering featuring chef creations)",
+        "Indoor Dining Minimum - $2000 min.",
+        "Patio - $2000 min.",
+        "Full Buyout Wednesday - $3,000 min.",
+        "Full Buyout Thu + Sun - $3,500 min.",
+        "Full Buyout Fri + Sat - $7,500 min."
+      ],
+      "notes": [],
+      "link": "mailto:notes@jacksonhousewoodinville.com?subject=Curated%20Gatherings%20Inquiry"
+    }
+  ],
+  "extra_styles": [
+    "css/private-events.css"
+  ]
+}

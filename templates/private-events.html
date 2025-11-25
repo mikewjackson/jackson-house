@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main id="main" class="container">
+  <section class="events-hero container">
+    <h1>{{ hero.title }}</h1>
+    {% for paragraph in hero.paragraphs %}
+      <p class="lead">{{ paragraph }}</p>
+    {% endfor %}
+  </section>
+
+  <section class="events-list container">
+    <div class="tiers">
+      {% for event in events %}
+      <div class="tier">
+        <h2>{{ event.type }}</h2>
+        <p class="best-for"><strong>Best For:</strong> {{ event.best_for }}</p>
+
+        <div class="tier-content">
+          <h3>Location + Capacity</h3>
+          <ul>
+            {% for item in event.location_capacity %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+
+          <h3>Highlights</h3>
+          <ul>
+            {% for item in event.highlights %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+
+          <h3>Pricing</h3>
+          <ul>
+            {% for item in event.pricing %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+
+          {% if event.notes %}
+          <h3>Notes</h3>
+          <ul>
+            {% for item in event.notes %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+
+        <div class="tier-footer">
+          <a href="{{ event.link }}" class="join-btn">Inquire Now</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock %}

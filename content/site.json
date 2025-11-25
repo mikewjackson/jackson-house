@@ -1,0 +1,24 @@
+{
+  "title": "Jackson House",
+  "meta": {
+    "title_suffix": " - Now Open",
+    "description": "Jackson House - Now Open. An elevated restaurant and craft cocktail bar in Woodinville serving mocktails, craft cocktails, and seasonal fare.",
+    "og_title": "Jackson House - Now Open",
+    "og_description": "An elevated restaurant and craft cocktail bar Woodinville.",
+    "og_image": "logod.png",
+    "twitter_card": "summary_large_image"
+  },
+  "favicon": "images/full_logo.png",
+  "stylesheet": "css/styles.css",
+  "scripts": [
+    "js/menu.js",
+    "js/site-header.js"
+  ],
+  "nav": [
+    { "label": "Menu", "href": "menu.html" },
+    { "label": "Team", "href": "team.html" },
+    { "label": "Private Events", "href": "private-events.html" },
+    { "label": "Membership", "href": "membership.html" },
+    { "label": "Contact", "href": "mailto:info@jacksonhousewoodinville.com" }
+  ]
+}

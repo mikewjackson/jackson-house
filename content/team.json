@@ -1,0 +1,48 @@
+{
+  "title": "Meet the Team",
+  "extra_scripts": [
+    "js/team.js"
+  ],
+  "team": [
+    {
+      "name": "Chef Lauren Jackson",
+      "title": "Executive Chef, Owner",
+      "bio": "Chef Lauren's journey to the kitchen began in the classroom, where she first discovered the power of curiosity, connection, and shared learning. Today, those same values shape every dish she creates. Her menus are more than seasonal - they are snapshots of place and time, designed to evoke memory, spark conversation, and honor the ingredients of the Pacific Northwest. Guests feel her warmth not just in the flavors, but in the atmosphere she cultivates: a kitchen alive with experimentation, mentorship, and quiet confidence. Lauren doesn't just cook - she invites you into a story, one plate at a time.",
+      "image": "images/chef.avif",
+      "alt": "Lauren - Executive Chef, Owner",
+      "summary": "Chef Lauren infuses every dish with creativity, warmth, and seasonal flair."
+    },
+    {
+      "name": "Will Gall",
+      "title": "Director of Hospitality and Operations",
+      "bio": "I grew up between the hills of West Virginia and the bustle of Houston, with Austin adding its own spark along the way. Each place left its mark - but it was the Pacific Northwest that felt like home from the start. The landscape, the people, the ever-shifting rhythm of the seasons - it all drew me in and shaped how I show up in this work. My path through hospitality has been wide-ranging, but always rooted in people-first leadership and the kind of service where every detail speaks. I've come to believe that the best work happens in dialogue-with ingredients, with collaborators, with guests. So let's keep the conversation going. That's where the magic lives.",
+      "image": "images/director.avif",
+      "alt": "Will - General Manager",
+      "summary": "Will shapes every moment with care, precision, and elevated service."
+    },
+    {
+      "name": "Owenuma Johnstone",
+      "title": "Bar Curator",
+      "bio": "Raised in a small mountain town in British Columbia, Owenuma grew up steeped in the arts - where creativity wasn't just encouraged, it was inevitable. That early immersion shaped his path behind the bar, where he now blends flavor, form, and feeling into every cocktail he crafts. For Owenuma, mixology is more than technique - it's a canvas. Beyond the bar, he's drawn to the quiet precision of calligraphy and hand lettering, constantly refining his touch. Whether working with ink or spirits, Owenuma brings the same intention to every creation: make it original, make it expressive, make it matter.",
+      "image": "images/bar_curator.avif",
+      "alt": "Owenuma - General Manager",
+      "summary": "Owenuma crafts every cocktail with creativity, balance, and a designer's touch."
+    },
+    {
+      "name": "Juan Cole",
+      "title": "Sous Chef",
+      "bio": "Memphis-born and precision-driven, Juan brings quiet intensity to the line - anchored in craft, fluent in detail, and relentless in pursuit of excellence. He thrives in kitchens that reward instinct, seasonal change, and the discipline of doing things right. No theatrics. No shortcuts. Just plate-by-plate mastery from a chef who leads without saying a word.",
+      "image": "images/sous.avif",
+      "alt": "Alex - Sous Chef",
+      "summary": "Juan keeps the kitchen running smoothly and elevates seasonal ingredients."
+    },
+    {
+      "name": "EJ Contreras",
+      "title": "Wine Steward",
+      "bio": "Fresh from San Marcos, Texas, EJ brings creative energy and quiet warmth to the floor - blending a background in photography and design with a growing passion for wine. Their path into hospitality was built on storytelling, connection, and the pursuit of moments that matter. Thoughtful, intuitive, and all-in, EJ thrives in the rhythm of a close-knit crew and the kind of guest experience that lingers.",
+      "image": "images/wine_steward.avif",
+      "alt": "Maya - Barback",
+      "summary": "EJ channels a growing passion for wine into curated guest moments."
+    }
+  ]
+}

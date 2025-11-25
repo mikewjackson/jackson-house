@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main id="main" class="container">
+  <div class="menu-page" role="application">
+    <div class="menu-tabs" role="tablist" aria-label="Menus">
+      {%- for panel, label in panels.items() %}
+      <button id="tab-{{ panel }}" class="menu-tab" role="tab" aria-selected="{{ 'true' if loop.first else 'false' }}" aria-controls="{{ panel }}-panel">{{ label }}</button>
+      {%- endfor %}
+    </div>
+
+    <div class="menu-panels">
+      {% for panel, label in panels.items() %}
+      <section id="{{ panel }}-panel" class="menu-panel" role="tabpanel" aria-labelledby="tab-{{ panel }}" {% if not loop.first %}hidden{% endif %}>
+        {% set categories = menu.get(panel, {}) -%}
+        {%- set ns = namespace(header_index=0) -%}
+        {%- for category, subtitles in categories.items() -%}
+          {%- for subtitle, data in subtitles.items() %}
+            {% set ns.header_index = ns.header_index + 1 -%}
+            <header class="menu-header {% if ns.header_index > 1 %}spacing-top{% endif %}">
+              {% if panel == 'food' -%}
+                <h2 class="menu-title"><span>{{ category }}</span></h2>
+                {% if subtitle %}<p class="menu-sub">{{ subtitle }}</p>{% endif %}
+              {%- else -%}
+                <h1 class="menu-title"><span>{{ category }}</span></h1>
+                {% if subtitle %}<p class="menu-sub">{{ subtitle }}</p>{% endif %}
+              {%- endif %}
+            </header>
+
+            <ul class="menu-list">
+              {%- for item in data["items"] %}
+                <li><span class="dish">{{ item.dish }}</span>
+                  {%- if item.price_glass and item.price_bottle -%}
+                    <span class="price">{{ item.price_glass }} - {{ item.price_bottle }}</span>
+                  {%- elif item.price_glass -%}
+                    <span class="price">{{ item.price_glass }}</span>
+                  {%- elif item.price_bottle -%}
+                    <span class="price">{{ item.price_bottle }}</span>
+                  {%- endif -%}
+                </li>
+              {%- endfor %}
+            </ul>
+
+          {%- endfor %}
+        {%- endfor %}
+      </section>
+      {%- endfor %}
+    </div>
+
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="hero" role="banner" aria-label="{{ hero.title }}">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <h1 class="coming-soon">{{ hero.title }}</h1>
+      {% for p in hero.paragraphs %}
+        <p class="lead">{{ p }}</p>
+      {% endfor %}
+    </div>
+
+    <div class="hero-slideshow" aria-roledescription="carousel" aria-label="Photos of Jackson House">
+      <div class="slideshow" id="heroSlideshow">
+        <div class="slides">
+          {% for slide in hero.slideshow %}
+            <picture>
+              <img src="{{ slide.src }}" alt="{{ slide.alt }}" class="slide {% if loop.first %}active{% endif %}" loading="lazy">
+            </picture>
+          {% endfor %}
+        </div>
+        <button class="slideshow-prev" aria-label="Previous image">‹</button>
+        <button class="slideshow-next" aria-label="Next image">›</button>
+        <div class="slideshow-indicators" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</header>
+{% endblock %}

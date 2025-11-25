@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main id="main" class="container">
+    <section class="membership-intro container">
+    <h1>{{ hero.title }}</h1>
+    {% for paragraph in hero.paragraphs %}
+        <p>{{ paragraph }}</p>
+    {% endfor %}
+    </section>
+
+    <section class="container">
+    <h2>Membership Options</h2>
+    <div class="tiers">
+        {% for tier in memberships %}
+        <div class="tier">
+            <img src="{{ tier.image }}" alt="{{ tier.name }}">
+            <h2>{{ tier.name }}</h2>
+            <div class="tier-content">
+                <ul>
+                    {% for benefit in tier.benefits %}
+                    <li>{{ benefit }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="tier-footer">
+                <p class="price">{{ tier.price }}</p>
+                <a href="{{ tier.link }}" class="join-btn">Join Now</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </section>
+</main>
+{% endblock %}
+

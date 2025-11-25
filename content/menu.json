@@ -1,0 +1,17 @@
+{
+  "title": "Menus",
+  "panels": {
+    "food": "Food",
+    "cocktail": "Cocktails",
+    "mocktail": "Low & No",
+    "beer": "Beer & Cider",
+    "wine": "Spirits & Wine",
+    "happy-hour": "Happy Hour"
+  },
+  "extra_scripts": [
+    "js/menu-tabs.js"
+  ],
+  "extra_styles": [
+    "css/menu.css"
+  ]
+}

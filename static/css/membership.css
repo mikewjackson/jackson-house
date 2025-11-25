@@ -1,0 +1,91 @@
+/* ==========================
+   Membership Tiers
+   ========================== */
+.tiers {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.tier {
+  background: var(--surface);
+  border-radius: 6px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform .25s ease, box-shadow .25s ease;
+  display: flex;              /* enable flexbox */
+  flex-direction: column;     /* stack content vertically */
+  justify-content: space-between; /* push bottom section down */
+}
+
+.tier-content {
+  flex: 1 1 auto;             /* benefits list grows */
+}
+
+.tier-footer {
+  margin-top: auto;           /* pins footer to bottom */
+}
+
+.tier:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.tier img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.tier h2 {
+  color: var(--accent);
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.tier ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.tier li {
+  font-size: 0.95rem;
+  margin: 0.25rem 0;
+}
+
+.price {
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+a.join-btn {
+  background-color: var(--cta-bg);
+  color: #fff !important;       /* force white text */
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;        /* remove underline */
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.join-btn:hover,
+a.join-btn:focus {
+  background-color: var(--cta-bg-hover);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  outline: none;
+}
+
+
+/* Responsive tiers: horizontal layout with min 2 visible */
+@media(min-width:600px) {
+  .tiers {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}

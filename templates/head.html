@@ -1,0 +1,26 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ site.title }}{% if title %} - {{title}}{% endif %}{{ meta.title_suffix }}</title>
+  <link rel="icon" href="{{ site.favicon }}">
+  <link rel="stylesheet" href="{{ site.stylesheet }}">
+  {%- if extra_styles -%}
+    {%- for s in extra_styles %}
+  <link rel="stylesheet" href="{{ s }}">
+    {%- endfor %}
+  {%- endif %}
+  <meta name="description"
+      content="{{ site.meta.description }}">
+  <meta property="og:title" content="{{ site.meta.og_title }}">
+  <meta property="og:description" content="{{ site.meta.og_description }}">
+  <meta property="og:image" content="{{ site.meta.og_image }}">
+  <meta name="twitter:card" content="{{ site.meta.twitter_card }}">
+  {%- for script in site.scripts %}
+  <script src="{{ script }}" defer></script>
+  {%- endfor %}
+  {%- if extra_scripts -%}
+    {%- for s in extra_scripts %}
+  <script src="{{ s }}" defer></script>
+    {%- endfor %}
+  {%- endif %}
+</head>

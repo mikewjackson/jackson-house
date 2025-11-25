@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main id="main" class="container">
+  <section class="team-grid" aria-labelledby="team-heading">
+    {% for member in team %}
+      <article class="team-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="{{ member.name }}"
+          data-title="{{ member.title }}" 
+          data-bio="{{ member.bio }}">        
+        <img class="team-media" src="{{ member.image }}" alt="{{ member.alt }}" loading="lazy">
+        <div class="team-body">
+          <h3>{{ member.name }}</h3>
+          <p class="muted">{{ member.title }}</p>
+          <p class="reveal">{{ member.summary }}</p>
+        </div>
+      </article>
+    {% endfor %}
+  </section>
+
+  <div class="modal" id="bioModal" role="dialog" aria-hidden="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modalTitle">Name</h3>
+        <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <div class="modal-media" aria-hidden="false" style="margin-bottom:0.75rem">
+          <img id="modalImage" src="" alt="" style="width:100%;height:auto;object-fit:cover;border-radius:6px">
+        </div>
+        <div id="modalText">
+          <p class="muted"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
