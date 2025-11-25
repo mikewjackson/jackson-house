@@ -45,5 +45,5 @@
   });
 
   // Ensure initial state
-  activate(tabFood);
+  activate(tabs[0]);
 })();

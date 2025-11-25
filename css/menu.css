@@ -36,3 +36,18 @@
   .menu-panels::before { width: 360px; height: 360px; top: 28%; }
   .menu-list { padding: 0 0.5rem; }
 }
+
+/* Mobile rules: show compact select, also reduce tab spacing as a fallback */
+@media (max-width: 767px) {
+  /* make the tabs more compact in case the select isn't used */
+  .menu-tabs { display: flex; justify-content: center; gap: 0.4rem; margin-bottom: 0.6rem; flex-wrap: wrap; }
+  .menu-tab { padding: 0.28rem 0.5rem; font-size: 0.95rem; }
+
+  /* Ensure panels fit the viewport and can scroll under header */
+  .menu-panels {
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1.25rem;
+  }
+}
