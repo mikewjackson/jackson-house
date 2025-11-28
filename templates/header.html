@@ -27,12 +27,21 @@
               <li><a href="{{ item.href }}">{{ item.label }}</a></li>
             {%- endfor %}
         </ul>
-        <div class="mobile-socials">
-            <a href="https://x.com/jacksonhousewa" target="_blank" rel="noopener noreferrer" aria-label="Follow on X"><img src="css/icons/x.svg" alt="X" class="social-icon" loading="lazy"></a>
-            <a href="https://www.facebook.com/jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on Facebook"><img src="css/icons/facebook.svg" alt="Facebook" class="social-icon" loading="lazy"></a>
-            <a href="https://www.tiktok.com/@jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on TikTok"><img src="css/icons/tiktok.svg" alt="TikTok" class="social-icon" loading="lazy"></a>
-            <a href="https://www.instagram.com/jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram"><img src="css/icons/instagram.svg" alt="Instagram" class="social-icon" loading="lazy"></a>
-        </div>
+        {% if footer.socials and footer.socials|length > 0 %}
+            <div class="mobile-socials">
+                {% for social in footer.socials %}
+                <a href="{{ social.url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Follow on {{ social.platform }}">
+                    <img src="{{ social.icon }}"
+                        alt="{{ social.platform }}"
+                        class="social-icon"
+                        loading="lazy">
+                </a>
+                {% endfor %}
+            </div>
+        {% endif %}
     </div>
 </div>
 

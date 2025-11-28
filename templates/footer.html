@@ -1,22 +1,37 @@
 <footer class="site-footer">
-    <div class="muted footer-tagline" style="text-align:center">Craft Pours • Seasonal Menus • Locally Sourced</div>
-    <div class="container footer-inner footer-grid">
-        <div class="contact">
-            <p><strong>Jackson House</strong></p>
-            <p>Email: <a href="mailto:info@jacksonhousewoodinville.com">info@jacksonhousewoodinville.com</a></p>
-            <p>Phone: <a href="tel:+14253644544">(425) 364-4544</a></p>
-            <p class="muted">Hours: Wed-Thu 5pm-10pm • Fri 4pm-10pm • Sat-Sun 3pm-10pm</p>
-            <p class="muted">Address: 17409 133rd Ave NE #1203, Woodinville, WA 98072</p>
-        </div>
-        <div class="parking">
-            <p><strong>Parking</strong><br><span class="muted">Free parking validation<br>
-            Located at street level of District Flats Apts</span></p>
-        </div>
-        <div class="socials" aria-label="social links">
-            <a href="https://x.com/jacksonhousewa" target="_blank" rel="noopener noreferrer" aria-label="Follow on X"><img src="css/icons/x.svg" alt="X" class="social-icon" loading="lazy"></a>
-            <a href="https://www.facebook.com/jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on Facebook"><img src="css/icons/facebook.svg" alt="Facebook" class="social-icon" loading="lazy"></a>
-            <a href="https://www.tiktok.com/@jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on TikTok"><img src="css/icons/tiktok.svg" alt="TikTok" class="social-icon" loading="lazy"></a>
-            <a href="https://www.instagram.com/jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram"><img src="css/icons/instagram.svg" alt="Instagram" class="social-icon" loading="lazy"></a>
-        </div>
+  <div class="muted footer-tagline" style="text-align:center">
+    {{ footer.tagline }}
+  </div>
+  <div class="container footer-inner footer-grid">
+    <div class="contact">
+      <p><strong>{{ footer.contact.name }}</strong></p>
+      <p>Email: <a href="mailto:{{ footer.contact.email }}">{{ footer.contact.email }}</a></p>
+      <p>Phone: <a href="tel:{{ footer.contact.phone_link }}">{{ footer.contact.phone }}</a></p>
+      <p class="muted">
+        Hours:
+        {% for day, time in footer.contact.hours.items() %}
+          {{ day }} {{ time }}{% if not loop.last %} • {% endif %}
+        {% endfor %}
+      </p>
+      <p class="muted">Address: {{ footer.contact.address }}</p>
     </div>
+
+    <div class="parking">
+      <p><strong>{{ footer.parking.title }}</strong><br>
+        <span class="muted">
+          {% for line in footer.parking.details %}
+            {{ line }}<br>
+          {% endfor %}
+        </span>
+      </p>
+    </div>
+
+    <div class="socials" aria-label="social links">
+      {% for social in footer.socials %}
+        <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer" aria-label="Follow on {{ social.platform }}">
+          <img src="{{ social.icon }}" alt="{{ social.platform }}" class="social-icon" loading="lazy">
+        </a>
+      {% endfor %}
+    </div>
+  </div>
 </footer>

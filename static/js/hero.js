@@ -68,3 +68,51 @@
     updateIndicators(current);
     start();
 })();
+
+(function(){
+  const carousel = document.querySelector('.reviews-carousel');
+  const track = carousel.querySelector('.reviews-track');
+  const cards = Array.from(track.querySelectorAll('.review-card'));
+  const leftArrow = carousel.querySelector('.carousel-arrow.left');
+  const rightArrow = carousel.querySelector('.carousel-arrow.right');
+
+  if (!cards.length) return;
+
+  // Compute gap robustly
+  function getGapPx(el) {
+    const cs = getComputedStyle(el);
+    const gap = parseFloat(cs.columnGap || cs.gap || '0');
+    return isNaN(gap) ? 0 : gap;
+  }
+
+  function getStep() {
+    const firstCard = track.querySelector('.review-card');
+    if (!firstCard) return 0;
+    return firstCard.offsetWidth + getGapPx(track);
+  }
+
+  // Arrow visibility: hide when no overflow, or at edges
+  function updateArrows() {
+    const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+    const hasOverflow = maxScroll > 1;
+    const atStart = track.scrollLeft <= 1;
+    const atEnd = track.scrollLeft >= maxScroll - 1;
+
+    leftArrow.style.visibility = hasOverflow && !atStart ? 'visible' : 'hidden';
+    rightArrow.style.visibility = hasOverflow && !atEnd ? 'visible' : 'hidden';
+  }
+
+  function scrollByCard(direction) {
+    const step = getStep();
+    if (step <= 0) return;
+    track.scrollBy({ left: direction * step, behavior: 'smooth' });
+  }
+
+  leftArrow.addEventListener('click', () => scrollByCard(-1));
+  rightArrow.addEventListener('click', () => scrollByCard(1));
+  track.addEventListener('scroll', updateArrows);
+  window.addEventListener('resize', () => requestAnimationFrame(updateArrows));
+
+  // Initialize
+  updateArrows();
+})();  

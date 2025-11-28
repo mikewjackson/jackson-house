@@ -25,4 +25,100 @@
     </div>
   </div>
 </header>
+
+<section class="info-row" aria-labelledby="infoHeading">
+  <div class="container">
+    <div class="info-grid">
+      <!-- Address -->
+      <div class="info-block address">
+        <h3>Address</h3>
+        <p>{{ footer.contact.address }}</p>
+        <h3>{{ footer.parking.title }}</h3>
+        <p>
+          {% for line in footer.parking.details %}
+            {{ line }}<br>
+          {% endfor %}
+        </p>
+      </div>
+
+      <!-- Hours -->
+      <div class="info-block hours">
+        <h3>Hours</h3>
+        <ul>
+          {% for day, time in footer.contact.hours.items() %}
+            <li><strong>{{ day }}</strong>: {{ time }}</li>
+          {% endfor %}
+        </ul>
+        <br>
+        <h3 class="happy-hour">Happy Hour:</h3>
+        <ul>
+          {% for day, time in happy_hour.hours.items() %}
+            <li><strong>{{ day }}</strong>: {{ time }}</li>
+          {% endfor %}
+        </ul>
+        {% if holiday_hours and holiday_hours|length > 0 %}
+          <br>
+          <h3 class="happy-hour">Holiday Hours</h3>
+          <ul>
+            {% for holiday, time in holiday_hours.items() %}
+              <li><strong>{{ holiday }}</strong>: {{ time }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+
+      <!-- Contact -->
+      <div class="info-block contact">
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:{{ footer.contact.email }}">{{ footer.contact.email }}</a></p>
+        <p>Phone: <a href="tel:{{ footer.contact.phone_link }}">{{ footer.contact.phone }}</a></p>
+
+        {% if footer.socials and footer.socials|length > 0 %}
+          <h3>Follow Us</h3>
+          <div class="socials">
+            {% for social in footer.socials %}
+              <a href="{{ social.url }}" target="_blank" rel="noopener">
+                <img src="{{ social.icon }}" alt="{{ social.platform }} icon" class="social-icon" />
+              </a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" aria-labelledby="reviewsHeading">
+  <div class="reviews-wrapper">
+    <h2 id="reviewsHeading">What People Are Saying</h2>
+
+    <div class="reviews-carousel">
+      <!-- arrows live inside the carousel, not inside the scrolling element -->
+      <button class="carousel-arrow left" aria-label="Previous reviews">‹</button>
+
+      <div class="reviews-track" tabindex="0">
+        {% for review in reviews %}
+          <div class="review-card">
+            <blockquote>
+              <p>"{{ review.text }}"</p>
+              <footer>
+                — {{ review.author }}
+                {% if review.site %}
+                  <span class="review-site">({{ review.site }})</span>
+                {% endif %}
+              </footer>
+            </blockquote>
+          </div>
+        {% endfor %}
+      </div>
+
+      <button class="carousel-arrow right" aria-label="Next reviews">›</button>
+    </div>
+  </div>
+</section>
+
+
+
+
+
 {% endblock %}

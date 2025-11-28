@@ -14,7 +14,6 @@
   <meta name="twitter:card" content="summary_large_image">
   <script src="js/menu.js" defer></script>
   <script src="js/site-header.js" defer></script>
-  <script src="js/team.js" defer></script>
   <script src="js/hero.js" defer></script>
 </head>
 <body class="team-page">
@@ -51,12 +50,51 @@
               <li><a href="membership.html">Membership</a></li>
               <li><a href="mailto:info@jacksonhousewoodinville.com">Contact</a></li>
         </ul>
-        <div class="mobile-socials">
-            <a href="https://x.com/jacksonhousewa" target="_blank" rel="noopener noreferrer" aria-label="Follow on X"><img src="css/icons/x.svg" alt="X" class="social-icon" loading="lazy"></a>
-            <a href="https://www.facebook.com/jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on Facebook"><img src="css/icons/facebook.svg" alt="Facebook" class="social-icon" loading="lazy"></a>
-            <a href="https://www.tiktok.com/@jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on TikTok"><img src="css/icons/tiktok.svg" alt="TikTok" class="social-icon" loading="lazy"></a>
-            <a href="https://www.instagram.com/jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram"><img src="css/icons/instagram.svg" alt="Instagram" class="social-icon" loading="lazy"></a>
-        </div>
+        
+            <div class="mobile-socials">
+                
+                <a href="https://www.instagram.com/jacksonhousewoodinville"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Follow on Instagram">
+                    <img src="css/icons/instagram.svg"
+                        alt="Instagram"
+                        class="social-icon"
+                        loading="lazy">
+                </a>
+                
+                <a href="https://www.facebook.com/jacksonhousewoodinville"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Follow on Facebook">
+                    <img src="css/icons/facebook.svg"
+                        alt="Facebook"
+                        class="social-icon"
+                        loading="lazy">
+                </a>
+                
+                <a href="https://www.tiktok.com/@jacksonhousewoodinville"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Follow on TikTok">
+                    <img src="css/icons/tiktok.svg"
+                        alt="TikTok"
+                        class="social-icon"
+                        loading="lazy">
+                </a>
+                
+                <a href="https://x.com/jacksonhousewa"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Follow on X">
+                    <img src="css/icons/x.svg"
+                        alt="X"
+                        class="social-icon"
+                        loading="lazy">
+                </a>
+                
+            </div>
+        
     </div>
 </div>
 
@@ -68,7 +106,7 @@
       
         <p class="lead">Now Open, we&#39;re ushering in a new era of hospitality in Woodinville, WA. We specialize in curated cocktails and artisanal local cuisine. You&#39;re invited to experience Jackson House - where every cocktail, plate, and detail is crafted with purpose.</p>
       
-        <p class="lead">Reservations are now open. The finest in Woodinville awaits!</p>
+        <p class="lead">Reserve your table on Tock. The finest in Woodinville awaits!</p>
       
     </div>
 
@@ -96,26 +134,255 @@
     </div>
   </div>
 </header>
-<footer class="site-footer">
-    <div class="muted footer-tagline" style="text-align:center">Craft Pours • Seasonal Menus • Locally Sourced</div>
-    <div class="container footer-inner footer-grid">
-        <div class="contact">
-            <p><strong>Jackson House</strong></p>
-            <p>Email: <a href="mailto:info@jacksonhousewoodinville.com">info@jacksonhousewoodinville.com</a></p>
-            <p>Phone: <a href="tel:+14253644544">(425) 364-4544</a></p>
-            <p class="muted">Hours: Wed-Thu 5pm-10pm • Fri 4pm-10pm • Sat-Sun 3pm-10pm</p>
-            <p class="muted">Address: 17409 133rd Ave NE #1203, Woodinville, WA 98072</p>
-        </div>
-        <div class="parking">
-            <p><strong>Parking</strong><br><span class="muted">Free parking validation<br>
-            Located at street level of District Flats Apts</span></p>
-        </div>
-        <div class="socials" aria-label="social links">
-            <a href="https://x.com/jacksonhousewa" target="_blank" rel="noopener noreferrer" aria-label="Follow on X"><img src="css/icons/x.svg" alt="X" class="social-icon" loading="lazy"></a>
-            <a href="https://www.facebook.com/jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on Facebook"><img src="css/icons/facebook.svg" alt="Facebook" class="social-icon" loading="lazy"></a>
-            <a href="https://www.tiktok.com/@jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on TikTok"><img src="css/icons/tiktok.svg" alt="TikTok" class="social-icon" loading="lazy"></a>
-            <a href="https://www.instagram.com/jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram"><img src="css/icons/instagram.svg" alt="Instagram" class="social-icon" loading="lazy"></a>
-        </div>
+
+<section class="info-row" aria-labelledby="infoHeading">
+  <div class="container">
+    <div class="info-grid">
+      <!-- Address -->
+      <div class="info-block address">
+        <h3>Address</h3>
+        <p>17409 133rd Ave NE #1203, Woodinville, WA 98072</p>
+        <h3>Parking</h3>
+        <p>
+          
+            Free parking validation<br>
+          
+            Located in the parking garage of the<br>
+          
+            District Flats Apts<br>
+          
+        </p>
+      </div>
+
+      <!-- Hours -->
+      <div class="info-block hours">
+        <h3>Hours</h3>
+        <ul>
+          
+            <li><strong>Wed-Thu</strong>: 5pm-10pm</li>
+          
+            <li><strong>Fri</strong>: 4pm-10pm</li>
+          
+            <li><strong>Sat-Sun</strong>: 3pm-10pm</li>
+          
+        </ul>
+        <br>
+        <h3 class="happy-hour">Happy Hour:</h3>
+        <ul>
+          
+            <li><strong>Thur</strong>: 9pm-10pm</li>
+          
+            <li><strong>Fri:</strong>: 4pm-5pm</li>
+          
+            <li><strong>Sun</strong>: All day</li>
+          
+        </ul>
+        
+          <br>
+          <h3 class="happy-hour">Holiday Hours</h3>
+          <ul>
+            
+              <li><strong>Christmas Eve</strong>: Closed</li>
+            
+              <li><strong>Christmas Day</strong>: Closed</li>
+            
+          </ul>
+        
+      </div>
+
+      <!-- Contact -->
+      <div class="info-block contact">
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:info@jacksonhousewoodinville.com">info@jacksonhousewoodinville.com</a></p>
+        <p>Phone: <a href="tel:+14253644544">(425) 364-4544</a></p>
+
+        
+          <h3>Follow Us</h3>
+          <div class="socials">
+            
+              <a href="https://www.instagram.com/jacksonhousewoodinville" target="_blank" rel="noopener">
+                <img src="css/icons/instagram.svg" alt="Instagram icon" class="social-icon" />
+              </a>
+            
+              <a href="https://www.facebook.com/jacksonhousewoodinville" target="_blank" rel="noopener">
+                <img src="css/icons/facebook.svg" alt="Facebook icon" class="social-icon" />
+              </a>
+            
+              <a href="https://www.tiktok.com/@jacksonhousewoodinville" target="_blank" rel="noopener">
+                <img src="css/icons/tiktok.svg" alt="TikTok icon" class="social-icon" />
+              </a>
+            
+              <a href="https://x.com/jacksonhousewa" target="_blank" rel="noopener">
+                <img src="css/icons/x.svg" alt="X icon" class="social-icon" />
+              </a>
+            
+          </div>
+        
+      </div>
     </div>
-</footer></body>
+  </div>
+</section>
+
+<section class="reviews" aria-labelledby="reviewsHeading">
+  <div class="reviews-wrapper">
+    <h2 id="reviewsHeading">What People Are Saying</h2>
+
+    <div class="reviews-carousel">
+      <!-- arrows live inside the carousel, not inside the scrolling element -->
+      <button class="carousel-arrow left" aria-label="Previous reviews">‹</button>
+
+      <div class="reviews-track" tabindex="0">
+        
+          <div class="review-card">
+            <blockquote>
+              <p>"This is hands down THE best place to eat in woodinville."</p>
+              <footer>
+                — Samantha C.
+                
+                  <span class="review-site">(Google Reviews)</span>
+                
+              </footer>
+            </blockquote>
+          </div>
+        
+          <div class="review-card">
+            <blockquote>
+              <p>"I had such a lovely experience. I can&#39;t wait to return, the food was so delicious."</p>
+              <footer>
+                — Cristi C.
+                
+                  <span class="review-site">(Yelp)</span>
+                
+              </footer>
+            </blockquote>
+          </div>
+        
+          <div class="review-card">
+            <blockquote>
+              <p>"Then came the showstopper: charred lamb rib chops, tender and perfumed with just enough smoke to tease out their natural sweetness. It was  the kind of dish that makes you pause mid-bite, recalibrating your expectations for what Woodinville dining can be."</p>
+              <footer>
+                — advinetures.ca
+                
+              </footer>
+            </blockquote>
+          </div>
+        
+          <div class="review-card">
+            <blockquote>
+              <p>"The lamb chops were so good I almost cried."</p>
+              <footer>
+                — Andrew N.
+                
+                  <span class="review-site">(Google Reviews)</span>
+                
+              </footer>
+            </blockquote>
+          </div>
+        
+          <div class="review-card">
+            <blockquote>
+              <p>"The cocktails there are lovingly and beautifully crafted as well."</p>
+              <footer>
+                — Genevieve V.
+                
+                  <span class="review-site">(Yelp)</span>
+                
+              </footer>
+            </blockquote>
+          </div>
+        
+          <div class="review-card">
+            <blockquote>
+              <p>"The mains are always awesome, but the veggie shareables are what keeps us coming back!"</p>
+              <footer>
+                — Tyler Morgan.
+                
+                  <span class="review-site">(Google Reviews)</span>
+                
+              </footer>
+            </blockquote>
+          </div>
+        
+          <div class="review-card">
+            <blockquote>
+              <p>"Just went there last night probably have one of the best chefs and cocktail tenders west of the Mississippi."</p>
+              <footer>
+                — Michael J.
+                
+                  <span class="review-site">(Yelp)</span>
+                
+              </footer>
+            </blockquote>
+          </div>
+        
+      </div>
+
+      <button class="carousel-arrow right" aria-label="Next reviews">›</button>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer class="site-footer">
+  <div class="muted footer-tagline" style="text-align:center">
+    Craft Pours • Seasonal Menus • Locally Sourced
+  </div>
+  <div class="container footer-inner footer-grid">
+    <div class="contact">
+      <p><strong>Jackson House</strong></p>
+      <p>Email: <a href="mailto:info@jacksonhousewoodinville.com">info@jacksonhousewoodinville.com</a></p>
+      <p>Phone: <a href="tel:+14253644544">(425) 364-4544</a></p>
+      <p class="muted">
+        Hours:
+        
+          Wed-Thu 5pm-10pm • 
+        
+          Fri 4pm-10pm • 
+        
+          Sat-Sun 3pm-10pm
+        
+      </p>
+      <p class="muted">Address: 17409 133rd Ave NE #1203, Woodinville, WA 98072</p>
+    </div>
+
+    <div class="parking">
+      <p><strong>Parking</strong><br>
+        <span class="muted">
+          
+            Free parking validation<br>
+          
+            Located in the parking garage of the<br>
+          
+            District Flats Apts<br>
+          
+        </span>
+      </p>
+    </div>
+
+    <div class="socials" aria-label="social links">
+      
+        <a href="https://www.instagram.com/jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram">
+          <img src="css/icons/instagram.svg" alt="Instagram" class="social-icon" loading="lazy">
+        </a>
+      
+        <a href="https://www.facebook.com/jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on Facebook">
+          <img src="css/icons/facebook.svg" alt="Facebook" class="social-icon" loading="lazy">
+        </a>
+      
+        <a href="https://www.tiktok.com/@jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on TikTok">
+          <img src="css/icons/tiktok.svg" alt="TikTok" class="social-icon" loading="lazy">
+        </a>
+      
+        <a href="https://x.com/jacksonhousewa" target="_blank" rel="noopener noreferrer" aria-label="Follow on X">
+          <img src="css/icons/x.svg" alt="X" class="social-icon" loading="lazy">
+        </a>
+      
+    </div>
+  </div>
+</footer>
+</body>
 </html>

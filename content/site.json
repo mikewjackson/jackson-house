@@ -20,5 +20,50 @@
     { "label": "Private Events", "href": "private-events.html" },
     { "label": "Membership", "href": "membership.html" },
     { "label": "Contact", "href": "mailto:info@jacksonhousewoodinville.com" }
-  ]
+  ],
+  "footer": {
+    "tagline": "Craft Pours • Seasonal Menus • Locally Sourced",
+    "contact": {
+      "name": "Jackson House",
+      "email": "info@jacksonhousewoodinville.com",
+      "phone": "(425) 364-4544",
+      "phone_link": "+14253644544",
+      "hours": {
+        "Wed-Thu": "5pm-10pm",
+        "Fri": "4pm-10pm",
+        "Sat-Sun": "3pm-10pm"
+      },
+      "address": "17409 133rd Ave NE #1203, Woodinville, WA 98072"
+    },
+    "parking": {
+      "title": "Parking",
+      "details": [
+        "Free parking validation",
+        "Located in the parking garage of the",
+        "District Flats Apts"
+      ]
+    },
+    "socials": [
+      {
+        "platform": "Instagram",
+        "url": "https://www.instagram.com/jacksonhousewoodinville",
+        "icon": "css/icons/instagram.svg"
+      },
+      {
+        "platform": "Facebook",
+        "url": "https://www.facebook.com/jacksonhousewoodinville",
+        "icon": "css/icons/facebook.svg"
+      },
+      {
+        "platform": "TikTok",
+        "url": "https://www.tiktok.com/@jacksonhousewoodinville",
+        "icon": "css/icons/tiktok.svg"
+      },
+      {
+        "platform": "X",
+        "url": "https://x.com/jacksonhousewa",
+        "icon": "css/icons/x.svg"
+      }
+    ]
+  }
 }

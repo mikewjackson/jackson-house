@@ -7,7 +7,7 @@ import shutil
 env = Environment(loader=FileSystemLoader('templates'), autoescape=select_autoescape(["html", "xml"]))
 
 # Load global site metadata
-with open("content/site.json") as f:
+with open("content/site.json", encoding="utf-8") as f:
     site_content = json.load(f)
 
 def load_menu_csv(path):
@@ -48,7 +48,7 @@ page_files = [
 pages = []
 
 for page in page_files:
-    with open(f"content/{page['json']}") as f:
+    with open(f"content/{page['json']}", encoding="utf-8") as f:
         page_content = json.load(f)
 
     pages.append({
@@ -57,6 +57,7 @@ for page in page_files:
         "context": {
             "site": site_content,
             "meta": site_content["meta"],
+            "footer": site_content.get("footer", {}),
             "hero": page_content.get("hero", ""),
             "title": page_content.get("title"),
             "menu": menu_data,
@@ -65,7 +66,10 @@ for page in page_files:
             "extra_styles": page_content.get("extra_styles", []),
             "team": page_content.get("team", []),
             "memberships": page_content.get("memberships", []),
-            "events": page_content.get("events", [])
+            "events": page_content.get("events", []),
+            "happy_hour": page_content.get("happy_hour", {}),
+            "reviews": page_content.get("reviews", []),
+            "holiday_hours": page_content.get("holiday_hours", [])
         }
     })
 

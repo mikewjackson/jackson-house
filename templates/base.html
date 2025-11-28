@@ -5,6 +5,8 @@
 {% include "header.html" -%}
 {% block content -%}
 {%- endblock %}
+{% if not hide_footer %}
 {%- include "footer.html" -%}
+{% endif %}
 </body>
 </html>
