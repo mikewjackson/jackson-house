@@ -1,5 +1,11 @@
 {
   "title": "Menus",
+  "extra_scripts": [
+    "js/menu-tabs.js"
+  ],
+  "extra_styles": [
+    "css/menu.css"
+  ],
   "panels": {
     "food": "Food",
     "cocktail": "Cocktails",
@@ -7,11 +13,5 @@
     "beer": "Beer & Cider",
     "wine": "Spirits & Wine",
     "happy-hour": "Happy Hour"
-  },
-  "extra_scripts": [
-    "js/menu-tabs.js"
-  ],
-  "extra_styles": [
-    "css/menu.css"
-  ]
+  }
 }

@@ -1,5 +1,5 @@
 // Simple accessible tabs for the menu page
-(function(){
+(function () {
   const tabs = [
     document.getElementById('tab-food'),
     document.getElementById('tab-cocktail'),
@@ -13,7 +13,7 @@
     return;
   }
 
-  function activate(selected){
+  function activate(selected) {
     tabs.forEach(tab => {
       const controls = document.getElementById(tab.getAttribute('aria-controls'));
       const isSelected = tab === selected;
@@ -26,19 +26,19 @@
   }
 
   tabs.forEach(tab => {
-    tab.addEventListener('click', ()=> activate(tab));
+    tab.addEventListener('click', () => activate(tab));
   });
 
   // keyboard navigation between tabs
   tabs.forEach((tab, idx) => {
-    tab.addEventListener('keydown', (e)=>{
+    tab.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight' || e.key === 'Right') {
         e.preventDefault();
-        const next = tabs[(idx+1) % tabs.length];
+        const next = tabs[(idx + 1) % tabs.length];
         activate(next);
       } else if (e.key === 'ArrowLeft' || e.key === 'Left') {
         e.preventDefault();
-        const prev = tabs[(idx-1 + tabs.length) % tabs.length];
+        const prev = tabs[(idx - 1 + tabs.length) % tabs.length];
         activate(prev);
       }
     });

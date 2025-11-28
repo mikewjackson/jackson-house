@@ -1,5 +1,8 @@
 {
   "title": "Membership",
+  "extra_styles": [
+    "css/membership.css"
+  ],
   "hero": {
     "title": "Membership at Jackson House",
     "paragraphs": [
@@ -46,8 +49,5 @@
       "price": "$100 quarterly",
       "link": "https://link.clover.com/urlshortener/c9CmKD"
     }
-  ],
-  "extra_styles": [
-    "css/membership.css"
   ]
 }

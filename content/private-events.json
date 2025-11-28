@@ -1,5 +1,8 @@
 {
   "title": "Private Events",
+  "extra_styles": [
+    "css/private-events.css"
+  ],
   "hero": {
     "title": "Private Events at Jackson House",
     "paragraphs": [
@@ -56,8 +59,5 @@
       "notes": [],
       "link": "mailto:notes@jacksonhousewoodinville.com?subject=Curated%20Gatherings%20Inquiry"
     }
-  ],
-  "extra_styles": [
-    "css/private-events.css"
   ]
 }

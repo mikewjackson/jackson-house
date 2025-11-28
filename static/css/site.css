@@ -1,0 +1,637 @@
+:root {
+  --bg: #1a1a1a;
+  --text: #0a0a0a;
+  --text-light: #f3f3f3;
+  --muted: #bdbdbd;
+  --muted-light: #bdbdbd;
+  --accent: #f3f3f3;
+  --max-width: 1100px;
+  --focus: #ffd54f;
+  --link: #CBAF7C;
+  --link-hover: #E3D8A1;
+  --cta-bg: #7f5318;
+  --cta-bg-hover: #9b6526;
+  --surface: #242424;
+  --space-xxs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --radius: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
+a,
+header a,
+a:link,
+a:visited,
+a:active {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-color: rgb(255 213 79 / 18%);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.tagline a {
+  color: var(--link);
+}
+
+a:focus {
+  outline: 1.5px solid var(--muted);
+  outline-offset: 3px;
+}
+
+a:focus-visible {
+  outline: 1.5px solid var(--muted);
+  outline-offset: 3px;
+}
+
+a:hover,
+a:focus {
+  color: var(--link-hover);
+  text-decoration-color: rgb(255 227 138 / 28%);
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  height: 18vh;
+  max-height: 220px;
+  width: auto;
+}
+
+.header-logo {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+@media(width >=768px) {
+  .header-logo {
+    height: 48px;
+  }
+}
+
+.logo,
+.logo img {
+  background: transparent;
+}
+
+.coming-soon {
+  margin: 0.02rem 0 0.01rem;
+  font-size: 1.6rem;
+  letter-spacing: 0.02em;
+}
+
+.tagline {
+  margin: 0.06rem 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.lead {
+  font-size: 1.02rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.lead,
+.site-header,
+.site-primary-nav,
+.site-primary-list a,
+.reservations-cta,
+.site-footer .contact {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.modal-card a {
+  color: var(--text);
+  text-decoration: underline;
+
+}
+
+.team-card a {
+  color: var(--link);
+}
+
+.team-card:hover .team-media {
+  transform: none;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: center;
+  padding: 1.25rem 0;
+}
+
+.socials {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.socials a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25rem;
+}
+
+.site-primary-list a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 0.98rem;
+  padding: 0.18rem 0.35rem;
+}
+
+.site-mobile-list a {
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 0.75rem 0.4rem;
+  display: block;
+  border-radius: 6px;
+}
+
+.site-primary-list a:hover,
+.site-primary-list a:focus {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+.socials a:hover {
+  text-decoration: underline;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  filter: grayscale(100%) invert(1);
+  opacity: 0.95;
+}
+
+@media(width >=768px) {
+  .logo {
+    height: 30vh;
+    max-height: none;
+    margin-top: 0;
+  }
+
+  .coming-soon {
+    font-size: 2.15rem;
+  }
+}
+
+@media(width >=1100px) {
+  .container {
+    padding: 1rem;
+  }
+}
+
+@media(width <=420px) {
+
+  html,
+  body {
+    font-size: 15px;
+  }
+
+  .logo {
+    width: min(60vw, 88%);
+    height: auto;
+    max-height: none;
+  }
+
+  .coming-soon {
+    font-size: 1.25rem;
+  }
+
+  .tagline {
+    font-size: 0.95rem;
+  }
+}
+
+@media(width <=767px) {
+
+  html,
+  body {
+    font-size: 15.5px;
+  }
+
+  .logo {
+    width: min(65vw, 90%);
+    height: auto;
+    max-height: none;
+  }
+
+  .coming-soon {
+    font-size: 1.4rem;
+  }
+
+  .tagline {
+    font-size: 0.98rem;
+  }
+
+  .container {
+    padding: 0.5rem;
+  }
+}
+
+.reveal {
+  opacity: 1;
+  transform: none;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  
+  .team-card {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  background: rgb(26 26 26 / 98%);
+  border-bottom: 1px solid rgb(255 255 255 / 3%);
+  z-index: 12000;
+  backdrop-filter: blur(4px);
+}
+
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 0.5rem;
+}
+
+.site-left,
+.site-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-primary-nav {
+  display: none;
+}
+
+.site-primary-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.site-nav-toggle {
+  background: transparent;
+  border: 0;
+  color: var(--text-light);
+  font-size: 1.15rem;
+  padding: 0.45rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.site-nav-toggle:focus {
+  outline: 1.5px solid var(--muted);
+  outline-offset: 3px;
+}
+
+.site-header .reservations-cta,
+.site-header .reservations-cta:link,
+.site-header .reservations-cta:visited,
+.site-header .reservations-cta:active {
+  display: inline-block;
+  background: var(--cta-bg);
+  color: #fff !important;
+  border: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: inherit;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgb(127 83 24 / 16%);
+  transition: background-color .18s ease, box-shadow .18s ease;
+}
+
+.site-header .reservations-cta:hover {
+  background: var(--cta-bg-hover);
+}
+
+.site-header .reservations-cta:focus {
+  outline: 3px solid rgb(255 255 255 / 18%);
+  outline-offset: 3px;
+}
+
+.site-mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 45%);
+  z-index: 11990;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .28s ease;
+}
+
+.site-mobile-overlay[aria-hidden="false"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.site-mobile-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 86%;
+  max-width: 360px;
+  background: var(--bg);
+  color: var(--text-light);
+  z-index: 12010;
+  transform: translateX(110%);
+  transition: transform .32s cubic-bezier(.2, .9, .2, 1);
+  box-shadow: -8px 0 36px rgb(0 0 0 / 50%);
+  padding: 1rem;
+  display: flex;
+}
+
+.site-mobile-nav[aria-hidden="false"] {
+  transform: translateX(0);
+}
+
+.site-mobile-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.site-mobile-close {
+  margin-left: auto;
+  background: transparent;
+  border: 0;
+  color: var(--text-light);
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.site-mobile-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.site-mobile-list a:focus,
+.site-mobile-list a:hover {
+  background: rgb(255 255 255 / 3%);
+}
+
+.mobile-socials {
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mobile-socials .social-icon {
+  width: 28px;
+  height: 28px;
+  filter: grayscale(100%) invert(1);
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+@media(width >=768px) {
+  .site-primary-nav {
+    display: block;
+  }
+
+  .site-nav-toggle {
+    display: none;
+  }
+
+  .site-mobile-nav {
+    display: none;
+  }
+
+  .site-mobile-overlay {
+    display: none;
+  }
+
+  .site-primary-list {
+    gap: 2rem;
+  }
+
+  .site-primary-list a {
+    padding: 0.25rem 0.6rem;
+  }
+}
+
+.team-page main {
+  padding-top: 84px;
+}
+
+@media(width >=768px) {
+  .team-page main {
+    padding-top: 94px;
+  }
+}
+
+.site-footer {
+  background: var(--bg);
+  color: var(--text-light);
+  border-top: 1px solid rgb(255 255 255 / 3%);
+  padding: 1.25rem 0;
+}
+
+.site-footer .footer-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.site-footer .contact {
+  text-align: center;
+  color: var(--text-light);
+}
+
+.site-footer .contact p {
+  margin: 0;
+}
+
+.site-footer .contact .muted {
+  color: var(--muted);
+}
+
+.site-footer .socials {
+  order: 3;
+}
+
+@media(width >=768px) {
+  .site-footer .footer-grid {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .site-footer .contact {
+    text-align: left;
+  }
+
+  .site-footer .socials {
+    order: 2;
+  }
+
+  .site-footer .parking {
+    align-self: flex-start;
+  }
+
+  .site-footer .parking p {
+    margin: 0;
+  }
+}
+
+@media(width <=767px) {
+  .site-footer .socials {
+    display: none;
+  }
+
+  .site-footer .parking {
+    display: none;
+  }
+}
+
+.slideshow {
+  position: relative;
+  background: var(--surface);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.slideshow .slides {
+  position: relative;
+  display: block;
+}
+
+.slideshow img.slide {
+  display: none;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.slideshow img.slide.active {
+  display: block;
+}
+
+.slideshow-prev,
+.slideshow-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgb(0 0 0 / 45%);
+  color: var(--text-light);
+  border: 0;
+  padding: 0.5rem 0.7rem;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.slideshow-prev {
+  left: 0.5rem;
+}
+
+.slideshow-next {
+  right: 0.5rem;
+}
+
+.slideshow-indicators {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0.5rem;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.slideshow-indicators .indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 25%);
+  border: 0;
+  cursor: pointer;
+}
+
+.slideshow-indicators .indicator.active {
+  background: var(--cta-bg);
+}
+
+@media(width >=900px) {
+  .slideshow img.slide {
+    height: 360px;
+  }
+}
+
+@media(width >=1100px) {
+  .slideshow img.slide {
+    height: 420px;
+  }
+}

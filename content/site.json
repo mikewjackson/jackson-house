@@ -9,9 +9,8 @@
     "twitter_card": "summary_large_image"
   },
   "favicon": "images/full_logo.png",
-  "stylesheet": "css/styles.css",
+  "stylesheet": "css/site.css",
   "scripts": [
-    "js/menu.js",
     "js/site-header.js"
   ],
   "nav": [

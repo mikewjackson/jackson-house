@@ -3,6 +3,9 @@
   "extra_scripts": [
     "js/team.js"
   ],
+  "extra_styles": [
+    "css/team.css"
+  ],
   "team": [
     {
       "name": "Chef Lauren Jackson",
