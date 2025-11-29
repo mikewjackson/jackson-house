@@ -151,9 +151,6 @@
   }
 
   .menu-panels {
-    max-height: calc(100vh - 120px);
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
     padding-bottom: 1.25rem;
   }
 }
