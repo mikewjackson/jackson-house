@@ -26,14 +26,24 @@
   },
   "reviews": [
     {
-      "author": "Samantha C.",
+      "author": "Ben D.",
       "site": "Google Reviews",
-      "text": "This is hands down THE best place to eat in woodinville."
+      "text": "Great addition to downtown Woodinville - a much needed restaurant with excellent cocktails and high end food that has been missing in the area."
+    },
+    {
+      "author": "Ralph N.",
+      "site": "Google Reviews",
+      "text": "My favorite place in Woodinville. "
     },
     {
       "author": "Cristi C.",
       "site": "Yelp",
       "text": "I had such a lovely experience. I can't wait to return, the food was so delicious."
+    },
+    {
+      "author": "Samantha C.",
+      "site": "Google Reviews",
+      "text": "This is hands down THE best place to eat in woodinville."
     },
     {
       "author": "advinetures.ca",
@@ -61,7 +71,6 @@
     }
   ],
   "holiday_hours": {
-    "Christmas Eve": "Closed",
-    "Christmas Day": "Closed"
+
   }
 }
