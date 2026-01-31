@@ -19,9 +19,9 @@
   },
   "happy_hour": {
     "hours": {
-      "Thur": "9pm-10pm",
+      "Wed-Thur": "5pm-6pm",
       "Fri:": "4pm-5pm",
-      "Sun": "All day"
+      "Sat-Sun": "3pm-4pm"
     }
   },
   "reviews": [
