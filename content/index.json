@@ -25,6 +25,21 @@
     }
   },
   "reviews": [
+        {
+      "author": "Autumn S.",
+      "site": "Google Reviews",
+      "text": "Husband and I came in for our anniversary and truly had one of the best meals ever."
+    },
+    {
+      "author": "Hernan C..",
+      "site": "Yelp",
+      "text": "Amazing. I've been here twice now, and it's instantly become a local favorite spot."
+    },
+    {
+      "author": "PeeVee",
+      "site": "Google Reviews",
+      "text": "Folks, if your not coming here, your missing out. The ambiance, the staff from door to table/bar are amazing, the chef, are all fabulous. "
+    },
     {
       "author": "Ben D.",
       "site": "Google Reviews",
@@ -53,21 +68,6 @@
       "author": "Andrew N.",
       "site": "Google Reviews",
       "text": "The lamb chops were so good I almost cried."
-    },
-    {
-      "author": "Genevieve V.",
-      "site": "Yelp",
-      "text": "The cocktails there are lovingly and beautifully crafted as well."
-    },
-    {
-      "author": "Tyler Morgan.",
-      "site": "Google Reviews",
-      "text": "The mains are always awesome, but the veggie shareables are what keeps us coming back!"
-    },
-    {
-      "author": "Michael J.",
-      "site": "Yelp",
-      "text": "Just went there last night probably have one of the best chefs and cocktail tenders west of the Mississippi."
     }
   ],
   "holiday_hours": {

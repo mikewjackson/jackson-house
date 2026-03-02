@@ -16,7 +16,6 @@
   "nav": [
     { "label": "Menu", "href": "menu.html" },
     { "label": "Team", "href": "team.html" },
-    { "label": "Private Events", "href": "private-events.html" },
     { "label": "Membership", "href": "membership.html" },
     { "label": "Contact", "href": "mailto:info@jacksonhousewoodinville.com" }
   ],
