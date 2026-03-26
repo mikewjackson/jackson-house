@@ -1,66 +1,71 @@
 ﻿panel,category,subtitle,dish,price_glass,price_bottle
+food,SMALL PLATES,crafted for sharing (or not),"house focaccia - with honey lavendar butter",8,
 food,SMALL PLATES,crafted for sharing (or not),"sausage rolls - veal, puff pastry, house ketchup, an aussie delicacy",16,
-food,SMALL PLATES,crafted for sharing (or not),"feta damper bread - compound butter + onion jam",8,
-food,SMALL PLATES,crafted for sharing (or not),"poutine - hand cut fries, house gravy, fried cheese curds",16,
-food,SMALL PLATES,crafted for sharing (or not),"beet spread - blue glass beets, ellenos labneh, house made chips",12,
+food,SMALL PLATES,crafted for sharing (or not),"poutine - hand cut fries, house gravy, fried halloumi",16,
+food,SMALL PLATES,crafted for sharing (or not),"labneh + caviar - ossetra caviar, ellenos labneh, house made chips",26,
 food,SMALL PLATES,crafted for sharing (or not),"dungeness cheesecake - caramelized onion, dungeness crab, lemon oil",19,
-food,FROM THE FARM,celebrating our local farms,"brussels + burrata - roasted + charred skagit valley brussels, burrata, aged balsamic",13,
-food,FROM THE FARM,celebrating our local farms,"winter cabbage - napa cabbage, apple gel, blood orange, mascarpone, hazelnut",16,
-food,FROM THE FARM,celebrating our local farms,"almond dusted kuri squash - marcona almonds, hot honey, labneh, fried parsley",15,
-food,FROM THE FARM,celebrating our local farms,"crispy wild mushrooms - shittake & button mushrooms, tempura batter, miso aioli",14,
-food,FROM THE FARM,celebrating our local farms,"whiskey-poached pear salad - feta, blue glass greens, charred shallot vin",18,
+food,FROM THE FARM,celebrating our local farms,"whiskey-poached pear salad - feta, blue glass greens, charred shallot vin",14,
+food,FROM THE FARM,celebrating our local farms,"brussels + burrata - roasted + charred skagit valley brussels, burrata, aged balsamic",12,
+food,FROM THE FARM,celebrating our local farms,"roasted beets - skagit valley golden beet, hummus, toasted wild rice, blood orange",18,
+food,FROM THE FARM,celebrating our local farms,"almond dusted kabocha squash - marcona almonds, hot honey, labneh, fried parsley",15,
+food,FROM THE FARM,celebrating our local farms,"crispy mushrooms - shiitake & white mushrooms, tempura batter, miso aioli",14,
 food,FOR THE TABLE,creations served family-style,"chicken cassoulet - gin oil confit, roasted carrots, spiced lemon curd, white beans",32,
 food,FOR THE TABLE,creations served family-style,"seared duck - polenta, 5-spice, drunken cherry & pickled turnip relish",38,
-food,FOR THE TABLE,creations served family-style,"steak frites - miso-glazed teres major, maitre ‘d butter, house cut fries",50,
+food,FOR THE TABLE,creations served family-style,"steak frites - miso-glazed flat iron, maitre ‘d butter, house cut fries",50,
 food,FOR THE TABLE,creations served family-style,"iberico pork skirt - butternut squash puree, truffle powder, charred local onion",39,
 food,FOR THE TABLE,creations served family-style,"charred lamb rib chops - sweet potato puree, charred green onion vin.",36,
 food,FOR THE TABLE,creations served family-style,"bone-in ribeye - 23 oz ribeye, local herb chimichurri, smoked olive oil",69,
 food,AFTER DINNER,made for lingering,"whiskey brown sugar basque cheesecake - seasonal ""burnt"" cheesecake",14,
 food,AFTER DINNER,made for lingering,"honey & lemon tart - brown sugar marscapone, aperol-candied lemon peel",10,
 food,AFTER DINNER,made for lingering,"double espresso - local roast, served with cream + sugar",6,
+food,AFTER DINNER,made for lingering,"french press service - local roast, served with cream + sugar, serves two",15,
 food,AFTER DINNER,made for lingering,"espresso martini - espresso, wohlfert coffee liqueur, outfitters vodka",16,
 food,AFTER DINNER,made for lingering,"filthy chai - rhum barbancourt, local chai + espresso, orange bitters",18,
-cocktail,FIELD NOTES,seasonal & locally sourced,"squashbuckler - rhum barbancourt, blue glass squash maceration, canton ginger, house orgeat, lemon",18,
-cocktail,FIELD NOTES,seasonal & locally sourced,"bitter patter - house bitter blend, aviation gin, luxardo syrup, lemon, blood orange bitters, brovo curacao",18,
-cocktail,FIELD NOTES,seasonal & locally sourced,"doc's orders - doc swinsons bourbon, ginger + honey syrup, lemon, ardbeg uigeadail float",20,
-cocktail,FIELD NOTES,seasonal & locally sourced,"velveteen rabbit - elijah craig toasted barrel, amaricano, lemon, brovo chocolate, carrot cake rooibos syrup, bitters",20,
+food,AFTER DINNER,made for lingering,"lemon myrtle limoncello - served chilled",10,
+cocktail,FIELD NOTES,seasonal & locally sourced,"sling theory - appleton estate rum, doc swinsons rye, lemon, black walnut + angostura bitters, wassail",18,
+cocktail,FIELD NOTES,seasonal & locally sourced,"phenol affair - ardbeg 'wee beastie', pikesville rye, canton, citrus, passionfruit + pineapple, hazelnut orgeat, bitters",22,
+cocktail,FIELD NOTES,seasonal & locally sourced,"limoncello spritz - house made lemon myrtle limoncello, saline cava, lo-fi vermouth",18,
+cocktail,FIELD NOTES,seasonal & locally sourced,"the hornet - citrus infused savor spear gin, chili bitters fresh citrus, local hot honey",18,
 cocktail,ROOTS,our mainstays,"sage against the ravine - big gin peated, green chartreuse, gentian amaro, brovo douglas fir, mezcal union, lime, sage syrup",21,
-cocktail,ROOTS,our mainstays,"violet fog - house gin blend, lemon, egg white, butterfly pea, earl grey syrup",16,
+cocktail,ROOTS,our mainstays,"violet fog - house gin blend, amaricano viola, lemon, egg white,earl grey syrup, butterfly pea",16,
 cocktail,ROOTS,our mainstays,"jackson house old fashioned - woodinville rye, muscavado simple, house bitters",16,
-cocktail,ROOTS,our mainstays,"espresso martini - wohlfert espresso liqueur, outfitters vodka, local bean espresso pulled-to-order",16,
+cocktail,ROOTS,our mainstays,"o's black manhattan - pikesville rye, jammy vermouth, cynar 70, sfumato, angostura + orange bitters",16,
 cocktail,MARTINIS,our creative interpretations,"olive oil - olive oil washed martin miller's london dry, lo-fi dry vermouth, orange bitters, olive oil",20,
 cocktail,MARTINIS,our creative interpretations,"especially dirty - choice of vodka or gin, lo-fi dry vermouth, olive brine, flor de garum, saline",20,
-cocktail,MARTINIS,our creative interpretations,"buzzkill - wohlfert decaf espresso liqueur, outfitters vodka, outlands buzzkill decaf cold brew",16,
-mocktail,LOW&NO,zero proof* or lightly proofed,"ella spritzgerald - red wine redux, tiridis sparkling, citrus",12,
-mocktail,LOW&NO,zero proof* or lightly proofed,"calla lily - white wine redux, chamomile syrup, tonic, lemon",12,
+cocktail,MARTINIS,our creative interpretations,"limoncello drop - lemon myrtle limoncello, oleo saccharum, brovo curacao, saline",16,
+cocktail,MARTINIS,our creative interpretations,"espresso - wohlfert espresso liqueur, outfitters vodka, local bean espresso pulled-to-order",16,
 mocktail,LOW&NO,zero proof* or lightly proofed,"squeaky tiki* - passionfruit, blood orange, house orgeat",10,
 mocktail,LOW&NO,zero proof* or lightly proofed,"pink 'groni club - st agrestis phony negroni, tiridis sparkling, citrus",12,
 mocktail,LOW&NO,zero proof* or lightly proofed,"lemon lime & bitters - sweetened lim, lemon-lime soda, bitters",10,
 beer,BEER & CIDER,craft pours and local favorites,stone brewing pilsner - 12oz,12,
 beer,BEER & CIDER,craft pours and local favorites,chuckanut fest beer - 12oz,12,
-beer,BEER & CIDER,craft pours and local favorites,mirrored realities wc ipa - 16oz,14,
 beer,BEER & CIDER,craft pours and local favorites,crikey ipa - 16oz,12,
+beer,BEER & CIDER,craft pours and local favorites,bitburger drive n/a - 12oz,11,
+beer,BEER & CIDER,craft pours and local favorites,yonder mazama cider - 16oz,14,
+beer,BEER & CIDER,craft pours and local favorites,incline POG cider - 12oz,11,
+beer,BEER & CIDER,craft pours and local favorites,black raven origins ipa - 12oz,10,
 beer,BEER & CIDER,craft pours and local favorites,boundary bay scotch ale - 12oz,12,
-beer,BEER & CIDER,craft pours and local favorites,tsumani stout - 12oz,12,
+beer,BEER & CIDER,craft pours and local favorites,tsumani stout - 12oz,14,
 beer,BEER & CIDER,craft pours and local favorites,westmalle trappist - 11.2oz,16,
-beer,BEER & CIDER,craft pours and local favorites,douglas lager - 12oz,10,
+beer,BEER & CIDER,craft pours and local favorites,black raven moontower lager - 12oz,10,
+beer,BEER & CIDER,craft pours and local favorites,rotating draft beer,mkt,
 wine,WINE,celebrating the old world,valdemar estates - french creek chardonnay - 2022 - wa,17,75
 wine,WINE,celebrating the old world,"dossier - flagship viognier - 2023 - columbia valley, wa",,105
 wine,WINE,celebrating the old world,"mac forbes - riesling - 2022 - victoria, aus",19,72
 wine,WINE,celebrating the old world,"domaine de coron - grenache blanc - 2023 - rhone valley, fr",15,48
 wine,WINE,celebrating the old world,"gilbert cellars - orange riesling - 2024 - wahluke slope, wa",,58
-wine,WINE,celebrating the old world,"domaine rimbert - rosé - 2024 - languedoc, fr",14,48
+wine,WINE,celebrating the old world,"domaine rimbert rosé - 'gsm' - 2024 - bandol, provence, fr",16,67
 wine,WINE,celebrating the old world,tirriddis blanc de gris - sparkling pinto gris - n/v - wa,15,50
 wine,WINE,celebrating the old world,"moët & chandon - imperial brut rosé - nv - champagne, fr",,195
 wine,WINE,celebrating the old world,"dom perignon - champagne - 2015 - champagne, fr",,595
 wine,WINE,and the new world,"big table farm - pinot noir - 2023 - willamette valley, or",,105
-wine,WINE,and the new world,"thibault ducroux - gamay - 2020 - fleurie, beaujolais, fr",,96
-wine,WINE,and the new world,"conde valdemar - reserva - 2017 - rioja, sp",14,52
-wine,WINE,and the new world,"conde valdemar - garnacha - 2021 - rioja, sp",,130
+wine,WINE,and the new world,"galet - gamay - 2019 - beaujolais, fr",18,65
+wine,WINE,and the new world,"amos rome - estate concrete malbec - 2022 - lake chelan, wa",,120
 wine,WINE,and the new world,"gaacina disa ello sandri - nebbiolo - 2022 - piedmont, it",,95
-wine,WINE,and the new world,"crozes-hermitage ""la croix du verre""- syrah - 2022 - rhône, fr",22,85
-wine,WINE,and the new world,"valdemar estates - syrah - 2021 - blue mountain ava, wa",,115
-wine,WINE,and the new world,valdemar estates entre nosotros - cabernet blend - 2024 - wa,,70
+wine,WINE,and the new world,"brun-avril rouge - grenache + syrah - 2023 - côtes du rhône, fr",18,90
+wine,WINE,and the new world,"crozes-hermitage “la croix du verre” - syrah - 2022 - rhône, fr",22,85
+wine,WINE,and the new world,"upsidedown ‘birds+things+flowers’ - syrah - 2023 - col. valley, wa",24,105
+wine,WINE,and the new world,"valdemar estates entre nosotros - cabernet blend - 2024 - wa",,70
 wine,WINE,and the new world,dossier - flagship cabernet sauvignon - 2022 - columbia valley,,175
 wine,VODKA & GIN,,outfitters vodka,8,
 wine,VODKA & GIN,,belvedere,10,
