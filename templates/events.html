@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main id="upcoming-events">
+  <section class="container">
+    <h1>{{ hero.title }}</h1>
+    <p class="lead">{{ hero.description }}</p>
+  </section>
+
+  <div class="container">
+    <section class="hp-tl-track" aria-label="Upcoming events">
+    {%- for event in events %}
+
+    <div class="hp-tl-item">
+      <div class="hp-tl-date">
+        <span class="hp-tl-month">{{ event.month }}</span>
+        <span class="hp-tl-day">{{ event.day }}</span>
+        <span class="hp-tl-dow">{{ event.dow }}</span>
+      </div>
+      <div class="hp-tl-content">
+        <div class="hp-tl-title">
+          {{ event.title }}
+          {%- if event.members_only %}
+          <span class="badge-members-tl">Members Only</span>
+          {%- endif %}
+        </div>
+        <div class="hp-tl-pills">
+          <span class="hp-tl-pill">{{ event.time }}</span>
+          <span class="hp-tl-pill">{{ event.capacity }} guests</span>
+          <span class="hp-tl-pill">${{ event.price }} / guest</span>
+        </div>
+        <p class="tl-desc">{{ event.description }}</p>
+        {%- if event.reserve_url %}
+        <a class="reservations-cta"
+          href="{{ event.reserve_url }}"
+          target="_blank"
+          rel="noopener"
+          aria-label="Reserve a spot">Reserve a spot</a>
+        {%- endif %}
+      </div>
+    </div>
+    {%- endfor %}
+    </section>
+  </div>
+
+</main>
+{% endblock %}

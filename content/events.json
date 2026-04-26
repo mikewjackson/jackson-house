@@ -1,0 +1,52 @@
+{
+  "title": "Upcoming Events",
+  "extra_styles": [
+    "css/events.css"
+  ],
+  "hero": {
+    "title": "Upcoming Events",
+    "description": "From intimate guided tastings to festive holiday gatherings, our curated events are designed to make every occasion feel memorable. Secure your seat early - these experiences tend to go fast."
+  },
+  "events": [
+    {
+      "title": "Tequila Guided Tasting - Cinco de Mayo-ish!",
+      "date": "2026-05-03",
+      "time": "4:30pm - 6:00pm",
+      "capacity": 14,
+      "price": 45,
+      "members_only": true,
+      "description": "Cinco de Mayo deserves something exceptional. Join us for a guided exploration of premium and rare tequilas, showcasing the spirit's artistry through depth, balance, and craftsmanship—complete with a small bite thoughtfully paired to elevate the experience.",
+      "reserve_url": "https://www.exploretock.com/jacksonhousewoodinville/event/private/b68b591f-bf64-4b0c-9249-b39010e64397"
+    },
+    {
+      "title": "Mother's Day Afternoon Tea",
+      "date": "2026-05-10",
+      "time": "Noon - 3:00pm",
+      "capacity": 60,
+      "price": 75,
+      "members_only": false,
+      "description": "Make Mother's Day special with an afternoon tea that brings the whole family together. Fresh flavors, a welcoming atmosphere, and a moment to celebrate the moms who do it all.",
+      "reserve_url": ""
+    },
+    {
+      "title": "Harvest Dinner",
+      "date": "2026-05-17",
+      "time": "6:30pm - 10:00pm",
+      "capacity": 36,
+      "price": 145,
+      "members_only": false,
+      "description": "Join us for a seasonal, five-course dinner celebrating the arrival of new harvest ingredients and their debut on our menu. This experience invites guests to gather around the table and be among the first to taste the flavors shaping our spring and summer offerings, sourced from the local farms and producers we're proud to partner with. Each course is paired with a curated selection from our bar, featuring a thoughtful mix of cocktails and wines throughout the evening, with select courses offering side-by-side pairings.",
+      "reserve_url": "https://www.exploretock.com/jacksonhousewoodinville/event/private/0e493c98-a1ab-416e-83f4-3b5dde731b22"
+    },
+    {
+      "title": "Rare + Allocated Whiskey Tasting",
+      "date": "2026-06-07",
+      "time": "4:30pm - 6:00pm",
+      "capacity": 16,
+      "price": 55,
+      "members_only": false,
+      "description": "Discover the finer side of bourbon through a tasting built around limited releases and hard-to-find expressions. Each pour is thoughtfully selected for its depth and rarity, served alongside a simple bite to enhance the moment.",
+      "reserve_url": "https://www.exploretock.com/jacksonhousewoodinville/event/private/9d017130-fe29-44d1-b1b4-73a3812a523f"
+    }
+  ]
+}
