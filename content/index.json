@@ -25,15 +25,35 @@
     }
   },
   "reviews": [
-        {
+    {
+      "author": "Mike S.",
+      "site": "Yelp",
+      "text": "Chef Lauren and her excellent team have done it again! Jackson House is a winner and hands down, the best restaurant in Woodinville."
+    },
+    {
+      "author": "Danielle H.",
+      "site": "Google Reviews",
+      "text": "This may have been the most accommodating, friendly, and passionate restaurant we have been to."
+    },
+    {
+      "author": "Hernan C.",
+      "site": "Yelp",
+      "text": "Amazing. I've been here twice now, and it's instantly become a local favorite spot."
+    },
+    {
+      "author": "Sabrina C.",
+      "site": "Facebook",
+      "text": "One of my friends said, “I didn't like lamb BUT now I do.” i can’t wait to go back."
+    },
+    {
       "author": "Autumn S.",
       "site": "Google Reviews",
       "text": "Husband and I came in for our anniversary and truly had one of the best meals ever."
     },
     {
-      "author": "Hernan C..",
+      "author": "Julie L.",
       "site": "Yelp",
-      "text": "Amazing. I've been here twice now, and it's instantly become a local favorite spot."
+      "text": "Fabulous little Woodinville gem in dark moody colors with excellent food, cocktails, and exceptional service."
     },
     {
       "author": "PeeVee",

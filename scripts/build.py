@@ -34,7 +34,43 @@ def load_menu_csv(path):
             })
     return panels
 
+def enrich_events(events):
+    """Extract month, day, and day of week from date field"""
+    enriched = []
+    for event in events:
+        event_date = datetime.strptime(event["date"], "%Y-%m-%d")
+        enriched.append({
+            **event,
+            "month": event_date.strftime("%B"),
+            "day": event_date.strftime("%d").lstrip("0"),
+            "dow": event_date.strftime("%A")
+        })
+    return enriched
+
+def get_upcoming_events(events, days=30):
+    """Filter events within the next N days"""
+    if not events:
+        return []
+    
+    today = datetime.strptime("2026-04-26", "%Y-%m-%d")  # Use fixed date for demo
+    upcoming = []
+    
+    for event in events:
+        event_date = datetime.strptime(event.get("date"), "%Y-%m-%d")
+        days_until = (event_date - today).days
+        if 0 <= days_until <= days:
+            upcoming.append(event)
+    
+    return sorted(upcoming, key=lambda e: datetime.strptime(e.get("date"), "%Y-%m-%d"))
+
 menu_data = load_menu_csv("data/menu.csv")
+
+# Load all events once
+with open("content/events.json", encoding="utf-8") as f:
+    all_events = json.load(f)
+
+# Enrich all events with date parts
+all_events["events"] = enrich_events(all_events["events"])
 
 # Pages to render
 page_files = [
@@ -42,7 +78,8 @@ page_files = [
     {"json": "menu.json", "template": "menu.html", "output": "menu.html"},
     {"json": "team.json", "template": "team.html", "output": "team.html"},
     {"json": "private-events.json", "template": "private-events.html", "output": "private-events.html"},
-    {"json": "membership.json", "template": "membership.html", "output": "membership.html"}
+    {"json": "membership.json", "template": "membership.html", "output": "membership.html"},
+    {"json": "events.json", "template": "events.html", "output": "events.html"}
 ]
 
 pages = []
@@ -50,6 +87,13 @@ pages = []
 for page in page_files:
     with open(f"content/{page['json']}", encoding="utf-8") as f:
         page_content = json.load(f)
+
+    # For homepage, filter upcoming events
+    page_events = page_content.get("events", [])
+    if page['json'] == 'index.json':
+        page_events = enrich_events(get_upcoming_events(all_events["events"]))
+    elif page['json'] == 'events.json':
+        page_events = all_events.get("events", [])
 
     pages.append({
         "template": page["template"],   # use the template you want
@@ -66,7 +110,7 @@ for page in page_files:
             "extra_styles": page_content.get("extra_styles", []),
             "team": page_content.get("team", []),
             "memberships": page_content.get("memberships", []),
-            "events": page_content.get("events", []),
+            "events": page_events,
             "happy_hour": page_content.get("happy_hour", {}),
             "reviews": page_content.get("reviews", []),
             "holiday_hours": page_content.get("holiday_hours", [])

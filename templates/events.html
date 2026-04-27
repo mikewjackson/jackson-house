@@ -30,7 +30,7 @@
           <span class="hp-tl-pill">${{ event.price }} / guest</span>
         </div>
         <p class="tl-desc">{{ event.description }}</p>
-        {%- if event.reserve_url %}
+        {%- if event.reserve_url and not event.members_only %}
         <a class="reservations-cta"
           href="{{ event.reserve_url }}"
           target="_blank"

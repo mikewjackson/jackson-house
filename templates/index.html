@@ -26,6 +26,80 @@
   </div>
 </header>
 
+{% if events and events|length > 0 %}
+<section class="upcoming-events" aria-labelledby="reviewsHeading">
+  <div class="container">
+    <h2>Upcoming Events</h2>
+    <p class="lead">Join us for special tastings, dinners, and celebrations.</p>
+    <div class="upcoming-events-grid">
+      {% for event in events %}
+        <div class="upcoming-event-card">
+          <div class="event-date">
+            <span class="event-month">{{ event.month }}</span>
+            <span class="event-day">{{ event.day }}</span>
+          </div>
+          <div class="event-details">
+            <h3>{{ event.title }}</h3>
+            <p>
+            {% if event.members_only %}
+              <span class="badge-members">Members Only</span>
+            {% endif %}
+            </p>
+            <div class="hp-tl-pills">
+              <span class="hp-tl-pill">{{ event.time }}</span>
+              <span class="hp-tl-pill">{{ event.capacity }} guests</span>
+              <span class="hp-tl-pill">${{ event.price }} / guest</span>
+            </div>
+            {%- if event.reserve_url and not event.members_only %}
+            <p>
+              <a class="reservations-cta"
+                href="{{ event.reserve_url }}"
+                target="_blank"
+                rel="noopener"
+                aria-label="Reserve a spot">Reserve a spot</a>
+            </p>
+            {%- endif %}
+
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="events-cta">
+      <a href="events.html" class="btn-view-all">View All Events →</a>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="reviews" aria-labelledby="reviewsHeading">
+  <div class="reviews-wrapper">
+    <h2 id="reviewsHeading">What People Are Saying</h2>
+
+    <div class="reviews-carousel">
+      <!-- arrows live inside the carousel, not inside the scrolling element -->
+      <button class="carousel-arrow left" aria-label="Previous reviews">‹</button>
+
+      <div class="reviews-track" tabindex="0">
+        {% for review in reviews %}
+          <div class="review-card">
+            <blockquote>
+              <p>"{{ review.text }}"</p>
+              <footer>
+                — {{ review.author }}
+                {% if review.site %}
+                  <span class="review-site">({{ review.site }})</span>
+                {% endif %}
+              </footer>
+            </blockquote>
+          </div>
+        {% endfor %}
+      </div>
+
+      <button class="carousel-arrow right" aria-label="Next reviews">›</button>
+    </div>
+  </div>
+</section>
+
 <section class="info-row" aria-labelledby="infoHeading">
   <div class="container">
     <div class="info-grid">
@@ -87,37 +161,6 @@
     </div>
   </div>
 </section>
-
-<section class="reviews" aria-labelledby="reviewsHeading">
-  <div class="reviews-wrapper">
-    <h2 id="reviewsHeading">What People Are Saying</h2>
-
-    <div class="reviews-carousel">
-      <!-- arrows live inside the carousel, not inside the scrolling element -->
-      <button class="carousel-arrow left" aria-label="Previous reviews">‹</button>
-
-      <div class="reviews-track" tabindex="0">
-        {% for review in reviews %}
-          <div class="review-card">
-            <blockquote>
-              <p>"{{ review.text }}"</p>
-              <footer>
-                — {{ review.author }}
-                {% if review.site %}
-                  <span class="review-site">({{ review.site }})</span>
-                {% endif %}
-              </footer>
-            </blockquote>
-          </div>
-        {% endfor %}
-      </div>
-
-      <button class="carousel-arrow right" aria-label="Next reviews">›</button>
-    </div>
-  </div>
-</section>
-
-
 
 
 

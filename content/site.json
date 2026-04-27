@@ -15,6 +15,7 @@
   ],
   "nav": [
     { "label": "Menu", "href": "menu.html" },
+    { "label": "Events", "href": "events.html" },
     { "label": "Team", "href": "team.html" },
     { "label": "Membership", "href": "membership.html" },
     { "label": "Contact", "href": "mailto:info@jacksonhousewoodinville.com" }
@@ -51,16 +52,6 @@
         "platform": "Facebook",
         "url": "https://www.facebook.com/jacksonhousewoodinville",
         "icon": "css/icons/facebook.svg"
-      },
-      {
-        "platform": "TikTok",
-        "url": "https://www.tiktok.com/@jacksonhousewoodinville",
-        "icon": "css/icons/tiktok.svg"
-      },
-      {
-        "platform": "X",
-        "url": "https://x.com/jacksonhousewa",
-        "icon": "css/icons/x.svg"
       }
     ]
   }

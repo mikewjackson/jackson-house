@@ -19,16 +19,6 @@
       "reserve_url": "https://www.exploretock.com/jacksonhousewoodinville/event/private/b68b591f-bf64-4b0c-9249-b39010e64397"
     },
     {
-      "title": "Mother's Day Afternoon Tea",
-      "date": "2026-05-10",
-      "time": "Noon - 3:00pm",
-      "capacity": 60,
-      "price": 75,
-      "members_only": false,
-      "description": "Make Mother's Day special with an afternoon tea that brings the whole family together. Fresh flavors, a welcoming atmosphere, and a moment to celebrate the moms who do it all.",
-      "reserve_url": ""
-    },
-    {
       "title": "Harvest Dinner",
       "date": "2026-05-17",
       "time": "6:30pm - 10:00pm",
@@ -44,7 +34,7 @@
       "time": "4:30pm - 6:00pm",
       "capacity": 16,
       "price": 55,
-      "members_only": false,
+      "members_only": true,
       "description": "Discover the finer side of bourbon through a tasting built around limited releases and hard-to-find expressions. Each pour is thoughtfully selected for its depth and rarity, served alongside a simple bite to enhance the moment.",
       "reserve_url": "https://www.exploretock.com/jacksonhousewoodinville/event/private/9d017130-fe29-44d1-b1b4-73a3812a523f"
     }

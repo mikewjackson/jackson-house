@@ -98,15 +98,33 @@
 .hp-tl-cta {
   margin-top: .1rem;
 }
-.hp-tl-cta a {
-  font-size: .8rem;
-  color: var(--link);
+
+.hp-tl-cta a,
+.hp-tl-cta a:link,
+.hp-tl-cta a:visited,
+.hp-tl-cta a:active {
+  display: inline-block;
+  background: var(--cta-bg);
+  color: #fff !important;
+  border: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 10px;
   text-decoration: none;
-  border-bottom: 1px solid rgb(203 175 124 / 30%);
-  padding-bottom: 1px;
-  transition: border-color .2s;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgb(127 83 24 / 16%);
+  transition:
+    background-color 0.18s ease,
+    box-shadow 0.18s ease;
 }
-.hp-tl-cta a:hover { border-color: var(--link); }
+
+.hp-tl-cta a:hover {
+  background: var(--cta-bg-hover);
+}
+
+.hp-tl-cta a:focus {
+  outline: 3px solid rgb(255 255 255 / 18%);
+  outline-offset: 3px;
+}
 .badge-members-tl {
   display: inline-block;
   background: rgb(203 175 124 / 12%);
