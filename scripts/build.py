@@ -52,7 +52,7 @@ def get_upcoming_events(events, days=30):
     if not events:
         return []
     
-    today = datetime.strptime("2026-04-26", "%Y-%m-%d")  # Use fixed date for demo
+    today = datetime.now()  # Use current date
     upcoming = []
     
     for event in events:
@@ -111,6 +111,7 @@ for page in page_files:
             "team": page_content.get("team", []),
             "memberships": page_content.get("memberships", []),
             "events": page_events,
+            "today": datetime.now().strftime("%Y-%m-%d"),
             "happy_hour": page_content.get("happy_hour", {}),
             "reviews": page_content.get("reviews", []),
             "holiday_hours": page_content.get("holiday_hours", [])

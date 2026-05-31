@@ -9,7 +9,7 @@
 
   <div class="container">
     <section class="hp-tl-track" aria-label="Upcoming events">
-    {%- for event in events %}
+    {%- for event in events if event.date >= today %}
 
     <div class="hp-tl-item">
       <div class="hp-tl-date">

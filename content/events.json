@@ -37,6 +37,16 @@
       "members_only": true,
       "description": "Discover the finer side of bourbon through a tasting built around limited releases and hard-to-find expressions. Each pour is thoughtfully selected for its depth and rarity, served alongside a simple bite to enhance the moment.",
       "reserve_url": "https://www.exploretock.com/jacksonhousewoodinville/event/private/9d017130-fe29-44d1-b1b4-73a3812a523f"
+    },
+    {
+      "title": "Summer Solstice Dinner - Featuring Darby Winery",
+      "date": "2026-06-21",
+      "time": "6:30pm - 10:00pm",
+      "capacity": 28,
+      "price": 135,
+      "members_only": false,
+      "description": "Our Summer Solstice Dinner features a five-course seasonal menu inspired by the peak of the Pacific Northwest harvest, highlighting beautiful produce from Blue Glass Farm and thoughtfully paired wines from Darby Winery.",
+      "reserve_url": "https://www.exploretock.com/jacksonhousewoodinville/event/606484/summer-solstice-dinner-featuring-darby-winery"
     }
   ]
 }
