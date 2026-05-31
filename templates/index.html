@@ -26,15 +26,15 @@
   </div>
 </header>
 
-{% set show_events = false %}
+{% set ns = namespace(show_events=false) %}
 {% if events %}
   {% for event in events %}
     {% if event.date >= today %}
-      {% set show_events = true %}
+      {% set ns.show_events = true %}
     {% endif %}
   {% endfor %}
 {% endif %}
-{% if show_events %}
+{% if ns.show_events %}
 <section class="upcoming-events" aria-labelledby="reviewsHeading">
   <div class="container">
     <h2>Upcoming Events</h2>
