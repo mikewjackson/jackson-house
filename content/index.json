@@ -12,9 +12,10 @@
       "Reserve your table on OpenTable. The finest in Woodinville awaits!"
     ],
     "slideshow": [
-      { "src": "images/beverage.avif", "alt": "Cocktails" },
-      { "src": "images/lamb.avif", "alt": "Signature dish" },
-      { "src": "images/location.avif", "alt": "Location" }
+      { "src": "images/drink.avif", "alt": "Cocktails" },
+      { "src": "images/lamb2.avif", "alt": "Lamb" },
+      { "src": "images/sausage_rolls.avif", "alt": "Sausage Rolls" },
+      { "src": "images/bar-shelf.avif", "alt": "Bar" }
     ]
   },
   "happy_hour": {
