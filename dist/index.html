@@ -14,6 +14,7 @@
   <meta property="og:image" content="logod.png">
   <meta name="twitter:card" content="summary_large_image">
   <script src="js/site-header.js" defer></script>
+  <script src="js/events-filter.js" defer></script>
   <script src="js/index.js" defer></script>
 </head>
 <body class="team-page">
@@ -84,7 +85,7 @@
     <div class="hero-text">
       <h1 class="coming-soon">Welcome to Jackson House</h1>
       
-        <p class="lead">Now Open, we&#39;re ushering in a new era of hospitality in Woodinville, WA. We specialize in curated cocktails and artisanal local cuisine. You&#39;re invited to experience Jackson House - where every cocktail, plate, and detail is crafted with purpose.</p>
+        <p class="lead">Jackson House is defining a new era of hospitality in Woodinville. Our focus is curated cocktails, artisanal local cuisine, and an experience where every plate, pour, and detail is crafted with intention.</p>
       
         <p class="lead">Reserve your table on OpenTable. The finest in Woodinville awaits!</p>
       
@@ -115,21 +116,13 @@
   </div>
 </header>
 
-
-
-  
-    
-      
-    
-  
-
-
-<section class="upcoming-events" aria-labelledby="reviewsHeading">
+<section class="upcoming-events" aria-labelledby="reviewsHeading" id="upcoming-events-section">
   <div class="container">
     <h2>Upcoming Events</h2>
     <p class="lead">Join us for special tastings, dinners, and celebrations.</p>
-    <div class="upcoming-events-grid">
-        <div class="upcoming-event-card">
+    <div class="upcoming-events-grid" id="upcoming-events-grid">
+      
+        <div class="upcoming-event-card event-item" data-date="2026-06-21">
           <div class="event-date">
             <span class="event-month">June</span>
             <span class="event-day">21</span>
@@ -155,13 +148,59 @@
           </div>
         </div>
       
+        <div class="upcoming-event-card event-item" data-date="2026-07-05">
+          <div class="event-date">
+            <span class="event-month">July</span>
+            <span class="event-day">5</span>
+          </div>
+          <div class="event-details">
+            <h3>Sunday Sessions - Summer Gin + Botanicals</h3>
+            <p>
+            
+              <span class="badge-members">Members Only</span>
+            
+            </p>
+            <div class="hp-tl-pills">
+              <span class="hp-tl-pill">4:30pm</span>
+              <span class="hp-tl-pill">12 guests</span>
+              <span class="hp-tl-pill">$30 / guest</span>
+            </div>
+
+          </div>
+        </div>
+      
+        <div class="upcoming-event-card event-item" data-date="2026-07-19">
+          <div class="event-date">
+            <span class="event-month">July</span>
+            <span class="event-day">19</span>
+          </div>
+          <div class="event-details">
+            <h3>Sunday Sessions - Team Favorites Wine Night</h3>
+            <p>
+            
+            </p>
+            <div class="hp-tl-pills">
+              <span class="hp-tl-pill">4:30pm</span>
+              <span class="hp-tl-pill">20 guests</span>
+              <span class="hp-tl-pill">$50 / guest</span>
+            </div>
+            <p>
+              <a class="reservations-cta"
+                href="https://www.opentable.com/booking/experiences-availability?rid=1496320&amp;restref=1496320&amp;experienceId=749167&amp;utm_source=external&amp;utm_medium=referral&amp;utm_campaign=shared"
+                target="_blank"
+                rel="noopener"
+                aria-label="Reserve a spot">Reserve a spot</a>
+            </p>
+
+          </div>
+        </div>
+      
     </div>
     <div class="events-cta">
       <a href="events.html" class="btn-view-all">View All Events →</a>
     </div>
   </div>
 </section>
-
 
 <section class="reviews" aria-labelledby="reviewsHeading">
   <div class="reviews-wrapper">
@@ -175,9 +214,21 @@
         
           <div class="review-card">
             <blockquote>
-              <p>"Chef Lauren and her excellent team have done it again! Jackson House is a winner and hands down, the best restaurant in Woodinville."</p>
+              <p>"The food was some of the most unique and delicious food we’ve had in the area. The lamb chops, caesar salad, and mushrooms were our favorites, but everything was so good. Highly highly recommend!"</p>
               <footer>
-                — Mike S.
+                — Dana S.
+                
+                  <span class="review-site">(Google Reviews)</span>
+                
+              </footer>
+            </blockquote>
+          </div>
+        
+          <div class="review-card">
+            <blockquote>
+              <p>"We loved our time at Jackson House! We tried their limoncello and food offering at taste WA, and that is how we discovered this restaurant. I&#39;m glad we did!"</p>
+              <footer>
+                — Molly B.
                 
                   <span class="review-site">(Yelp)</span>
                 
@@ -187,9 +238,9 @@
         
           <div class="review-card">
             <blockquote>
-              <p>"This may have been the most accommodating, friendly, and passionate restaurant we have been to."</p>
+              <p>"Incredible food, obviously, but the real treat is the bartender. Mixologist. Alchemist. Sorcerer. So creative and unique!!! I had an incredible dinner but I’ll be going back for some bites and sit at the bar."</p>
               <footer>
-                — Danielle H.
+                — Corinne Z.
                 
                   <span class="review-site">(Google Reviews)</span>
                 
@@ -199,9 +250,9 @@
         
           <div class="review-card">
             <blockquote>
-              <p>"Amazing. I&#39;ve been here twice now, and it&#39;s instantly become a local favorite spot."</p>
+              <p>"Came in here for date night with another couple and was very pleasantly surprised - I love finding amazing gems like this is my home town!"</p>
               <footer>
-                — Hernan C.
+                — Marcie S.
                 
                   <span class="review-site">(Yelp)</span>
                 
@@ -211,21 +262,9 @@
         
           <div class="review-card">
             <blockquote>
-              <p>"One of my friends said, “I didn&#39;t like lamb BUT now I do.” i can’t wait to go back."</p>
+              <p>"Food, service and atmosphere were fantastic. I have been here twice now and both times I feel right at home."</p>
               <footer>
-                — Sabrina C.
-                
-                  <span class="review-site">(Facebook)</span>
-                
-              </footer>
-            </blockquote>
-          </div>
-        
-          <div class="review-card">
-            <blockquote>
-              <p>"Husband and I came in for our anniversary and truly had one of the best meals ever."</p>
-              <footer>
-                — Autumn S.
+                — Tanner E.
                 
                   <span class="review-site">(Google Reviews)</span>
                 
@@ -235,93 +274,11 @@
         
           <div class="review-card">
             <blockquote>
-              <p>"Fabulous little Woodinville gem in dark moody colors with excellent food, cocktails, and exceptional service."</p>
+              <p>"The food is excellent. The vibe is very cute and moody in the best way, almost like a modern speakeasy, and the staff made my time very special."</p>
               <footer>
-                — Julie L.
+                — Megan T.
                 
                   <span class="review-site">(Yelp)</span>
-                
-              </footer>
-            </blockquote>
-          </div>
-        
-          <div class="review-card">
-            <blockquote>
-              <p>"Folks, if your not coming here, your missing out. The ambiance, the staff from door to table/bar are amazing, the chef, are all fabulous. "</p>
-              <footer>
-                — PeeVee
-                
-                  <span class="review-site">(Google Reviews)</span>
-                
-              </footer>
-            </blockquote>
-          </div>
-        
-          <div class="review-card">
-            <blockquote>
-              <p>"Great addition to downtown Woodinville - a much needed restaurant with excellent cocktails and high end food that has been missing in the area."</p>
-              <footer>
-                — Ben D.
-                
-                  <span class="review-site">(Google Reviews)</span>
-                
-              </footer>
-            </blockquote>
-          </div>
-        
-          <div class="review-card">
-            <blockquote>
-              <p>"My favorite place in Woodinville. "</p>
-              <footer>
-                — Ralph N.
-                
-                  <span class="review-site">(Google Reviews)</span>
-                
-              </footer>
-            </blockquote>
-          </div>
-        
-          <div class="review-card">
-            <blockquote>
-              <p>"I had such a lovely experience. I can&#39;t wait to return, the food was so delicious."</p>
-              <footer>
-                — Cristi C.
-                
-                  <span class="review-site">(Yelp)</span>
-                
-              </footer>
-            </blockquote>
-          </div>
-        
-          <div class="review-card">
-            <blockquote>
-              <p>"This is hands down THE best place to eat in woodinville."</p>
-              <footer>
-                — Samantha C.
-                
-                  <span class="review-site">(Google Reviews)</span>
-                
-              </footer>
-            </blockquote>
-          </div>
-        
-          <div class="review-card">
-            <blockquote>
-              <p>"Then came the showstopper: charred lamb rib chops, tender and perfumed with just enough smoke to tease out their natural sweetness. It was  the kind of dish that makes you pause mid-bite, recalibrating your expectations for what Woodinville dining can be."</p>
-              <footer>
-                — advinetures.ca
-                
-              </footer>
-            </blockquote>
-          </div>
-        
-          <div class="review-card">
-            <blockquote>
-              <p>"The lamb chops were so good I almost cried."</p>
-              <footer>
-                — Andrew N.
-                
-                  <span class="review-site">(Google Reviews)</span>
                 
               </footer>
             </blockquote>
@@ -407,54 +364,6 @@
 
 
 
-<footer class="site-footer">
-  <div class="muted footer-tagline" style="text-align:center">
-    Craft Pours • Seasonal Menus • Locally Sourced
-  </div>
-  <div class="container footer-inner footer-grid">
-    <div class="contact">
-      <p><strong>Jackson House</strong></p>
-      <p>Email: <a href="mailto:info@jacksonhousewoodinville.com">info@jacksonhousewoodinville.com</a></p>
-      <p>Phone: <a href="tel:+14253644544">(425) 364-4544</a></p>
-      <p class="muted">
-        Hours:
-        
-          Wed-Thu 5pm-10pm • 
-        
-          Fri 4pm-10pm • 
-        
-          Sat-Sun 3pm-10pm
-        
-      </p>
-      <p class="muted">Address: 17409 133rd Ave NE #1203, Woodinville, WA 98072</p>
-    </div>
 
-    <div class="parking">
-      <p><strong>Parking</strong><br>
-        <span class="muted">
-          
-            Free parking validation<br>
-          
-            Located in the parking garage of the<br>
-          
-            District Flats Apts<br>
-          
-        </span>
-      </p>
-    </div>
-
-    <div class="socials" aria-label="social links">
-      
-        <a href="https://www.instagram.com/jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram">
-          <img src="css/icons/instagram.svg" alt="Instagram" class="social-icon" loading="lazy">
-        </a>
-      
-        <a href="https://www.facebook.com/jacksonhousewoodinville" target="_blank" rel="noopener noreferrer" aria-label="Follow on Facebook">
-          <img src="css/icons/facebook.svg" alt="Facebook" class="social-icon" loading="lazy">
-        </a>
-      
-    </div>
-  </div>
-</footer>
 </body>
 </html>

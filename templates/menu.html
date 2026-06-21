@@ -19,8 +19,15 @@
             {% set ns.header_index = ns.header_index + 1 -%}
             <header class="menu-header {% if ns.header_index > 1 %}spacing-top{% endif %}">
               {% if panel == 'food' -%}
-                <h2 class="menu-title"><span>{{ category }}</span></h2>
-                {% if subtitle %}<p class="menu-sub">{{ subtitle }}</p>{% endif %}
+                {%- if category|upper == 'AFTER DINNER' -%}
+                  <h2 class="menu-title"><span>{{ category }}</span></h2>
+                  {% if subtitle %}<p class="menu-sub">{{ subtitle }}</p>{% endif %}
+                {%- else -%}
+                  {# No separator for the first food category (ns.header_index == 1). For later categories show a thin hr. #}
+                  {%- if ns.header_index > 1 -%}
+                    <hr class="menu-decorative-sep" aria-hidden="true" />
+                  {%- endif -%}
+                {%- endif %}
               {%- else -%}
                 <h1 class="menu-title"><span>{{ category }}</span></h1>
                 {% if subtitle %}<p class="menu-sub">{{ subtitle }}</p>{% endif %}

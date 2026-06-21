@@ -13,19 +13,6 @@
   },
   "memberships": [
     {
-      "name": "Founder's Club",
-      "image": "images/founders_club.avif",
-      "benefits": [
-        "Early access",
-        "Exclusive events",
-        "Special pours",
-        "10% food discounts",
-        "Priority access to reservations and ticketed events"
-      ],
-      "price": "$3500 one time",
-      "link": "https://link.clover.com/urlshortener/KYqzMR"
-    },
-    {
       "name": "Top Shelf Club",
       "image": "images/top_shelf.avif",
       "benefits": [

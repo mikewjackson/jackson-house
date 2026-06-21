@@ -9,9 +9,9 @@
 
   <div class="container">
     <section class="hp-tl-track" aria-label="Upcoming events">
-    {%- for event in events if event.date >= today %}
+    {%- for event in events %}
 
-    <div class="hp-tl-item">
+    <div class="hp-tl-item event-item" data-date="{{ event.date }}">
       <div class="hp-tl-date">
         <span class="hp-tl-month">{{ event.month }}</span>
         <span class="hp-tl-day">{{ event.day }}</span>
@@ -26,11 +26,13 @@
         </div>
         <div class="hp-tl-pills">
           <span class="hp-tl-pill">{{ event.time }}</span>
+          {%- if event.description and event.reserve_url %}
           <span class="hp-tl-pill">{{ event.capacity }} guests</span>
           <span class="hp-tl-pill">${{ event.price }} / guest</span>
+          {%- endif %}
         </div>
         <p class="tl-desc">{{ event.description }}</p>
-        {%- if event.reserve_url and not event.members_only %}
+        {%- if event.reserve_url %}
         <a class="reservations-cta"
           href="{{ event.reserve_url }}"
           target="_blank"
@@ -41,6 +43,7 @@
     </div>
     {%- endfor %}
     </section>
+    <p id="no-events-message" class="lead" style="display:none">Stay tuned for more events.</p>
   </div>
 
 </main>

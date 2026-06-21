@@ -35,33 +35,25 @@ def load_menu_csv(path):
     return panels
 
 def enrich_events(events):
-    """Extract month, day, and day of week from date field"""
+    """Extract month, day, and day of week from date field. Skip events without a valid date."""
     enriched = []
     for event in events:
-        event_date = datetime.strptime(event["date"], "%Y-%m-%d")
+        date_str = event.get("date")
+        if not date_str:
+            # skip events that don't have a date
+            continue
+        try:
+            event_date = datetime.strptime(date_str, "%Y-%m-%d")
+        except Exception:
+            # skip events with malformed dates
+            continue
         enriched.append({
             **event,
             "month": event_date.strftime("%B"),
             "day": event_date.strftime("%d").lstrip("0"),
-            "dow": event_date.strftime("%A")
+            "dow": event_date.strftime("A") if False else event_date.strftime("%A")
         })
     return enriched
-
-def get_upcoming_events(events, days=30):
-    """Filter events within the next N days"""
-    if not events:
-        return []
-    
-    today = datetime.now()  # Use current date
-    upcoming = []
-    
-    for event in events:
-        event_date = datetime.strptime(event.get("date"), "%Y-%m-%d")
-        days_until = (event_date - today).days
-        if 0 <= days_until <= days:
-            upcoming.append(event)
-    
-    return sorted(upcoming, key=lambda e: datetime.strptime(e.get("date"), "%Y-%m-%d"))
 
 menu_data = load_menu_csv("data/menu.csv")
 
@@ -70,7 +62,9 @@ with open("content/events.json", encoding="utf-8") as f:
     all_events = json.load(f)
 
 # Enrich all events with date parts
-all_events["events"] = enrich_events(all_events["events"])
+all_events["events"] = enrich_events(all_events.get("events", []))
+# Sort all events by date ascending (closest date first)
+all_events["events"] = sorted(all_events["events"], key=lambda e: datetime.strptime(e.get("date"), "%Y-%m-%d"))
 
 # Pages to render
 page_files = [
@@ -88,12 +82,28 @@ for page in page_files:
     with open(f"content/{page['json']}", encoding="utf-8") as f:
         page_content = json.load(f)
 
-    # For homepage, filter upcoming events
+    # Include all events in pages (client-side JS will hide expired events)
     page_events = page_content.get("events", [])
+    # Use enriched & sorted global events for index and events pages.
+    # Index should show only the next 3 upcoming events (exclude past events); events page shows all.
     if page['json'] == 'index.json':
-        page_events = enrich_events(get_upcoming_events(all_events["events"]))
+        # filter out past events (keep today and future) and take next 3
+        today_date = datetime.now().date()
+        upcoming = []
+        for ev in all_events.get("events", []):
+            try:
+                ev_date = datetime.strptime(ev.get("date"), "%Y-%m-%d").date()
+            except Exception:
+                continue
+            if ev_date >= today_date:
+                upcoming.append(ev)
+        page_events = upcoming[:3]
     elif page['json'] == 'events.json':
         page_events = all_events.get("events", [])
+    else:
+        # enrich and sort any page-specific events by date ascending
+        if page_events:
+            page_events = sorted(enrich_events(page_events), key=lambda e: datetime.strptime(e.get("date"), "%Y-%m-%d"))
 
     pages.append({
         "template": page["template"],   # use the template you want
@@ -114,7 +124,8 @@ for page in page_files:
             "today": datetime.now().strftime("%Y-%m-%d"),
             "happy_hour": page_content.get("happy_hour", {}),
             "reviews": page_content.get("reviews", []),
-            "holiday_hours": page_content.get("holiday_hours", [])
+            "holiday_hours": page_content.get("holiday_hours", []),
+            "hide_footer": True if page['json'] == 'index.json' else False
         }
     })
 

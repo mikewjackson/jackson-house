@@ -26,22 +26,13 @@
   </div>
 </header>
 
-{% set ns = namespace(show_events=false) %}
-{% if events %}
-  {% for event in events %}
-    {% if event.date >= today %}
-      {% set ns.show_events = true %}
-    {% endif %}
-  {% endfor %}
-{% endif %}
-{% if ns.show_events %}
-<section class="upcoming-events" aria-labelledby="reviewsHeading">
+<section class="upcoming-events" aria-labelledby="reviewsHeading" id="upcoming-events-section">
   <div class="container">
     <h2>Upcoming Events</h2>
     <p class="lead">Join us for special tastings, dinners, and celebrations.</p>
-    <div class="upcoming-events-grid">
-      {%- for event in events if event.date >= today %}
-        <div class="upcoming-event-card">
+    <div class="upcoming-events-grid" id="upcoming-events-grid">
+      {% for event in events %}
+        <div class="upcoming-event-card event-item" data-date="{{ event.date }}">
           <div class="event-date">
             <span class="event-month">{{ event.month }}</span>
             <span class="event-day">{{ event.day }}</span>
@@ -55,8 +46,10 @@
             </p>
             <div class="hp-tl-pills">
               <span class="hp-tl-pill">{{ event.time }}</span>
+              {%- if event.description and event.reserve_url %}
               <span class="hp-tl-pill">{{ event.capacity }} guests</span>
               <span class="hp-tl-pill">${{ event.price }} / guest</span>
+              {%- endif %}
             </div>
             {%- if event.reserve_url and not event.members_only %}
             <p>
@@ -77,7 +70,6 @@
     </div>
   </div>
 </section>
-{% endif %}
 
 <section class="reviews" aria-labelledby="reviewsHeading">
   <div class="reviews-wrapper">

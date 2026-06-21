@@ -155,6 +155,17 @@
   }
 }
 
+/* Decorative separator line between food categories */
+hr.menu-decorative-sep {
+  width: 128px;
+  max-width: 20%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.776);
+  border: none;
+  margin: 1.2rem auto;
+  display: block;
+}
+
 .menu-note {
   text-align: center;
   margin-top: 1.25rem;

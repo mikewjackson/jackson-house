@@ -11,7 +11,8 @@
   "favicon": "images/full_logo.png",
   "stylesheet": "css/site.css",
   "scripts": [
-    "js/site-header.js"
+    "js/site-header.js",
+    "js/events-filter.js"
   ],
   "nav": [
     { "label": "Menu", "href": "menu.html" },
