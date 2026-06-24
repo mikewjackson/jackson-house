@@ -87,17 +87,8 @@ for page in page_files:
     # Use enriched & sorted global events for index and events pages.
     # Index should show only the next 3 upcoming events (exclude past events); events page shows all.
     if page['json'] == 'index.json':
-        # filter out past events (keep today and future) and take next 3
-        today_date = datetime.now().date()
-        upcoming = []
-        for ev in all_events.get("events", []):
-            try:
-                ev_date = datetime.strptime(ev.get("date"), "%Y-%m-%d").date()
-            except Exception:
-                continue
-            if ev_date >= today_date:
-                upcoming.append(ev)
-        page_events = upcoming[:3]
+        # Include all events for the index page and let client-side JS pick the next 3 upcoming
+        page_events = all_events.get("events", [])
     elif page['json'] == 'events.json':
         page_events = all_events.get("events", [])
     else:

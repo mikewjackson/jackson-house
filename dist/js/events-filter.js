@@ -9,31 +9,35 @@ document.addEventListener('DOMContentLoaded', function() {
   var today = new Date();
   today.setHours(0,0,0,0);
 
-  var eventItems = document.querySelectorAll('.event-item[data-date]');
-  var anyVisible = false;
-
-  eventItems.forEach(function(el) {
+  // Collect event items with parsed dates
+  var eventNodeList = document.querySelectorAll('.event-item[data-date]');
+  var events = [];
+  eventNodeList.forEach(function(el){
     var ds = el.getAttribute('data-date');
     var ed = toDateOnly(ds);
-    if (!ed) {
-      el.style.display = 'none';
-      return;
-    }
+    if (!ed) return; // drop malformed
     ed.setHours(0,0,0,0);
-    if (ed >= today) {
-      el.style.display = '';
-      anyVisible = true;
-    } else {
-      el.style.display = 'none';
-    }
+    events.push({ el: el, date: ed });
   });
+
+  // Hide past events and keep future/today events array
+  var futureEvents = events.filter(function(e){ return e.date >= today; });
+
+  // Sort future events by date ascending (closest first)
+  futureEvents.sort(function(a,b){ return a.date - b.date; });
+
+  // If on the index page, show only the next 3 upcoming; otherwise show all future events
+  var path = window.location.pathname || '';
+  var onIndex = path === '/' || path.endsWith('index.html');
+  var toShow = onIndex ? futureEvents.slice(0,3) : futureEvents;
+
+  // First hide everything, then un-hide the desired ones
+  events.forEach(function(e){ e.el.style.display = 'none'; });
+  toShow.forEach(function(e){ e.el.style.display = ''; });
 
   // Hide upcoming-events section if no visible items and show message on events page
   var upcomingSection = document.getElementById('upcoming-events-section');
-  var totalVisibleCount = 0;
-  eventItems.forEach(function(el){
-    if (el.offsetParent !== null) totalVisibleCount += 1;
-  });
+  var totalVisibleCount = toShow.length;
 
   if (upcomingSection) {
     var visibleCount = 0;
