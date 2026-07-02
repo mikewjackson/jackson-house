@@ -51,11 +51,21 @@
   text-align: center;
 }
 
+.menu-title.menu-tagline {
+  font-size: 1rem;
+  margin: 0.4rem 0 1rem;
+}
+
 .menu-title span {
   letter-spacing: 0.6em;
   white-space: normal;
   display: inline;
   word-spacing: 0.4em;
+}
+
+.menu-tagline span {
+  letter-spacing: normal;
+  word-spacing: normal;
 }
 
 .menu-sub {

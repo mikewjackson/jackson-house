@@ -16,8 +16,8 @@
         
         {# Display tagline if present (supports string or list of strings for multiple lines) #}
         {% if panel_data.get("tagline") -%}
-          <header class="menu-header">
-            <h2 class="menu-title">
+          <header class="menu-header menu-tagline-header">
+            <h2 class="menu-title menu-tagline">
               {% if panel_data.tagline is string -%}
                 <span>{{ panel_data.tagline }}</span>
               {%- else -%}
