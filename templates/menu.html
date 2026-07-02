@@ -16,13 +16,20 @@
         
         {# Display tagline if present (supports string or list of strings for multiple lines) #}
         {% if panel_data.get("tagline") -%}
-          {% if panel_data.tagline is string -%}
-            <p class="menu-tagline">{{ panel_data.tagline }}</p>
-          {%- else -%}
-            {% for line in panel_data.tagline -%}
-              <p class="menu-tagline">{{ line }}</p>
-            {%- endfor %}
-          {%- endif %}
+          <header class="menu-header">
+            <h2 class="menu-title">
+              {% if panel_data.tagline is string -%}
+                <span>{{ panel_data.tagline }}</span>
+              {%- else -%}
+                <span>
+                  {%- for line in panel_data.tagline -%}
+                    {%- if not loop.first %}<br>{%- endif -%}
+                    {{ line }}
+                  {%- endfor -%}
+                </span>
+              {%- endif %}
+            </h2>
+          </header>
         {%- endif %}
 
         {# Render groups and items #}
