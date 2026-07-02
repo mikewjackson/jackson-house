@@ -83,11 +83,18 @@
 
 .menu-list li {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.35rem;
   padding: 0.5rem 0;
   border-bottom: 1px solid rgb(255 255 255 / 2%);
   color: var(--muted);
+}
+
+.menu-item-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
 }
 
 .menu-list li .dish {
@@ -95,6 +102,10 @@
   color: var(--text-light);
   font-family: Georgia, serif;
   font-size: 1rem;
+}
+
+.menu-list li .description {
+  flex: 0 1 auto;
 }
 
 .menu-list li .price {
@@ -193,8 +204,10 @@ hr.menu-decorative-sep {
 
 .add-ons {
   display: block;
-  margin-top: 0.35rem;
+  margin-top: 0;
   padding-left: 0;
+  margin-left: auto;
+  width: calc(100% - 0.75rem);
 }
 
 .add-on {
