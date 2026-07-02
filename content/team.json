@@ -1,5 +1,9 @@
 {
   "title": "Meet the Team",
+  "seo": {
+    "title": "Meet the Team | Jackson House Woodinville",
+    "description": "Get to know the Jackson House team behind the kitchen, bar, wine, and hospitality experience in Woodinville."
+  },
   "extra_scripts": [
     "js/team.js"
   ],

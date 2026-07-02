@@ -1,4 +1,8 @@
 {
+  "seo": {
+    "title": "Jackson House | Woodinville Restaurant & Craft Cocktail Bar",
+    "description": "Discover Jackson House in Woodinville, WA: seasonal dining, craft cocktails, weekly events, and memberships. Reserve your table today."
+  },
   "extra_styles": [
     "css/index.css"
   ],
@@ -21,8 +25,8 @@
   "happy_hour": {
     "hours": {
       "Wed-Thur": "5pm-6pm",
-      "Fri:": "4pm-5pm",
-      "Sat-Sun": "3pm-4pm"
+      "Fri:": "4pm-6pm",
+      "Sat-Sun": "2pm-4pm"
     }
   },
   "reviews": [

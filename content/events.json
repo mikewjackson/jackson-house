@@ -1,5 +1,9 @@
 {
   "title": "Upcoming Events",
+  "seo": {
+    "title": "Upcoming Events | Jackson House Woodinville",
+    "description": "See upcoming Jackson House events in Woodinville, including guided tastings, seasonal dinners, and member experiences."
+  },
   "extra_styles": [
     "css/events.css"
   ],

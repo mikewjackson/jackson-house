@@ -1,7 +1,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>{{ site.title }}{% if title %} - {{title}}{% endif %}{{ meta.title_suffix }}</title>
+  {% set seo_title = seo.get("title") if seo else "" %}
+  {% set seo_description = seo.get("description") if seo else "" %}
+  {% set seo_og_title = seo.get("og_title") if seo else "" %}
+  {% set seo_og_description = seo.get("og_description") if seo else "" %}
+  {% set seo_og_image = seo.get("og_image") if seo else "" %}
+  {% set seo_canonical_url = seo.get("canonical_url") if seo else "" %}
+  {% set page_title = seo_title or (title ~ " | " ~ site.title if title else site.title) %}
+  <title>{{ page_title }}</title>
   <link rel="icon" href="{{ site.favicon }}">
   <link rel="stylesheet" href="{{ site.stylesheet }}">
   {%- if extra_styles -%}
@@ -9,12 +16,22 @@
   <link rel="stylesheet" href="{{ s }}">
     {%- endfor %}
   {%- endif %}
-  <meta name="description"
-      content="{{ site.meta.description }}">
-  <meta property="og:title" content="{{ site.meta.og_title }}">
-  <meta property="og:description" content="{{ site.meta.og_description }}">
-  <meta property="og:image" content="{{ site.meta.og_image }}">
+  <meta name="description" content="{{ seo_description or site.meta.description }}">
+  <meta name="robots" content="{{ seo.get('robots') if seo and seo.get('robots') else site.meta.get('robots', 'index,follow') }}">
+  {% if seo_canonical_url or canonical_url %}
+  <link rel="canonical" href="{{ seo_canonical_url or canonical_url }}">
+  {% endif %}
+  <meta property="og:title" content="{{ seo_og_title or seo_title or page_title }}">
+  <meta property="og:description" content="{{ seo_og_description or seo_description or site.meta.og_description or site.meta.description }}">
+  <meta property="og:type" content="{{ seo.get('og_type') if seo and seo.get('og_type') else site.meta.get('og_type', 'website') }}">
+  {% if seo_canonical_url or canonical_url %}
+  <meta property="og:url" content="{{ seo_canonical_url or canonical_url }}">
+  {% endif %}
+  <meta property="og:image" content="{{ seo_og_image or site.meta.og_image }}">
   <meta name="twitter:card" content="{{ site.meta.twitter_card }}">
+  <meta name="twitter:title" content="{{ seo_og_title or seo_title or page_title }}">
+  <meta name="twitter:description" content="{{ seo_og_description or seo_description or site.meta.og_description or site.meta.description }}">
+  <meta name="twitter:image" content="{{ seo_og_image or site.meta.og_image }}">
   {%- for script in site.scripts %}
   <script src="{{ script }}" defer></script>
   {%- endfor %}

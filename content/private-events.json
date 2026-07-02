@@ -1,5 +1,9 @@
 {
   "title": "Private Events",
+  "seo": {
+    "title": "Private Events | Jackson House Woodinville",
+    "description": "Host private and curated events at Jackson House in Woodinville, from intimate gatherings to full restaurant buyouts."
+  },
   "extra_styles": [
     "css/private-events.css"
   ],

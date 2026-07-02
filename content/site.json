@@ -2,11 +2,14 @@
   "title": "Jackson House",
   "meta": {
     "title_suffix": " - Now Open",
-    "description": "Jackson House - Now Open. An elevated restaurant and craft cocktail bar in Woodinville serving mocktails, craft cocktails, and seasonal fare.",
-    "og_title": "Jackson House - Now Open",
-    "og_description": "An elevated restaurant and craft cocktail bar Woodinville.",
+    "site_url": "https://www.jacksonhousewoodinville.com",
+    "description": "Jackson House is an elevated restaurant and craft cocktail bar in Woodinville, WA serving seasonal small plates, curated spirits, and memorable hospitality.",
+    "og_title": "Jackson House | Woodinville Restaurant & Craft Cocktail Bar",
+    "og_description": "Seasonal menus, curated cocktails, and elevated hospitality in the heart of Woodinville.",
     "og_image": "logod.png",
-    "twitter_card": "summary_large_image"
+    "og_type": "website",
+    "twitter_card": "summary_large_image",
+    "robots": "index,follow"
   },
   "favicon": "images/full_logo.png",
   "stylesheet": "css/site.css",
@@ -31,7 +34,7 @@
       "hours": {
         "Wed-Thu": "5pm-10pm",
         "Fri": "4pm-10pm",
-        "Sat-Sun": "3pm-10pm"
+        "Sat-Sun": "2pm-10pm"
       },
       "address": "17409 133rd Ave NE #1203, Woodinville, WA 98072"
     },

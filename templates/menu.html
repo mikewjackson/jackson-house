@@ -79,10 +79,7 @@
                 {%- if item.get("add_ons") %}
                   <div class="add-ons">
                     {%- for addon in item.add_ons %}
-                      <span class="add-on">
-                        <span class="add-on-name">{{ addon.name }}</span>
-                        <span class="add-on-price">+{{ addon.price }}</span>
-                      </span>
+                      <span class="add-on">{{ addon.name }} <span class="add-on-price">+{{ addon.price }}</span></span>{% if not loop.last %}<span class="add-on-sep"> • </span>{% endif %}
                     {%- endfor %}
                   </div>
                 {%- endif %}

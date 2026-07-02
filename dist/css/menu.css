@@ -52,8 +52,9 @@
 }
 
 .menu-title.menu-tagline {
-  font-size: 1rem;
-  margin: 0.4rem 0 1rem;
+  font-size: 1.25rem;
+  margin: 0.6rem 0 0.25rem;
+  line-height: 1.35;
 }
 
 .menu-title span {
@@ -63,9 +64,9 @@
   word-spacing: 0.4em;
 }
 
-.menu-tagline span {
-  letter-spacing: normal;
-  word-spacing: normal;
+.menu-title.menu-tagline span {
+  letter-spacing: 0.45em;
+  word-spacing: 0.3em;
 }
 
 .menu-sub {
@@ -82,34 +83,33 @@
 }
 
 .menu-list li {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  column-gap: 1rem;
+  row-gap: 0.35rem;
   padding: 0.5rem 0;
   border-bottom: 1px solid rgb(255 255 255 / 2%);
   color: var(--muted);
 }
 
 .menu-item-main {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: flex-start;
+  display: contents;
 }
 
 .menu-list li .dish {
-  flex: 1 1 auto;
+  grid-column: 1;
   color: var(--text-light);
   font-family: Georgia, serif;
   font-size: 1rem;
 }
 
 .menu-list li .description {
-  flex: 0 1 auto;
+  grid-column: 2;
+  text-align: right;
 }
 
 .menu-list li .price {
-  flex: 0 0 auto;
+  grid-column: 3;
   color: var(--muted);
   padding-left: 0.75rem;
   min-width: 2ch;
@@ -203,36 +203,24 @@ hr.menu-decorative-sep {
 }
 
 .add-ons {
-  display: block;
-  margin-top: 0;
-  padding-left: 0;
-  margin-left: auto;
-  width: calc(100% - 0.75rem);
+  grid-column: 2;
+  justify-self: stretch;
+  text-align: right;
+  font-size: 0.95rem;
+  color: var(--muted);
 }
 
 .add-on {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.75rem;
-  font-size: 0.95rem;
-  color: var(--muted);
-  padding: 0.25rem 0;
-}
-
-.add-on-name {
-  flex: 1 1 auto;
-  text-align: left;
+  white-space: nowrap;
 }
 
 .add-on-price {
-  flex: 0 0 auto;
-  text-align: right;
-  min-width: 3ch;
+  white-space: nowrap;
 }
 
 .tasting-notes {
-  display: block;
-  margin-top: 0.35rem;
+  grid-column: 2;
+  justify-self: stretch;
   text-align: right;
   font-size: 0.95rem;
   font-style: italic;

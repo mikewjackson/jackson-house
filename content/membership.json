@@ -1,5 +1,9 @@
 {
   "title": "Membership",
+  "seo": {
+    "title": "Membership | Jackson House Woodinville",
+    "description": "Join Jackson House membership for priority access, curated tastings, and exclusive cocktail and dining experiences in Woodinville."
+  },
   "extra_styles": [
     "css/membership.css"
   ],

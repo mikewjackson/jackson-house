@@ -9,6 +9,8 @@ env = Environment(loader=FileSystemLoader('templates'), autoescape=select_autoes
 with open("content/site.json", encoding="utf-8") as f:
     site_content = json.load(f)
 
+base_site_url = site_content.get("meta", {}).get("site_url", "").rstrip("/")
+
 def enrich_events(events):
     """Extract month, day, and day of week from date field. Skip events without a valid date."""
     enriched = []
@@ -75,6 +77,12 @@ for page in page_files:
         "context": {
             "site": site_content,
             "meta": site_content["meta"],
+            "seo": page_content.get("seo", {}),
+            "canonical_url": (
+                base_site_url
+                if page["output"] == "index.html"
+                else f"{base_site_url}/{page['output']}"
+            ) if base_site_url else "",
             "footer": site_content.get("footer", {}),
             "hero": page_content.get("hero", ""),
             "title": page_content.get("title"),
