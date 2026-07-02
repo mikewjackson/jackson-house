@@ -17,7 +17,10 @@
     "happy-hour": "Happy Hour"
   },
   "dining": {
-    "tagline": "Premium fine dining experiences built for sharing",
+    "tagline": [
+      "dishes meant to be paired",
+      "+ shared"
+    ],
     "groups": [
       {
         "name": "For the Table",
@@ -129,7 +132,6 @@
   "after_dinner": {
     "groups": [
       {
-        "name": "Desserts",
         "items": [
           {
             "dish": "whiskey brown sugar basque cheesecake",

@@ -14,9 +14,15 @@
       <section id="{{ panel }}-panel" class="menu-panel" role="tabpanel" aria-labelledby="tab-{{ panel }}" {% if not loop.first %}hidden{% endif %}>
         {% set panel_data = menu.get(panel, {}) -%}
         
-        {# Display tagline if present #}
+        {# Display tagline if present (supports string or list of strings for multiple lines) #}
         {% if panel_data.get("tagline") -%}
-          <p class="menu-tagline">{{ panel_data.tagline }}</p>
+          {% if panel_data.tagline is string -%}
+            <p class="menu-tagline">{{ panel_data.tagline }}</p>
+          {%- else -%}
+            {% for line in panel_data.tagline -%}
+              <p class="menu-tagline">{{ line }}</p>
+            {%- endfor %}
+          {%- endif %}
         {%- endif %}
 
         {# Render groups and items #}
@@ -24,10 +30,13 @@
         {%- for group in panel_data.get("groups", []) -%}
           {%- set ns.group_index = ns.group_index + 1 -%}
           
-          <header class="menu-header {% if ns.group_index > 1 %}spacing-top{% endif %}">
-            <h2 class="menu-title"><span>{{ group.name }}</span></h2>
-            {% if group.get("description") %}<p class="menu-sub">{{ group.description }}</p>{% endif %}
-          </header>
+          {# Only show header if group has a name #}
+          {% if group.get("name") -%}
+            <header class="menu-header {% if ns.group_index > 1 %}spacing-top{% endif %}">
+              <h2 class="menu-title"><span>{{ group.name }}</span></h2>
+              {% if group.get("description") %}<p class="menu-sub">{{ group.description }}</p>{% endif %}
+            </header>
+          {%- endif %}
 
           <ul class="menu-list">
             {%- for item in group.get("items", []) %}
