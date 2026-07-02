@@ -83,276 +83,545 @@
 <main id="main" class="container">
   <div class="menu-page" role="application">
     <div class="menu-tabs" role="tablist" aria-label="Menus">
-      <button id="tab-food" class="menu-tab" role="tab" aria-selected="true" aria-controls="food-panel">Food</button>
+      <button id="tab-dining" class="menu-tab" role="tab" aria-selected="true" aria-controls="dining-panel">Dining</button>
+      <button id="tab-lounge" class="menu-tab" role="tab" aria-selected="false" aria-controls="lounge-panel">Lounge</button>
+      <button id="tab-after_dinner" class="menu-tab" role="tab" aria-selected="false" aria-controls="after_dinner-panel">After Dinner</button>
+      <button id="tab-whiskey" class="menu-tab" role="tab" aria-selected="false" aria-controls="whiskey-panel">Whiskey</button>
       <button id="tab-cocktail" class="menu-tab" role="tab" aria-selected="false" aria-controls="cocktail-panel">Cocktails</button>
-      <button id="tab-mocktail" class="menu-tab" role="tab" aria-selected="false" aria-controls="mocktail-panel">Low &amp; No</button>
       <button id="tab-beer" class="menu-tab" role="tab" aria-selected="false" aria-controls="beer-panel">Beer &amp; Cider</button>
-      <button id="tab-wine" class="menu-tab" role="tab" aria-selected="false" aria-controls="wine-panel">Spirits &amp; Wine</button>
+      <button id="tab-wine" class="menu-tab" role="tab" aria-selected="false" aria-controls="wine-panel">Wine</button>
       <button id="tab-happy-hour" class="menu-tab" role="tab" aria-selected="false" aria-controls="happy-hour-panel">Happy Hour</button>
     </div>
 
     <div class="menu-panels">
       
-      <section id="food-panel" class="menu-panel" role="tabpanel" aria-labelledby="tab-food" >
+      <section id="dining-panel" class="menu-panel" role="tabpanel" aria-labelledby="tab-dining" >
         
-            <header class="menu-header ">
-              
-            </header>
+        <p class="menu-tagline">Premium fine dining experiences built for sharing</p>
 
-            <ul class="menu-list">
-                <li><span class="dish">house focaccia - with honey lavendar butter</span><span class="price">8</span></li>
-                <li><span class="dish">labneh + caviar - ossetra caviar, ellenos labneh, house made chips</span><span class="price">26</span></li>
-                <li><span class="dish">roasted beets - skagit valley golden beet, hummus, toasted wild rice, feta</span><span class="price">18</span></li>
-                <li><span class="dish">dungeness cheesecake - butter-poached leek, dungeness crab, lemon oil</span><span class="price">19</span></li>
-                <li><span class="dish">bacon + egg caesar - 6-minute egg, local romaine, hogstead bacon, house caesar</span><span class="price">19</span></li>
-                <li><span class="dish">shrimp + avocado salad - champagne vinaigrette, basil, local greens</span><span class="price">22</span></li>
-            </ul>
-            <header class="menu-header spacing-top">
-              <hr class="menu-decorative-sep" aria-hidden="true" />
-            </header>
+        <header class="menu-header ">
+            <h2 class="menu-title"><span>For the Table</span></h2>
+            
+          </header>
 
-            <ul class="menu-list">
-                <li><span class="dish">sausage rolls - veal, puff pastry, house ketchup, an aussie tradition</span><span class="price">16</span></li>
-                <li><span class="dish">poutine - hand cut fries, house gravy, fried halloumi</span><span class="price">16</span></li>
-                <li><span class="dish">crispy mushrooms - market mushrooms, tempura batter, miso aioli</span><span class="price">14</span></li>
-                <li><span class="dish">spot prawns + polenta - pnw sofrito, parmesan polenta, house chili oil</span><span class="price">18</span></li>
-                <li><span class="dish">asparagus + barley risotto - mushroom brodo, shaved black summer truffle</span><span class="price">26</span></li>
-                <li><span class="dish">iberico pork skirt - butternut squash puree, truffle powder, charred local onion</span><span class="price">39</span></li>
-            </ul>
-            <header class="menu-header spacing-top">
-              <hr class="menu-decorative-sep" aria-hidden="true" />
-            </header>
+          <ul class="menu-list">
+              <li>
+                <span class="dish">charred lamb rib chops</span>
+                <span class="description">sweet potato puree, charred green onion vin.</span><span class="price">40</span></li>
+              <li>
+                <span class="dish">king salmon medallions</span>
+                <span class="description">shaved brussels, green goddess, lemon oil</span><span class="price">48</span></li>
+              <li>
+                <span class="dish">seared duck</span>
+                <span class="description">polenta, 5-spice, drunken cherry + pickled turnip relish</span><span class="price">38</span></li>
+              <li>
+                <span class="dish">steak frites</span>
+                <span class="description">miso-glazed flatiron, maitre &#39;d butter, house cut fries</span><span class="price">50</span></li>
+              <li>
+                <span class="dish">bone-in ribeye</span>
+                <span class="description">23 oz ribeye, local herb chimichurri, smoked olive oil</span><span class="price">69</span></li>
+          </ul>
+      </section>
+      <section id="lounge-panel" class="menu-panel" role="tabpanel" aria-labelledby="tab-lounge" hidden>
+        
+        <p class="menu-tagline">Casual plates and bites perfect for the bar or table</p>
 
-            <ul class="menu-list">
-                <li><span class="dish">charred lamb rib chops - sweet potato puree, charred green onion vin.</span><span class="price">40</span></li>
-                <li><span class="dish">king salmon medallions - shaved brussels, green goddess, lemon oil</span><span class="price">48</span></li>
-                <li><span class="dish">seared duck - polenta, 5-spice, drunken cherry + pickled turnip relish</span><span class="price">38</span></li>
-                <li><span class="dish">steak frites - miso-glazed lat iron, maitre ‘d butter, house cut fries</span><span class="price">50</span></li>
-                <li><span class="dish">bone-in ribeye - 23 oz ribeye, local herb chimichurri, smoked olive oil</span><span class="price">69</span></li>
-            </ul>
-            <header class="menu-header spacing-top">
-              <h2 class="menu-title"><span>AFTER DINNER</span></h2>
-                  <p class="menu-sub">made for lingering</p>
-            </header>
+        <header class="menu-header ">
+            <h2 class="menu-title"><span>Fresh &amp; Crisp</span></h2>
+            
+          </header>
 
-            <ul class="menu-list">
-                <li><span class="dish">whiskey brown sugar basque cheesecake - seasonal &#34;burnt&#34; cheesecake</span><span class="price">14</span></li>
-                <li><span class="dish">honey &amp; lemon tart - brown sugar marscapone, aperol-candied lemon peel</span><span class="price">10</span></li>
-                <li><span class="dish">double espresso - local roast, served with cream + sugar</span><span class="price">6</span></li>
-                <li><span class="dish">french press service - local roast, served with cream + sugar, serves two</span><span class="price">15</span></li>
-                <li><span class="dish">espresso martini - espresso, wohlfert coffee liqueur, outfitters vodka</span><span class="price">16</span></li>
-                <li><span class="dish">filthy chai - rhum barbancourt, local chai + espresso, orange bitters</span><span class="price">18</span></li>
-                <li><span class="dish">lemon myrtle limoncello - served chilled</span><span class="price">10</span></li>
-            </ul>
+          <ul class="menu-list">
+              <li>
+                <span class="dish">house focaccia</span>
+                <span class="description">with honey lavender butter</span><span class="price">8</span></li>
+              <li>
+                <span class="dish">labneh + caviar</span>
+                <span class="description">ossetra caviar, ellenos labneh, house made chips</span><span class="price">26</span></li>
+              <li>
+                <span class="dish">roasted beets</span>
+                <span class="description">skagit valley golden beet, hummus, toasted wild rice, feta</span><span class="price">18</span></li>
+              <li>
+                <span class="dish">dungeness cheesecake</span>
+                <span class="description">butter-poached leek, dungeness crab, lemon oil</span><span class="price">19</span></li>
+              <li>
+                <span class="dish">bacon + egg caesar</span>
+                <span class="description">6-minute egg, local romaine, hogstead bacon, house caesar</span><span class="price">19</span></li>
+              <li>
+                <span class="dish">shrimp + avocado salad</span>
+                <span class="description">champagne vinaigrette, basil, local greens</span><span class="price">22</span></li>
+          </ul><header class="menu-header spacing-top">
+            <h2 class="menu-title"><span>Hot &amp; Shareable</span></h2>
+            
+          </header>
+
+          <ul class="menu-list">
+              <li>
+                <span class="dish">sausage rolls</span>
+                <span class="description">veal, puff pastry, house ketchup, an aussie tradition</span><span class="price">16</span></li>
+              <li>
+                <span class="dish">poutine</span>
+                <span class="description">hand cut fries, house gravy, fried halloumi</span><span class="price">16</span></li>
+              <li>
+                <span class="dish">crispy mushrooms</span>
+                <span class="description">market mushrooms, tempura batter, miso aioli</span><span class="price">14</span></li>
+              <li>
+                <span class="dish">spot prawns + polenta</span>
+                <span class="description">pnw sofrito, parmesan polenta, house chili oil</span><span class="price">18</span></li>
+              <li>
+                <span class="dish">asparagus + barley risotto</span>
+                <span class="description">mushroom brodo, shaved black summer truffle</span><span class="price">26</span></li>
+              <li>
+                <span class="dish">iberico pork skirt</span>
+                <span class="description">butternut squash puree, truffle powder, charred local onion</span><span class="price">39</span></li>
+          </ul>
+      </section>
+      <section id="after_dinner-panel" class="menu-panel" role="tabpanel" aria-labelledby="tab-after_dinner" hidden>
+        
+        
+
+        <header class="menu-header ">
+            <h2 class="menu-title"><span>Desserts</span></h2>
+            
+          </header>
+
+          <ul class="menu-list">
+              <li>
+                <span class="dish">whiskey brown sugar basque cheesecake</span>
+                <span class="description">seasonal &#34;burnt&#34; cheesecake</span><span class="price">14</span></li>
+              <li>
+                <span class="dish">honey &amp; lemon tart</span>
+                <span class="description">brown sugar mascarpone, aperol-candied lemon peel</span><span class="price">10</span></li>
+              <li>
+                <span class="dish">double espresso</span>
+                <span class="description">local roast, served with cream + sugar</span><span class="price">6</span></li>
+              <li>
+                <span class="dish">french press service</span>
+                <span class="description">local roast, served with cream + sugar, serves two</span><span class="price">15</span></li>
+              <li>
+                <span class="dish">espresso martini</span>
+                <span class="description">espresso, wohlfert coffee liqueur, outfitters vodka</span><span class="price">16</span></li>
+              <li>
+                <span class="dish">filthy chai</span>
+                <span class="description">rhum barbancourt, local chai + espresso, orange bitters</span><span class="price">18</span></li>
+              <li>
+                <span class="dish">lemon myrtle limoncello</span>
+                <span class="description">served chilled</span><span class="price">10</span></li>
+          </ul>
+      </section>
+      <section id="whiskey-panel" class="menu-panel" role="tabpanel" aria-labelledby="tab-whiskey" hidden>
+        
+        
+
+        <header class="menu-header ">
+            <h2 class="menu-title"><span>Bourbon &amp; Rye</span></h2>
+            
+          </header>
+
+          <ul class="menu-list">
+              <li>
+                <span class="dish">woodinville bourbon</span>
+                <span class="price">14</span></li>
+              <li>
+                <span class="dish">doc swinson&#39;s session</span>
+                <span class="price">14</span></li>
+              <li>
+                <span class="dish">e.h. taylor</span>
+                <span class="price">20</span></li>
+              <li>
+                <span class="dish">blanton&#39;s</span>
+                <span class="price">25</span></li>
+              <li>
+                <span class="dish">elijah craig toasted barrel</span>
+                <span class="price">14</span></li>
+              <li>
+                <span class="dish">pikesville rye</span>
+                <span class="price">14</span></li>
+              <li>
+                <span class="dish">woodinville rye</span>
+                <span class="price">14</span></li>
+              <li>
+                <span class="dish">doc swinson&#39;s 7yr bib rye</span>
+                <span class="price">20</span></li>
+              <li>
+                <span class="dish">widow jane paradigm rye</span>
+                <span class="price">18</span></li>
+              <li>
+                <span class="dish">barrel seagrass</span>
+                <span class="price">34</span></li>
+          </ul><header class="menu-header spacing-top">
+            <h2 class="menu-title"><span>Scotch &amp; International</span></h2>
+            
+          </header>
+
+          <ul class="menu-list">
+              <li>
+                <span class="dish">ardmore</span>
+                <span class="price">16</span></li>
+              <li>
+                <span class="dish">dalwhinnie 15yr</span>
+                <span class="price">20</span></li>
+              <li>
+                <span class="dish">lagavulin 16yr</span>
+                <span class="price">24</span></li>
+              <li>
+                <span class="dish">aberlour 12yr</span>
+                <span class="price">14</span></li>
+              <li>
+                <span class="dish">suntory ao</span>
+                <span class="price">20</span></li>
+              <li>
+                <span class="dish">anCnoc 12yr</span>
+                <span class="price">16</span></li>
+              <li>
+                <span class="dish">edradour 10yr</span>
+                <span class="price">18</span></li>
+              <li>
+                <span class="dish">ardbeg uigeadail</span>
+                <span class="price">24</span></li>
+              <li>
+                <span class="dish">signatory caol ila 2007</span>
+                <span class="price">40</span></li>
+              <li>
+                <span class="dish">nikka coffey grain</span>
+                <span class="price">22</span></li>
+          </ul>
       </section>
       <section id="cocktail-panel" class="menu-panel" role="tabpanel" aria-labelledby="tab-cocktail" hidden>
         
-            <header class="menu-header ">
-              <h1 class="menu-title"><span>FIELD NOTES</span></h1>
-                <p class="menu-sub">seasonal &amp; locally sourced</p>
-            </header>
-
-            <ul class="menu-list">
-                <li><span class="dish">sling theory - appleton estate rum, doc swinsons rye, lemon, black walnut + angostura bitters, wassail</span><span class="price">18</span></li>
-                <li><span class="dish">phenol affair - ardbeg &#39;wee beastie&#39;, pikesville rye, canton, citrus, passionfruit + pineapple, hazelnut orgeat, bitters</span><span class="price">22</span></li>
-                <li><span class="dish">limoncello spritz - house made lemon myrtle limoncello, saline cava, lo-fi vermouth</span><span class="price">18</span></li>
-                <li><span class="dish">the hornet - citrus infused savor spear gin, chili bitters fresh citrus, local hot honey</span><span class="price">18</span></li>
-            </ul>
-            <header class="menu-header spacing-top">
-              <h1 class="menu-title"><span>ROOTS</span></h1>
-                <p class="menu-sub">our mainstays</p>
-            </header>
-
-            <ul class="menu-list">
-                <li><span class="dish">sage against the ravine - big gin peated, green chartreuse, gentian amaro, brovo douglas fir, mezcal union, lime, sage syrup</span><span class="price">21</span></li>
-                <li><span class="dish">violet fog - house gin blend, amaricano viola, lemon, egg white,earl grey syrup, butterfly pea</span><span class="price">16</span></li>
-                <li><span class="dish">jackson house old fashioned - woodinville rye, muscavado simple, house bitters</span><span class="price">16</span></li>
-                <li><span class="dish">o&#39;s black manhattan - pikesville rye, jammy vermouth, cynar 70, sfumato, angostura + orange bitters</span><span class="price">16</span></li>
-            </ul>
-            <header class="menu-header spacing-top">
-              <h1 class="menu-title"><span>MARTINIS</span></h1>
-                <p class="menu-sub">our creative interpretations</p>
-            </header>
-
-            <ul class="menu-list">
-                <li><span class="dish">olive oil - olive oil washed martin miller&#39;s london dry, lo-fi dry vermouth, orange bitters, olive oil</span><span class="price">20</span></li>
-                <li><span class="dish">especially dirty - choice of vodka or gin, lo-fi dry vermouth, olive brine, flor de garum, saline</span><span class="price">20</span></li>
-                <li><span class="dish">limoncello drop - lemon myrtle limoncello, oleo saccharum, brovo curacao, saline</span><span class="price">16</span></li>
-                <li><span class="dish">espresso - wohlfert espresso liqueur, outfitters vodka, local bean espresso pulled-to-order</span><span class="price">16</span></li>
-            </ul>
-      </section>
-      <section id="mocktail-panel" class="menu-panel" role="tabpanel" aria-labelledby="tab-mocktail" hidden>
         
-            <header class="menu-header ">
-              <h1 class="menu-title"><span>LOW&amp;NO</span></h1>
-                <p class="menu-sub">zero proof* or lightly proofed</p>
-            </header>
 
-            <ul class="menu-list">
-                <li><span class="dish">squeaky tiki* - passionfruit, blood orange, house orgeat</span><span class="price">10</span></li>
-                <li><span class="dish">pink &#39;groni club - st agrestis phony negroni, tiridis sparkling, citrus</span><span class="price">12</span></li>
-                <li><span class="dish">lemon lime &amp; bitters - sweetened lim, lemon-lime soda, bitters</span><span class="price">10</span></li>
-            </ul>
+        <header class="menu-header ">
+            <h2 class="menu-title"><span>Field Notes</span></h2>
+            <p class="menu-sub">seasonal &amp; locally sourced</p>
+          </header>
+
+          <ul class="menu-list">
+              <li>
+                <span class="dish">sling theory</span>
+                <span class="description">appleton estate rum, doc swinsons rye, lemon, black walnut + angostura bitters, wassail</span><span class="price">18</span></li>
+              <li>
+                <span class="dish">phenol affair</span>
+                <span class="description">ardbeg &#39;wee beastie&#39;, pikesville rye, canton, citrus, passionfruit + pineapple, hazelnut orgeat, bitters</span><span class="price">22</span></li>
+              <li>
+                <span class="dish">limoncello spritz</span>
+                <span class="description">house made lemon myrtle limoncello, saline cava, lo-fi vermouth</span><span class="price">18</span></li>
+              <li>
+                <span class="dish">the hornet</span>
+                <span class="description">citrus infused savor spear gin, chili bitters fresh citrus, local hot honey</span><span class="price">18</span></li>
+          </ul><header class="menu-header spacing-top">
+            <h2 class="menu-title"><span>Roots</span></h2>
+            <p class="menu-sub">our mainstays</p>
+          </header>
+
+          <ul class="menu-list">
+              <li>
+                <span class="dish">sage against the ravine</span>
+                <span class="description">big gin peated, green chartreuse, gentian amaro, brovo douglas fir, mezcal union, lime, sage syrup</span><span class="price">21</span></li>
+              <li>
+                <span class="dish">violet fog</span>
+                <span class="description">house gin blend, amaricano viola, lemon, egg white, earl grey syrup, butterfly pea</span><span class="price">16</span></li>
+              <li>
+                <span class="dish">jackson house old fashioned</span>
+                <span class="description">woodinville rye, muscavado simple, house bitters</span><span class="price">16</span></li>
+              <li>
+                <span class="dish">o&#39;s black manhattan</span>
+                <span class="description">pikesville rye, jammy vermouth, cynar 70, sfumato, angostura + orange bitters</span><span class="price">16</span></li>
+          </ul><header class="menu-header spacing-top">
+            <h2 class="menu-title"><span>Martinis</span></h2>
+            <p class="menu-sub">our creative interpretations</p>
+          </header>
+
+          <ul class="menu-list">
+              <li>
+                <span class="dish">olive oil</span>
+                <span class="description">olive oil washed martin miller&#39;s london dry, lo-fi dry vermouth, orange bitters, olive oil</span><span class="price">20</span></li>
+              <li>
+                <span class="dish">especially dirty</span>
+                <span class="description">choice of vodka or gin, lo-fi dry vermouth, olive brine, flor de garum, saline</span><span class="price">20</span></li>
+              <li>
+                <span class="dish">limoncello drop</span>
+                <span class="description">lemon myrtle limoncello, oleo saccharum, brovo curacao, saline</span><span class="price">16</span></li>
+              <li>
+                <span class="dish">espresso</span>
+                <span class="description">wohlfert espresso liqueur, outfitters vodka, local bean espresso pulled-to-order</span><span class="price">16</span></li>
+          </ul><header class="menu-header spacing-top">
+            <h2 class="menu-title"><span>Low &amp; No</span></h2>
+            <p class="menu-sub">zero proof* or lightly proofed</p>
+          </header>
+
+          <ul class="menu-list">
+              <li>
+                <span class="dish">squeaky tiki*</span>
+                <span class="description">passionfruit, blood orange, house orgeat</span><span class="price">10</span></li>
+              <li>
+                <span class="dish">pink &#39;groni club</span>
+                <span class="description">st agrestis phony negroni, tiridis sparkling, citrus</span><span class="price">12</span></li>
+              <li>
+                <span class="dish">lemon lime &amp; bitters</span>
+                <span class="description">sweetened lim, lemon-lime soda, bitters</span><span class="price">10</span></li>
+          </ul>
       </section>
       <section id="beer-panel" class="menu-panel" role="tabpanel" aria-labelledby="tab-beer" hidden>
         
-            <header class="menu-header ">
-              <h1 class="menu-title"><span>BEER &amp; CIDER</span></h1>
-                <p class="menu-sub">craft pours and local favorites</p>
-            </header>
+        
 
-            <ul class="menu-list">
-                <li><span class="dish">stone brewing pilsner - 12oz</span><span class="price">12</span></li>
-                <li><span class="dish">chuckanut fest beer - 12oz</span><span class="price">12</span></li>
-                <li><span class="dish">crikey ipa - 16oz</span><span class="price">12</span></li>
-                <li><span class="dish">bitburger drive n/a - 12oz</span><span class="price">11</span></li>
-                <li><span class="dish">yonder mazama cider - 16oz</span><span class="price">14</span></li>
-                <li><span class="dish">incline POG cider - 12oz</span><span class="price">11</span></li>
-                <li><span class="dish">black raven origins ipa - 12oz</span><span class="price">10</span></li>
-                <li><span class="dish">boundary bay scotch ale - 12oz</span><span class="price">12</span></li>
-                <li><span class="dish">tsumani stout - 12oz</span><span class="price">14</span></li>
-                <li><span class="dish">westmalle trappist - 11.2oz</span><span class="price">16</span></li>
-                <li><span class="dish">black raven moontower lager - 12oz</span><span class="price">10</span></li>
-                <li><span class="dish">rotating draft beer</span><span class="price">mkt</span></li>
-            </ul>
+        <header class="menu-header ">
+            <h2 class="menu-title"><span>Beer &amp; Cider</span></h2>
+            <p class="menu-sub">craft pours and local favorites</p>
+          </header>
+
+          <ul class="menu-list">
+              <li>
+                <span class="dish">stone brewing pilsner</span>
+                <span class="description">12oz</span><span class="price">12</span></li>
+              <li>
+                <span class="dish">chuckanut fest beer</span>
+                <span class="description">12oz</span><span class="price">12</span></li>
+              <li>
+                <span class="dish">crikey ipa</span>
+                <span class="description">16oz</span><span class="price">12</span></li>
+              <li>
+                <span class="dish">bitburger drive n/a</span>
+                <span class="description">12oz</span><span class="price">11</span></li>
+              <li>
+                <span class="dish">yonder mazama cider</span>
+                <span class="description">16oz</span><span class="price">14</span></li>
+              <li>
+                <span class="dish">incline POG cider</span>
+                <span class="description">12oz</span><span class="price">11</span></li>
+              <li>
+                <span class="dish">black raven origins ipa</span>
+                <span class="description">12oz</span><span class="price">10</span></li>
+              <li>
+                <span class="dish">boundary bay scotch ale</span>
+                <span class="description">12oz</span><span class="price">12</span></li>
+              <li>
+                <span class="dish">tsumani stout</span>
+                <span class="description">12oz</span><span class="price">14</span></li>
+              <li>
+                <span class="dish">westmalle trappist</span>
+                <span class="description">11.2oz</span><span class="price">16</span></li>
+              <li>
+                <span class="dish">black raven moontower lager</span>
+                <span class="description">12oz</span><span class="price">10</span></li>
+              <li>
+                <span class="dish">rotating draft beer</span>
+                <span class="description">market price</span></li>
+          </ul>
       </section>
       <section id="wine-panel" class="menu-panel" role="tabpanel" aria-labelledby="tab-wine" hidden>
         
-            <header class="menu-header ">
-              <h1 class="menu-title"><span>WINE</span></h1>
-                <p class="menu-sub">celebrating the old world</p>
-            </header>
+        
 
-            <ul class="menu-list">
-                <li><span class="dish">valdemar estates - french creek chardonnay - 2022 - wa</span><span class="price">17 - 75</span></li>
-                <li><span class="dish">dossier - flagship viognier - 2023 - columbia valley, wa</span><span class="price">105</span></li>
-                <li><span class="dish">mac forbes - riesling - 2022 - victoria, aus</span><span class="price">19 - 72</span></li>
-                <li><span class="dish">domaine de coron - grenache blanc - 2023 - rhone valley, fr</span><span class="price">15 - 48</span></li>
-                <li><span class="dish">gilbert cellars - orange riesling - 2024 - wahluke slope, wa</span><span class="price">58</span></li>
-                <li><span class="dish">domaine rimbert rosé - &#39;gsm&#39; - 2024 - bandol, provence, fr</span><span class="price">16 - 67</span></li>
-                <li><span class="dish">tirriddis blanc de gris - sparkling pinto gris - n/v - wa</span><span class="price">15 - 50</span></li>
-                <li><span class="dish">moët &amp; chandon - imperial brut rosé - nv - champagne, fr</span><span class="price">195</span></li>
-                <li><span class="dish">dom perignon - champagne - 2015 - champagne, fr</span><span class="price">595</span></li>
-            </ul>
-            <header class="menu-header spacing-top">
-              <h1 class="menu-title"><span>WINE</span></h1>
-                <p class="menu-sub">and the new world</p>
-            </header>
+        <header class="menu-header ">
+            <h2 class="menu-title"><span>White Wines</span></h2>
+            
+          </header>
 
-            <ul class="menu-list">
-                <li><span class="dish">big table farm - pinot noir - 2023 - willamette valley, or</span><span class="price">105</span></li>
-                <li><span class="dish">galet - gamay - 2019 - beaujolais, fr</span><span class="price">18 - 65</span></li>
-                <li><span class="dish">amos rome - estate concrete malbec - 2022 - lake chelan, wa</span><span class="price">120</span></li>
-                <li><span class="dish">gaacina disa ello sandri - nebbiolo - 2022 - piedmont, it</span><span class="price">95</span></li>
-                <li><span class="dish">brun-avril rouge - grenache + syrah - 2023 - côtes du rhône, fr</span><span class="price">18 - 90</span></li>
-                <li><span class="dish">crozes-hermitage “la croix du verre” - syrah - 2022 - rhône, fr</span><span class="price">22 - 85</span></li>
-                <li><span class="dish">upsidedown ‘birds+things+flowers’ - syrah - 2023 - col. valley, wa</span><span class="price">24 - 105</span></li>
-                <li><span class="dish">valdemar estates entre nosotros - cabernet blend - 2024 - wa</span><span class="price">70</span></li>
-                <li><span class="dish">dossier - flagship cabernet sauvignon - 2022 - columbia valley</span><span class="price">175</span></li>
-            </ul>
-            <header class="menu-header spacing-top">
-              <h1 class="menu-title"><span>VODKA &amp; GIN</span></h1>
-                
-            </header>
+          <ul class="menu-list">
+              <li>
+                <span class="dish">valdemar estates - french creek chardonnay</span>
+                <span class="description">2022 - wa</span><span class="price">17 - 75</span></li>
+              <li>
+                <span class="dish">dossier - flagship viognier</span>
+                <span class="description">2023 - columbia valley, wa</span><span class="price">105</span></li>
+              <li>
+                <span class="dish">mac forbes - riesling</span>
+                <span class="description">2022 - victoria, aus</span><span class="price">19 - 72</span></li>
+              <li>
+                <span class="dish">domaine de coron - grenache blanc</span>
+                <span class="description">2023 - rhone valley, fr</span><span class="price">15 - 48</span></li>
+              <li>
+                <span class="dish">gilbert cellars - orange riesling</span>
+                <span class="description">2024 - wahluke slope, wa</span><span class="price">58</span></li>
+          </ul><header class="menu-header spacing-top">
+            <h2 class="menu-title"><span>Rosé &amp; Sparkling</span></h2>
+            
+          </header>
 
-            <ul class="menu-list">
-                <li><span class="dish">outfitters vodka</span><span class="price">8</span></li>
-                <li><span class="dish">belvedere</span><span class="price">10</span></li>
-                <li><span class="dish">ketel one</span><span class="price">12</span></li>
-                <li><span class="dish">wohlfert vanilla</span><span class="price">14</span></li>
-                <li><span class="dish">outfitters gin</span><span class="price">8</span></li>
-                <li><span class="dish">aviation</span><span class="price">12</span></li>
-                <li><span class="dish">big gin peated</span><span class="price">12</span></li>
-                <li><span class="dish">monkey 47</span><span class="price">16</span></li>
-            </ul>
-            <header class="menu-header spacing-top">
-              <h1 class="menu-title"><span>RUM &amp; TEQUILA</span></h1>
-                
-            </header>
+          <ul class="menu-list">
+              <li>
+                <span class="dish">domaine rimbert rosé - &#39;gsm&#39;</span>
+                <span class="description">2024 - bandol, provence, fr</span><span class="price">16 - 67</span></li>
+              <li>
+                <span class="dish">tirriddis blanc de gris - sparkling pinto gris</span>
+                <span class="description">n/v - wa</span><span class="price">15 - 50</span></li>
+              <li>
+                <span class="dish">moët &amp; chandon - imperial brut rosé</span>
+                <span class="description">nv - champagne, fr</span><span class="price">195</span></li>
+              <li>
+                <span class="dish">dom perignon - champagne</span>
+                <span class="description">2015 - champagne, fr</span><span class="price">595</span></li>
+          </ul><header class="menu-header spacing-top">
+            <h2 class="menu-title"><span>Red Wines - Old World</span></h2>
+            
+          </header>
 
-            <ul class="menu-list">
-                <li><span class="dish">bacardi silver</span><span class="price">8</span></li>
-                <li><span class="dish">rhum barbancourt 8yr</span><span class="price">12</span></li>
-                <li><span class="dish">appleton estate 8yr</span><span class="price">12</span></li>
-                <li><span class="dish">gosling black</span><span class="price">9</span></li>
-                <li><span class="dish">santa teresa 1796</span><span class="price">12</span></li>
-                <li><span class="dish">cascabel blanco</span><span class="price">8</span></li>
-                <li><span class="dish">casa noble reposado</span><span class="price">15</span></li>
-                <li><span class="dish">olmeca altos anejo</span><span class="price">22</span></li>
-                <li><span class="dish">mezcal union</span><span class="price">12</span></li>
-                <li><span class="dish">montelobos espadin</span><span class="price">14</span></li>
-            </ul>
-            <header class="menu-header spacing-top">
-              <h1 class="menu-title"><span>BOURBON &amp; RYE</span></h1>
-                
-            </header>
+          <ul class="menu-list">
+              <li>
+                <span class="dish">galet - gamay</span>
+                <span class="description">2019 - beaujolais, fr</span><span class="price">18 - 65</span></li>
+              <li>
+                <span class="dish">gaacina disa ello sandri - nebbiolo</span>
+                <span class="description">2022 - piedmont, it</span><span class="price">95</span></li>
+              <li>
+                <span class="dish">brun-avril rouge - grenache + syrah</span>
+                <span class="description">2023 - côtes du rhône, fr</span><span class="price">18 - 90</span></li>
+              <li>
+                <span class="dish">crozes-hermitage &#34;la croix du verre&#34; - syrah</span>
+                <span class="description">2022 - rhône, fr</span><span class="price">22 - 85</span></li>
+          </ul><header class="menu-header spacing-top">
+            <h2 class="menu-title"><span>Red Wines - New World</span></h2>
+            
+          </header>
 
-            <ul class="menu-list">
-                <li><span class="dish">woodinville bourbon</span><span class="price">14</span></li>
-                <li><span class="dish">doc swinson&#39;s session</span><span class="price">14</span></li>
-                <li><span class="dish">e.h. taylor</span><span class="price">20</span></li>
-                <li><span class="dish">blanton&#39;s</span><span class="price">25</span></li>
-                <li><span class="dish">elijah craig toasted barrel</span><span class="price">14</span></li>
-                <li><span class="dish">pikesville rye</span><span class="price">14</span></li>
-                <li><span class="dish">woodinville rye</span><span class="price">14</span></li>
-                <li><span class="dish">doc swinson&#39;s 7yr bib rye</span><span class="price">20</span></li>
-                <li><span class="dish">widow jane paradigm rye</span><span class="price">18</span></li>
-                <li><span class="dish">barrel seagrass</span><span class="price">34</span></li>
-            </ul>
-            <header class="menu-header spacing-top">
-              <h1 class="menu-title"><span>SCOTCH &amp; INTL.</span></h1>
-                
-            </header>
+          <ul class="menu-list">
+              <li>
+                <span class="dish">big table farm - pinot noir</span>
+                <span class="description">2023 - willamette valley, or</span><span class="price">105</span></li>
+              <li>
+                <span class="dish">amos rome - estate concrete malbec</span>
+                <span class="description">2022 - lake chelan, wa</span><span class="price">120</span></li>
+              <li>
+                <span class="dish">upsidedown &#39;birds+things+flowers&#39; - syrah</span>
+                <span class="description">2023 - col. valley, wa</span><span class="price">24 - 105</span></li>
+              <li>
+                <span class="dish">valdemar estates entre nosotros - cabernet blend</span>
+                <span class="description">2024 - wa</span><span class="price">70</span></li>
+              <li>
+                <span class="dish">dossier - flagship cabernet sauvignon</span>
+                <span class="description">2022 - columbia valley</span><span class="price">175</span></li>
+          </ul><header class="menu-header spacing-top">
+            <h2 class="menu-title"><span>Spirits - Vodka &amp; Gin</span></h2>
+            
+          </header>
 
-            <ul class="menu-list">
-                <li><span class="dish">ardmore</span><span class="price">16</span></li>
-                <li><span class="dish">dalwhinnie 15yr</span><span class="price">20</span></li>
-                <li><span class="dish">lagavulin 16yr</span><span class="price">24</span></li>
-                <li><span class="dish">aberlour 12yr</span><span class="price">14</span></li>
-                <li><span class="dish">suntory ao</span><span class="price">20</span></li>
-                <li><span class="dish">anCnoc 12yr</span><span class="price">16</span></li>
-                <li><span class="dish">edradour 10yr</span><span class="price">18</span></li>
-                <li><span class="dish">ardbeg uigeadail</span><span class="price">24</span></li>
-                <li><span class="dish">signatory caol ila 2007</span><span class="price">40</span></li>
-                <li><span class="dish">nikka coffey grain</span><span class="price">22</span></li>
-            </ul>
+          <ul class="menu-list">
+              <li>
+                <span class="dish">outfitters vodka</span>
+                <span class="price">8</span></li>
+              <li>
+                <span class="dish">belvedere</span>
+                <span class="price">10</span></li>
+              <li>
+                <span class="dish">ketel one</span>
+                <span class="price">12</span></li>
+              <li>
+                <span class="dish">wohlfert vanilla</span>
+                <span class="price">14</span></li>
+              <li>
+                <span class="dish">outfitters gin</span>
+                <span class="price">8</span></li>
+              <li>
+                <span class="dish">aviation</span>
+                <span class="price">12</span></li>
+              <li>
+                <span class="dish">big gin peated</span>
+                <span class="price">12</span></li>
+              <li>
+                <span class="dish">monkey 47</span>
+                <span class="price">16</span></li>
+          </ul><header class="menu-header spacing-top">
+            <h2 class="menu-title"><span>Spirits - Rum &amp; Tequila</span></h2>
+            
+          </header>
+
+          <ul class="menu-list">
+              <li>
+                <span class="dish">bacardi silver</span>
+                <span class="price">8</span></li>
+              <li>
+                <span class="dish">rhum barbancourt 8yr</span>
+                <span class="price">12</span></li>
+              <li>
+                <span class="dish">appleton estate 8yr</span>
+                <span class="price">12</span></li>
+              <li>
+                <span class="dish">gosling black</span>
+                <span class="price">9</span></li>
+              <li>
+                <span class="dish">santa teresa 1796</span>
+                <span class="price">12</span></li>
+              <li>
+                <span class="dish">cascabel blanco</span>
+                <span class="price">8</span></li>
+              <li>
+                <span class="dish">casa noble reposado</span>
+                <span class="price">15</span></li>
+              <li>
+                <span class="dish">olmeca altos anejo</span>
+                <span class="price">22</span></li>
+              <li>
+                <span class="dish">mezcal union</span>
+                <span class="price">12</span></li>
+              <li>
+                <span class="dish">montelobos espadin</span>
+                <span class="price">14</span></li>
+          </ul>
       </section>
       <section id="happy-hour-panel" class="menu-panel" role="tabpanel" aria-labelledby="tab-happy-hour" hidden>
         
-            <header class="menu-header ">
-              <h1 class="menu-title"><span>KITCHEN</span></h1>
-                
-            </header>
+        
 
-            <ul class="menu-list">
-                <li><span class="dish">sausage rolls - (3) veal, puff pastry, house ketchup, an aussie delicacy</span><span class="price">9</span></li>
-                <li><span class="dish">poutine - hand cut fries, house gravy, fried cheese curds</span><span class="price">12</span></li>
-                <li><span class="dish">crispy wild mushrooms - chantrelle &amp; button mushrooms, tempura, miso aioli</span><span class="price">10</span></li>
-                <li><span class="dish">charred lamb rib chops - (each) sweet potato puree, charred green onion vin.</span><span class="price">6</span></li>
-                <li><span class="dish">½ steak frites - miso-glazed flatiron, maitre &#39;d butter, house cut fries</span><span class="price">25</span></li>
-            </ul>
-            <header class="menu-header spacing-top">
-              <h1 class="menu-title"><span>CELLAR</span></h1>
-                
-            </header>
+        <header class="menu-header ">
+            <h2 class="menu-title"><span>Kitchen</span></h2>
+            
+          </header>
 
-            <ul class="menu-list">
-                <li><span class="dish">valdemar estates - french creek chardonnay - 2022 - washington</span><span class="price">12</span></li>
-                <li><span class="dish">domaine rimbert - rosé - 2024 - languedoc, fr</span><span class="price">10</span></li>
-                <li><span class="dish">conde valdemar - reserva - 2017 - rioja, sp</span><span class="price">10</span></li>
-            </ul>
-            <header class="menu-header spacing-top">
-              <h1 class="menu-title"><span>BAR</span></h1>
-                
-            </header>
+          <ul class="menu-list">
+              <li>
+                <span class="dish">sausage rolls</span>
+                <span class="description">(3) veal, puff pastry, house ketchup, an aussie delicacy</span><span class="price">9</span></li>
+              <li>
+                <span class="dish">poutine</span>
+                <span class="description">hand cut fries, house gravy, fried cheese curds</span><span class="price">12</span></li>
+              <li>
+                <span class="dish">crispy wild mushrooms</span>
+                <span class="description">chantrelle &amp; button mushrooms, tempura, miso aioli</span><span class="price">10</span></li>
+              <li>
+                <span class="dish">charred lamb rib chops</span>
+                <span class="description">(each) sweet potato puree, charred green onion vin.</span><span class="price">6</span></li>
+              <li>
+                <span class="dish">½ steak frites</span>
+                <span class="description">miso-glazed flatiron, maitre &#39;d butter, house cut fries</span><span class="price">25</span></li>
+          </ul><header class="menu-header spacing-top">
+            <h2 class="menu-title"><span>Cellar</span></h2>
+            
+          </header>
 
-            <ul class="menu-list">
-                <li><span class="dish">jackson house old fashioned - ancient ancient age, muscavado, house bitters</span><span class="price">12</span></li>
-                <li><span class="dish">espresso martini - wohlfert espresso liqueur, outlands espresso, outfitters vodka</span><span class="price">12</span></li>
-                <li><span class="dish">lemon lime &amp; bitters - sweetened lim, lemon-lime soda, bitters</span><span class="price">7</span></li>
-                <li><span class="dish">pink &#39;groni club - st agrestis phony negroni, tirriddis sparkling, citrus</span><span class="price">8</span></li>
-                <li><span class="dish">crikey ipa - reuben&#39;s brews - seattle, wa</span><span class="price">8</span></li>
-            </ul>
+          <ul class="menu-list">
+              <li>
+                <span class="dish">valdemar estates - french creek chardonnay</span>
+                <span class="description">2022 - washington</span><span class="price">12</span></li>
+              <li>
+                <span class="dish">domaine rimbert - rosé</span>
+                <span class="description">2024 - languedoc, fr</span><span class="price">10</span></li>
+              <li>
+                <span class="dish">conde valdemar - reserva</span>
+                <span class="description">2017 - rioja, sp</span><span class="price">10</span></li>
+          </ul><header class="menu-header spacing-top">
+            <h2 class="menu-title"><span>Bar</span></h2>
+            
+          </header>
+
+          <ul class="menu-list">
+              <li>
+                <span class="dish">jackson house old fashioned</span>
+                <span class="description">ancient ancient age, muscavado, house bitters</span><span class="price">12</span></li>
+              <li>
+                <span class="dish">espresso martini</span>
+                <span class="description">wohlfert espresso liqueur, outlands espresso, outfitters vodka</span><span class="price">12</span></li>
+              <li>
+                <span class="dish">lemon lime &amp; bitters</span>
+                <span class="description">sweetened lim, lemon-lime soda, bitters</span><span class="price">7</span></li>
+              <li>
+                <span class="dish">pink &#39;groni club</span>
+                <span class="description">st agrestis phony negroni, tirriddis sparkling, citrus</span><span class="price">8</span></li>
+              <li>
+                <span class="dish">crikey ipa</span>
+                <span class="description">reuben&#39;s brews - seattle, wa</span><span class="price">8</span></li>
+          </ul>
       </section>
     </div>
 

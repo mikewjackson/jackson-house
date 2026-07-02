@@ -12,43 +12,45 @@
     <div class="menu-panels">
       {% for panel, label in panels.items() %}
       <section id="{{ panel }}-panel" class="menu-panel" role="tabpanel" aria-labelledby="tab-{{ panel }}" {% if not loop.first %}hidden{% endif %}>
-        {% set categories = menu.get(panel, {}) -%}
-        {%- set ns = namespace(header_index=0) -%}
-        {%- for category, subtitles in categories.items() -%}
-          {%- for subtitle, data in subtitles.items() %}
-            {% set ns.header_index = ns.header_index + 1 -%}
-            <header class="menu-header {% if ns.header_index > 1 %}spacing-top{% endif %}">
-              {% if panel == 'food' -%}
-                {%- if category|upper == 'AFTER DINNER' -%}
-                  <h2 class="menu-title"><span>{{ category }}</span></h2>
-                  {% if subtitle %}<p class="menu-sub">{{ subtitle }}</p>{% endif %}
-                {%- else -%}
-                  {# No separator for the first food category (ns.header_index == 1). For later categories show a thin hr. #}
-                  {%- if ns.header_index > 1 -%}
-                    <hr class="menu-decorative-sep" aria-hidden="true" />
-                  {%- endif -%}
+        {% set panel_data = menu.get(panel, {}) -%}
+        
+        {# Display tagline if present #}
+        {% if panel_data.get("tagline") -%}
+          <p class="menu-tagline">{{ panel_data.tagline }}</p>
+        {%- endif %}
+
+        {# Render groups and items #}
+        {%- set ns = namespace(group_index=0) -%}
+        {%- for group in panel_data.get("groups", []) -%}
+          {%- set ns.group_index = ns.group_index + 1 -%}
+          
+          <header class="menu-header {% if ns.group_index > 1 %}spacing-top{% endif %}">
+            <h2 class="menu-title"><span>{{ group.name }}</span></h2>
+            {% if group.get("description") %}<p class="menu-sub">{{ group.description }}</p>{% endif %}
+          </header>
+
+          <ul class="menu-list">
+            {%- for item in group.get("items", []) %}
+              <li>
+                <span class="dish">{{ item.dish }}</span>
+                {% if item.get("description") and (item.get("price") or item.get("price_glass") or item.get("price_bottle")) -%}
+                  <span class="description">{{ item.description }}</span>
                 {%- endif %}
-              {%- else -%}
-                <h1 class="menu-title"><span>{{ category }}</span></h1>
-                {% if subtitle %}<p class="menu-sub">{{ subtitle }}</p>{% endif %}
-              {%- endif %}
-            </header>
+                {%- if item.price_glass and item.price_bottle -%}
+                  <span class="price">{{ item.price_glass }} - {{ item.price_bottle }}</span>
+                {%- elif item.get("price_glass") -%}
+                  <span class="price">{{ item.price_glass }}</span>
+                {%- elif item.get("price_bottle") -%}
+                  <span class="price">{{ item.price_bottle }}</span>
+                {%- elif item.get("price") -%}
+                  <span class="price">{{ item.price }}</span>
+                {%- elif item.get("description") -%}
+                  <span class="description">{{ item.description }}</span>
+                {%- endif -%}
+              </li>
+            {%- endfor %}
+          </ul>
 
-            <ul class="menu-list">
-              {%- for item in data["items"] %}
-                <li><span class="dish">{{ item.dish }}</span>
-                  {%- if item.price_glass and item.price_bottle -%}
-                    <span class="price">{{ item.price_glass }} - {{ item.price_bottle }}</span>
-                  {%- elif item.price_glass -%}
-                    <span class="price">{{ item.price_glass }}</span>
-                  {%- elif item.price_bottle -%}
-                    <span class="price">{{ item.price_bottle }}</span>
-                  {%- endif -%}
-                </li>
-              {%- endfor %}
-            </ul>
-
-          {%- endfor %}
         {%- endfor %}
       </section>
       {%- endfor %}

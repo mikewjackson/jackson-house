@@ -1,6 +1,5 @@
 from jinja2 import Environment, FileSystemLoader, select_autoescape
-import json, csv, os
-from collections import defaultdict
+import json, os
 from datetime import datetime
 import shutil
 
@@ -9,30 +8,6 @@ env = Environment(loader=FileSystemLoader('templates'), autoescape=select_autoes
 # Load global site metadata
 with open("content/site.json", encoding="utf-8") as f:
     site_content = json.load(f)
-
-def load_menu_csv(path):
-    # panel → category → subtitle → {items: []}
-    panels = defaultdict(
-        lambda: defaultdict(
-            lambda: defaultdict(lambda: {"items": []})
-        )
-    )
-    with open(path, newline='', encoding="utf-8-sig") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            panel = row["panel"]
-            category = row["category"]
-            subtitle = row["subtitle"]
-            dish = row["dish"]
-            price_glass = row["price_glass"]
-            price_bottle = row["price_bottle"]
-
-            panels[panel][category][subtitle]["items"].append({
-                "dish": dish,
-                "price_glass": price_glass,
-                "price_bottle": price_bottle
-            })
-    return panels
 
 def enrich_events(events):
     """Extract month, day, and day of week from date field. Skip events without a valid date."""
@@ -54,8 +29,6 @@ def enrich_events(events):
             "dow": event_date.strftime("A") if False else event_date.strftime("%A")
         })
     return enriched
-
-menu_data = load_menu_csv("data/menu.csv")
 
 # Load all events once
 with open("content/events.json", encoding="utf-8") as f:
@@ -105,7 +78,7 @@ for page in page_files:
             "footer": site_content.get("footer", {}),
             "hero": page_content.get("hero", ""),
             "title": page_content.get("title"),
-            "menu": menu_data,
+            "menu": page_content,
             "panels": page_content.get("panels", {}),
             "extra_scripts": page_content.get("extra_scripts", []),
             "extra_styles": page_content.get("extra_styles", []),
