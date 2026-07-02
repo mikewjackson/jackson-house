@@ -1,15 +1,9 @@
 // Simple accessible tabs for the menu page
 (function () {
-  const tabs = [
-    document.getElementById('tab-food'),
-    document.getElementById('tab-cocktail'),
-    document.getElementById('tab-mocktail'),
-    document.getElementById('tab-beer'),
-    document.getElementById('tab-wine'),
-    document.getElementById('tab-happy-hour'),
-  ];
+  // Dynamically find all tabs instead of hardcoding specific ones
+  const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
 
-  if (!tabs.every(element => element !== null)) {
+  if (tabs.length === 0) {
     return;
   }
 
