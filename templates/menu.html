@@ -36,6 +36,11 @@
               <h2 class="menu-title"><span>{{ group.name }}</span></h2>
               {% if group.get("description") %}<p class="menu-sub">{{ group.description }}</p>{% endif %}
             </header>
+          {%- else -%}
+            {# If no name, show separator (but not for first group) #}
+            {%- if ns.group_index > 1 -%}
+              <hr class="menu-decorative-sep" aria-hidden="true" />
+            {%- endif -%}
           {%- endif %}
 
           <ul class="menu-list">
