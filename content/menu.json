@@ -32,7 +32,13 @@
           {
             "dish": "labneh + caviar",
             "description": "ossetra caviar, ellenos labneh, house made chips",
-            "price": 26
+            "price": 26,
+            "add_ons": [
+              {
+                "name": "extra caviar",
+                "price": 12
+              }
+            ]
           },
           {
             "dish": "dungeness basque cheesecake",
@@ -224,114 +230,188 @@
     ]
   },
   "whiskey": {
+    "tagline": [
+      "locals, legends, and limited releases"
+    ],
     "groups": [
       {
-        "name": "Bourbon & Rye",
         "items": [
           {
             "dish": "woodinville bourbon",
-            "price_1oz": 14,
-            "price_2oz": 28
+            "description": "straight bourbon - washington",
+            "price_1oz": 10,
+            "price_2oz": 18
           },
           {
-            "dish": "doc swinson's session",
-            "price_1oz": 14,
-            "price_2oz": 28
-          },
-          {
-            "dish": "e.h. taylor",
-            "price_1oz": 20,
-            "price_2oz": 40
-          },
-          {
-            "dish": "blanton's",
-            "price_1oz": 25,
-            "price_2oz": 50
+            "dish": "baby jane 91",
+            "description": "straight bourbon - kentucky",
+            "price_1oz": 12,
+            "price_2oz": 20
           },
           {
             "dish": "elijah craig toasted barrel",
+            "description": "toasted barrel bourbon - kentucky",
+            "price_1oz": 10,
+            "price_2oz": 18
+          },
+          {
+            "dish": "redwood empire pipe dream toasted",
+            "description": "toasted bourbon - napa,ca",
             "price_1oz": 14,
-            "price_2oz": 28
+            "price_2oz": 24
           },
           {
-            "dish": "pikesville rye",
+            "dish": "high west cask collection",
+            "description": "blended straight whiskey - utah",
             "price_1oz": 14,
+            "price_2oz": 26
+          },
+          {
+            "dish": "dark arts bourbon",
+            "description": "small batch bourbon - kentucky",
+            "price_1oz": 16,
+            "price_2oz": 30
+          },
+          {
+            "dish": "larceny barrel proof",
+            "description": "wheated barrel proof bourbon - kentucky",
+            "price_1oz": 10,
+            "price_2oz": 18
+          },
+          {
+            "dish": "penelope 'f*ck cancer'",
+            "description": "straight blended bourbon - new jersey",
+            "price_1oz": 24,
+            "price_2oz": 42
+          },
+          {
+            "dish": "john j. bowman single barrel",
+            "description": "virginia straight bourbon - virginia",
+            "price_1oz": 16,
             "price_2oz": 28
-          },
-          {
-            "dish": "woodinville rye",
-            "price_1oz": 14,
-            "price_2oz": 28
-          },
-          {
-            "dish": "doc swinson's 7yr bib rye",
-            "price_1oz": 20,
-            "price_2oz": 40
-          },
-          {
-            "dish": "widow jane paradigm rye",
-            "price_1oz": 18,
-            "price_2oz": 36
-          },
-          {
-            "dish": "barrel seagrass",
-            "price_1oz": 34,
-            "price_2oz": 68
           }
         ]
       },
       {
-        "name": "Scotch & International",
         "items": [
           {
-            "dish": "ardmore",
-            "price_1oz": 16,
-            "price_2oz": 32
+            "dish": "copperworks maltsmith",
+            "description": "american single malt - washington",
+            "price_1oz": 10,
+            "price_2oz": 18
           },
           {
-            "dish": "dalwhinnie 15yr",
-            "price_1oz": 20,
-            "price_2oz": 40
+            "dish": "redwood empire haystack needle",
+            "description": "american single malt - napa,ca",
+            "price_1oz": 28,
+            "price_2oz": 54
           },
           {
-            "dish": "lagavulin 16yr",
-            "price_1oz": 24,
-            "price_2oz": 48
+            "dish": "bulleit american single malt",
+            "description": "american single malt - kentucky",
+            "price_1oz": 10,
+            "price_2oz": 18
+          }
+        ]
+      },
+      {
+        "items": [
+          {
+            "dish": "woodinville rye",
+            "description": "straight rye - washington",
+            "price_1oz": 10,
+            "price_2oz": 18
           },
+          {
+            "dish": "pikesville rye",
+            "description": "straight rye - kentucky",
+            "price_1oz": 10,
+            "price_2oz": 18
+          },
+
+          {
+            "dish": "raleigh rye",
+            "description": "straight rye - washington",
+            "price_1oz": 14,
+            "price_2oz": 24
+          },
+
+          {
+            "dish": "widow jane paradigm rye",
+            "description": "straight rye - new york",
+            "price_1oz": 14,
+            "price_2oz": 24
+          },
+          {
+            "dish": "doc swinson's 7yr bib rye",
+            "description": "bottled in bond rye - washington",
+            "price_1oz": 10,
+            "price_2oz": 18
+          },
+          {
+            "dish": "doc swinson's 8yr rum cask rye",
+            "description": "rum cask finished rye - washington",
+            "price_1oz": 14,
+            "price_2oz": 24
+          }
+        ]
+      },
+      {
+        "items": [
           {
             "dish": "aberlour 12yr",
-            "price_1oz": 14,
+            "description": "single malt scotch - speyside",
+            "price_1oz": 16,
             "price_2oz": 28
           },
           {
-            "dish": "suntory ao",
-            "price_1oz": 20,
-            "price_2oz": 40
+            "dish": "signatory glenlivet 17 year",
+            "description": "single malt scotch - speyside",
+            "price_1oz": 28,
+            "price_2oz": 54
           },
+          {
+            "dish": "dalwhinnie 15yr",
+            "description": "highland single malt - highlands",
+            "price_1oz": 14,
+            "price_2oz": 26
+          },
+
           {
             "dish": "anCnoc 12yr",
-            "price_1oz": 16,
-            "price_2oz": 32
+            "description": "highland single malt - highlands",
+            "price_1oz": 12,
+            "price_2oz": 22
           },
           {
-            "dish": "edradour 10yr",
-            "price_1oz": 18,
-            "price_2oz": 36
+            "dish": "ardmore",
+            "description": "peated highland single malt - highlands",
+            "price_1oz": 14,
+            "price_2oz": 24
+          },
+          {
+            "dish": "ardbeg 'wee beastie' 5 year",
+            "description": "peated single malt sotch - islay",
+            "price_1oz": 12,
+            "price_2oz": 20
           },
           {
             "dish": "ardbeg uigeadail",
-            "price_1oz": 24,
-            "price_2oz": 48
+            "description": "peated single malt sotch - islay",
+            "price_1oz": 18,
+            "price_2oz": 34
           },
           {
-            "dish": "signatory caol ila 2007",
-            "price_1oz": 40,
-            "price_2oz": 80
+            "dish": "lagavulin 16yr",
+            "description": "peated single malt sotch - islay",
+            "price_1oz": 18,
+            "price_2oz": 34
           },
           {
-            "dish": "nikka coffey grain",
-            "price_1oz": 22,
-            "price_2oz": 44
+            "dish": "deacon blended",
+            "description": "blended scotch whisky - scotland",
+            "price_1oz": 12,
+            "price_2oz": 20
           }
         ]
       }
@@ -344,23 +424,23 @@
         "description": "seasonal & locally sourced",
         "items": [
           {
-            "dish": "sling theory",
-            "description": "appleton estate rum, doc swinsons rye, lemon, black walnut + angostura bitters, wassail",
+            "dish": "saint enzo",
+            "description": "aviation, campari, st. germain, lemon, grape syrup, rhubarb + orange bitters, saline",
             "price": 18
           },
           {
-            "dish": "phenol affair",
-            "description": "ardbeg 'wee beastie', pikesville rye, canton, citrus, passionfruit + pineapple, hazelnut orgeat, bitters",
-            "price": 22
-          },
-          {
-            "dish": "limoncello spritz",
-            "description": "house made lemon myrtle limoncello, saline cava, lo-fi vermouth",
+            "dish": "mule's gold",
+            "description": "weber ranch vodka, lime, canton ginger liqueur, golden milk + ginger-honey syrup, bundaberg",
             "price": 18
           },
           {
-            "dish": "the hornet",
-            "description": "citrus infused savor spear gin, chili bitters fresh citrus, local hot honey",
+            "dish": "kirby main",
+            "description": "spearmint-infused outfitters rum, aperol, lemon, watermelon mceration, plum bitters, soda",
+            "price": 18
+          },
+          {
+            "dish": "mainlander mai tai",
+            "description": "house rum blend, orange curacao house orgeat, blackberry, lime, sour cherry bitters, soda",
             "price": 18
           }
         ]
@@ -370,24 +450,52 @@
         "description": "our mainstays",
         "items": [
           {
+            "dish": "violet fog",
+            "description": "house gin blend, amaricano viola, lemon, egg white, earl grey syrup, butterfly pea",
+            "price": 16,
+            "tasting_notes": "floral, citrus, velvet texture"
+          },
+          {
+            "dish": "sling theory",
+            "description": "gran centenario reposado, brovo curacao, lime, grapefruit, spiced agave, chili bitters",
+            "price": 18,
+            "tasting_notes": "citrus, spice, tropical"
+          },
+          {
+            "dish": "squeaky tiki*",
+            "description": "passionfruit, blood orange, house orgeat",
+            "price": 12
+          },
+          {
+            "dish": "lemon lime & bitters",
+            "description": "sweetened lim, lemon-lime soda, bitters",
+            "price": 12
+          },
+          {
             "dish": "sage against the ravine",
             "description": "big gin peated, green chartreuse, gentian amaro, brovo douglas fir, mezcal union, lime, sage syrup",
             "price": 21
+          }
+        ]
+      },
+      {
+        "name": "Spritzes",
+        "description": "refreshing + crushable",
+        "items": [
+          {
+            "dish": "aperol spritz",
+            "description": "aperol, orange, csm sparkling, san pellegrino",
+            "price": 14
           },
           {
-            "dish": "violet fog",
-            "description": "house gin blend, amaricano viola, lemon, egg white, earl grey syrup, butterfly pea",
-            "price": 16
+            "dish": "golden hour",
+            "description": "outfitters vodka, 'golden syrup' , lemon, ginger beer",
+            "price": 14
           },
           {
-            "dish": "jackson house old fashioned",
-            "description": "woodinville rye, muscavado simple, house bitters",
-            "price": 16
-          },
-          {
-            "dish": "o's black manhattan",
-            "description": "pikesville rye, jammy vermouth, cynar 70, sfumato, angostura + orange bitters",
-            "price": 16
+            "dish": "phony negroni lemonade",
+            "description": "st agrestis phony negroni, fresh lemon, tonic",
+            "price": 14
           }
         ]
       },
@@ -397,44 +505,49 @@
         "items": [
           {
             "dish": "olive oil",
-            "description": "olive oil washed martin miller's london dry, lo-fi dry vermouth, orange bitters, olive oil",
-            "price": 20
+            "description": "olive oil washed martin miller's london dry, brovo dry vermouth, orange bitters, olive oil",
+            "price": 22
           },
           {
             "dish": "especially dirty",
-            "description": "choice of vodka or gin, lo-fi dry vermouth, olive brine, flor de garum, saline",
-            "price": 20
-          },
-          {
-            "dish": "limoncello drop",
-            "description": "lemon myrtle limoncello, oleo saccharum, brovo curacao, saline",
-            "price": 16
+            "description": "choice of vodka or gin, brovo dry vermouth, olive brine, saline",
+            "price": 22
           },
           {
             "dish": "espresso",
             "description": "wohlfert espresso liqueur, outfitters vodka, local bean espresso pulled-to-order",
             "price": 16
+          },
+          {
+            "dish": "lavender",
+            "description": "wohlfert lavender vodka, brovo rose vermouth, amaricano viola, 'violet syrup'",
+            "price": 18
           }
         ]
       },
       {
-        "name": "Low & No",
-        "description": "zero proof* or lightly proofed",
+        "name": "The Barrel Room",
+        "description": "whiskey-forward originals + classics",
         "items": [
           {
-            "dish": "squeaky tiki*",
-            "description": "passionfruit, blood orange, house orgeat",
-            "price": 10
+            "dish": "jackson house old fashioned",
+            "description": "woodinville rye + bourbon, muscavado simple, house bitters blend",
+            "price": 16
           },
           {
-            "dish": "pink 'groni club",
-            "description": "st agrestis phony negroni, tiridis sparkling, citrus",
-            "price": 12
+            "dish": "o's black manhattan",
+            "description": "pikesville rye, jammy vermouth, cynar 70, sfumato, angostura + orange bitters",
+            "price": 18
           },
           {
-            "dish": "lemon lime & bitters",
-            "description": "sweetened lim, lemon-lime soda, bitters",
-            "price": 10
+            "dish": "barrel-aged boulevardier",
+            "description": "woodinville rye, campari, gentian amaro, red wine, aged 1 month in woodinville whiskey barrel",
+            "price": 24
+          },
+          {
+            "dish": "the penicillin",
+            "description": "deacon blended, canton ginger, 'golden syrup', lemon, black walnut + ginger bitters",
+            "price": 22
           }
         ]
       }

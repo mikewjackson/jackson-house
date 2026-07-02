@@ -74,6 +74,19 @@
                 {%- elif item.get("description") -%}
                   <span class="description">{{ item.description }}</span>
                 {%- endif -%}
+                {%- if item.get("add_ons") %}
+                  <div class="add-ons">
+                    {%- for addon in item.add_ons %}
+                      <span class="add-on">
+                        <span class="add-on-name">{{ addon.name }}</span>
+                        <span class="add-on-price">+{{ addon.price }}</span>
+                      </span>
+                    {%- endfor %}
+                  </div>
+                {%- endif %}
+                {%- if item.get("tasting_notes") %}
+                  <div class="tasting-notes">{{ item.tasting_notes }}</div>
+                {%- endif %}
               </li>
             {%- endfor %}
           </ul>
