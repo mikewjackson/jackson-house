@@ -18,17 +18,75 @@
   },
   "dining": {
     "tagline": [
-      "dishes meant to be paired",
-      "+ shared"
+      "dishes meant to be paired + shared",
+      "arriving as they're prepared"
     ],
     "groups": [
       {
-        "name": "For the Table",
         "items": [
+          {
+            "dish": "house focaccia",
+            "description": "with honey lavender butter",
+            "price": 8
+          },
+          {
+            "dish": "labneh + caviar",
+            "description": "ossetra caviar, ellenos labneh, house made chips",
+            "price": 26
+          },
+          {
+            "dish": "dungeness basque cheesecake",
+            "description": "carmalized onion, dungeness crab, lemon oil",
+            "price": 19
+          },
+          {
+            "dish": "shrimp + avocado salad",
+            "description": "champagne vinaigrette, basil, local greens",
+            "price": 16
+          },
+          {
+            "dish": "bacon + egg caesar",
+            "description": "6-minute egg, local romaine, hogstead bacon, house caesar",
+            "price": 14
+          }
+
+        ]
+      },
+      {
+        "items": [
+          {
+            "dish": "roasted beets",
+            "description": "skagit valley golden beet, hummus, toasted wild rice, feta",
+            "price": 14
+          },
+          {
+            "dish": "mushroom + barley risotto",
+            "description": "market mushroosm, skagit valley barley risotto",
+            "price": 18
+          },
+          {
+            "dish": "hot honey carrots",
+            "description": "local hot honey, ralph's greenhouse carrots, carrot top pesto",
+            "price": 16
+          },
+          {
+            "dish": "cauliflower steak",
+            "description": "sesame crusted, hazelnut dukkah, tahini + roasted apple cream",
+            "price": 18
+          }
+        ]
+      },
+      {
+        "items": [
+          {
+            "dish": "iberico pork skirt",
+            "description": "butternut squash puree, truffle powder, charred local onion",
+            "price": 39
+          },
           {
             "dish": "charred lamb rib chops",
             "description": "sweet potato puree, charred green onion vin.",
-            "price": 40
+            "price": 45
           },
           {
             "dish": "king salmon medallions",
@@ -42,7 +100,7 @@
           },
           {
             "dish": "steak frites",
-            "description": "miso-glazed flatiron, maitre 'd butter, house cut fries",
+            "description": "chef's cut, maitre 'd butter, house cut fries",
             "price": 50
           },
           {
@@ -55,10 +113,12 @@
     ]
   },
   "lounge": {
-    "tagline": "Casual plates and bites perfect for the bar or table",
+    "tagline": [
+      "small plates built for cocktails",
+      "wine, and whatever happens next"
+    ],
     "groups": [
       {
-        "name": "Fresh & Crisp",
         "items": [
           {
             "dish": "house focaccia",
@@ -66,44 +126,34 @@
             "price": 8
           },
           {
+            "dish": "shipped golden beet dip",
+            "description": "skagit valley golden beet, labneh, house chips",
+            "price": 12
+          },
+          {
             "dish": "labneh + caviar",
             "description": "ossetra caviar, ellenos labneh, house made chips",
             "price": 26
           },
           {
-            "dish": "roasted beets",
-            "description": "skagit valley golden beet, hummus, toasted wild rice, feta",
-            "price": 18
+            "dish": "caesar deviled eggs",
+            "description": "house caesar, hogstead bacon, breadcrumb",
+            "price": 8
           },
-          {
-            "dish": "dungeness cheesecake",
-            "description": "butter-poached leek, dungeness crab, lemon oil",
-            "price": 19
-          },
-          {
-            "dish": "bacon + egg caesar",
-            "description": "6-minute egg, local romaine, hogstead bacon, house caesar",
-            "price": 19
-          },
-          {
-            "dish": "shrimp + avocado salad",
-            "description": "champagne vinaigrette, basil, local greens",
-            "price": 22
-          }
-        ]
-      },
-      {
-        "name": "Hot & Shareable",
-        "items": [
           {
             "dish": "sausage rolls",
             "description": "veal, puff pastry, house ketchup, an aussie tradition",
             "price": 16
           },
           {
-            "dish": "poutine",
-            "description": "hand cut fries, house gravy, fried halloumi",
-            "price": 16
+            "dish": "walla walla fried onion",
+            "description": "pickled + fried walla walla onion, green goddess",
+            "price": 12
+          },
+          {
+            "dish": "white truffle fries",
+            "description": "house-cut fries, spiva white truffle powder, garlic aioli",
+            "price": 10
           },
           {
             "dish": "crispy mushrooms",
@@ -111,19 +161,19 @@
             "price": 14
           },
           {
-            "dish": "spot prawns + polenta",
-            "description": "pnw sofrito, parmesan polenta, house chili oil",
-            "price": 18
+            "dish": "dungeness crab tartine",
+            "description": "sweet corn, garlic aioli, lemon, green onion, focaccia toast",
+            "price": 24
           },
           {
-            "dish": "asparagus + barley risotto",
-            "description": "mushroom brodo, shaved black summer truffle",
+            "dish": "charred lamb rib chops",
+            "description": "(3) rib chops, sweet potato puree, charred green onion vin.",
+            "price": 24
+          },
+          {
+            "dish": "steak frites",
+            "description": "5oz chef's cut, maitre 'd butter, house cut fries",
             "price": 26
-          },
-          {
-            "dish": "iberico pork skirt",
-            "description": "butternut squash puree, truffle powder, charred local onion",
-            "price": 39
           }
         ]
       }
@@ -132,6 +182,7 @@
   "after_dinner": {
     "groups": [
       {
+        "name": "made for lingering",
         "items": [
           {
             "dish": "whiskey brown sugar basque cheesecake",
@@ -179,43 +230,53 @@
         "items": [
           {
             "dish": "woodinville bourbon",
-            "price": 14
+            "price_1oz": 14,
+            "price_2oz": 28
           },
           {
             "dish": "doc swinson's session",
-            "price": 14
+            "price_1oz": 14,
+            "price_2oz": 28
           },
           {
             "dish": "e.h. taylor",
-            "price": 20
+            "price_1oz": 20,
+            "price_2oz": 40
           },
           {
             "dish": "blanton's",
-            "price": 25
+            "price_1oz": 25,
+            "price_2oz": 50
           },
           {
             "dish": "elijah craig toasted barrel",
-            "price": 14
+            "price_1oz": 14,
+            "price_2oz": 28
           },
           {
             "dish": "pikesville rye",
-            "price": 14
+            "price_1oz": 14,
+            "price_2oz": 28
           },
           {
             "dish": "woodinville rye",
-            "price": 14
+            "price_1oz": 14,
+            "price_2oz": 28
           },
           {
             "dish": "doc swinson's 7yr bib rye",
-            "price": 20
+            "price_1oz": 20,
+            "price_2oz": 40
           },
           {
             "dish": "widow jane paradigm rye",
-            "price": 18
+            "price_1oz": 18,
+            "price_2oz": 36
           },
           {
             "dish": "barrel seagrass",
-            "price": 34
+            "price_1oz": 34,
+            "price_2oz": 68
           }
         ]
       },
@@ -224,43 +285,53 @@
         "items": [
           {
             "dish": "ardmore",
-            "price": 16
+            "price_1oz": 16,
+            "price_2oz": 32
           },
           {
             "dish": "dalwhinnie 15yr",
-            "price": 20
+            "price_1oz": 20,
+            "price_2oz": 40
           },
           {
             "dish": "lagavulin 16yr",
-            "price": 24
+            "price_1oz": 24,
+            "price_2oz": 48
           },
           {
             "dish": "aberlour 12yr",
-            "price": 14
+            "price_1oz": 14,
+            "price_2oz": 28
           },
           {
             "dish": "suntory ao",
-            "price": 20
+            "price_1oz": 20,
+            "price_2oz": 40
           },
           {
             "dish": "anCnoc 12yr",
-            "price": 16
+            "price_1oz": 16,
+            "price_2oz": 32
           },
           {
             "dish": "edradour 10yr",
-            "price": 18
+            "price_1oz": 18,
+            "price_2oz": 36
           },
           {
             "dish": "ardbeg uigeadail",
-            "price": 24
+            "price_1oz": 24,
+            "price_2oz": 48
           },
           {
             "dish": "signatory caol ila 2007",
-            "price": 40
+            "price_1oz": 40,
+            "price_2oz": 80
           },
           {
             "dish": "nikka coffey grain",
-            "price": 22
+            "price_1oz": 22,
+            "price_2oz": 44
           }
         ]
       }

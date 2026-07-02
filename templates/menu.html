@@ -54,15 +54,21 @@
             {%- for item in group.get("items", []) %}
               <li>
                 <span class="dish">{{ item.dish }}</span>
-                {% if item.get("description") and (item.get("price") or item.get("price_glass") or item.get("price_bottle")) -%}
+                {% if item.get("description") and (item.get("price") or item.get("price_glass") or item.get("price_bottle") or item.get("price_1oz") or item.get("price_2oz")) -%}
                   <span class="description">{{ item.description }}</span>
                 {%- endif %}
-                {%- if item.price_glass and item.price_bottle -%}
+                {%- if item.price_1oz and item.price_2oz -%}
+                  <span class="price">{{ item.price_1oz }} - {{ item.price_2oz }}</span>
+                {%- elif item.price_glass and item.price_bottle -%}
                   <span class="price">{{ item.price_glass }} - {{ item.price_bottle }}</span>
                 {%- elif item.get("price_glass") -%}
                   <span class="price">{{ item.price_glass }}</span>
                 {%- elif item.get("price_bottle") -%}
                   <span class="price">{{ item.price_bottle }}</span>
+                {%- elif item.get("price_1oz") -%}
+                  <span class="price">{{ item.price_1oz }}</span>
+                {%- elif item.get("price_2oz") -%}
+                  <span class="price">{{ item.price_2oz }}</span>
                 {%- elif item.get("price") -%}
                   <span class="price">{{ item.price }}</span>
                 {%- elif item.get("description") -%}
