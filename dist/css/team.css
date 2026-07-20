@@ -61,7 +61,7 @@
 
 .team-body h3 {
   margin: 0.25rem 0;
-  font-family: inherit;
+  font-family: var(--font-heading);
   font-weight: 600;
 }
 

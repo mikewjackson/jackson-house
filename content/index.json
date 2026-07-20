@@ -12,8 +12,10 @@
   "hero": {
     "title": "Welcome to Jackson House",
     "paragraphs": [
-      "Jackson House is defining a new era of hospitality in Woodinville. Our focus is curated cocktails, artisanal local cuisine, and an experience where every plate, pour, and detail is crafted with intention.",
-      "Reserve your table on OpenTable. The finest in Woodinville awaits!"
+      "Jackson House is a beautifully appointed dining room and whiskey-driven bar and lounge. We celebrate the best of the Pacific Northwest through intricately crafted cocktails, seasonally driven cuisine, and warm hospitality.",
+      "Our Dining Room offers a full-service restaurant experience with locally inspired, chef-driven artisanal plates designed to be shared (or not).",
+      "Our Bar & Lounge features a relaxed, small-bite-focused, self-service format, with approachable team members ensuring a smooth experience. Join us midweek for gathering nights, including Vinyl Night on Thursdays. Visit on Wednesdays for Mystery Flight Night (guess all three pours correctly for a bonus pour) and half-price bottled wine.",
+      "Reservations are available in the dining room, or stop by and enjoy our lounge experience without a reservation."
     ],
     "slideshow": [
       { "src": "images/drink.avif", "alt": "Cocktails" },
