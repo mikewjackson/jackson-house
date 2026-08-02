@@ -14,7 +14,8 @@
         <div class="slides">
           {% for slide in hero.slideshow %}
             <picture>
-              <img src="{{ slide.src }}" alt="{{ slide.alt }}" class="slide {% if loop.first %}active{% endif %}" loading="lazy">
+              <img src="{{ slide.src }}" alt="{{ slide.alt }}" class="slide {% if loop.first %}active{% endif %}"
+                {% if loop.first %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}>
             </picture>
           {% endfor %}
         </div>
