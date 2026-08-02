@@ -18,6 +18,7 @@
       "Reservations are available in the dining room, or stop by and enjoy our lounge experience without a reservation."
     ],
     "slideshow": [
+      { "src": "images/wall.avif", "alt": "Dining" },
       { "src": "images/drink.avif", "alt": "Cocktails" },
       { "src": "images/lamb2.avif", "alt": "Lamb" },
       { "src": "images/sausage_rolls.avif", "alt": "Sausage Rolls" },
