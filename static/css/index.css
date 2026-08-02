@@ -190,6 +190,19 @@
   .hero {
     padding-top: 94px;
   }
+
+  /* Cap the slideshow width so its height (set via aspect-ratio) doesn't grow
+     too tall on wide screens now that it isn't stretched by a fixed pixel height. */
+  .hero-slideshow {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+}
+
+@media (width >=1100px) {
+  .hero-slideshow {
+    max-width: 720px;
+  }
 }
 
 /* Upcoming Events Section

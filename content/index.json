@@ -33,24 +33,29 @@
   },
   "reviews": [
     {
+      "author": "Katy T.",
+      "site": "Google Reviews",
+      "text": "We celebrate our 19th anniversary here and if we could give 10/5 stars, we would."
+    },
+    {
+      "author": "K I.",
+      "site": "Yelp",
+      "text": "The food was exquisite. They thought of all the details. Very good ambience, great date night spot in Woodinville."
+    },
+    {
+      "author": "Anthony P.",
+      "site": "Google Reviews",
+      "text": "What a great hidden gem in Woodinville."
+    },
+    {
+      "author": "Jeff K.",
+      "site": "Google Reviews",
+      "text": "One of the best craft cocktail programs in the area. "
+    },
+    {
       "author": "Dana S.",
       "site": "Google Reviews",
       "text": "The food was some of the most unique and delicious food we’ve had in the area. The lamb chops, caesar salad, and mushrooms were our favorites, but everything was so good. Highly highly recommend!"
-    },
-    {
-      "author": "Molly B.",
-      "site": "Yelp",
-      "text": "We loved our time at Jackson House! We tried their limoncello and food offering at taste WA, and that is how we discovered this restaurant. I'm glad we did!"
-    },
-    {
-      "author": "Corinne Z.",
-      "site": "Google Reviews",
-      "text": "Incredible food, obviously, but the real treat is the bartender. Mixologist. Alchemist. Sorcerer. So creative and unique!!! I had an incredible dinner but I’ll be going back for some bites and sit at the bar."
-    },
-    {
-      "author": "Marcie S.",
-      "site": "Yelp",
-      "text": "Came in here for date night with another couple and was very pleasantly surprised - I love finding amazing gems like this is my home town!"
     },
     {
       "author": "Tanner E.",
