@@ -2,6 +2,7 @@
 
 {% block content %}
 <main id="main" class="container">
+  <h1 id="team-heading" class="sr-only">{{ title or "Meet the Team" }}</h1>
   <section class="team-grid" aria-labelledby="team-heading">
     {% for member in team %}
       <article class="team-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="{{ member.name }}"

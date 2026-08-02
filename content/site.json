@@ -6,10 +6,11 @@
     "description": "Jackson House is an elevated restaurant and craft cocktail bar in Woodinville, WA serving seasonal small plates, curated spirits, and memorable hospitality.",
     "og_title": "Jackson House | Woodinville Restaurant & Craft Cocktail Bar",
     "og_description": "Seasonal menus, curated cocktails, and elevated hospitality in the heart of Woodinville.",
-    "og_image": "logod.png",
+    "og_image": "images/full_logo.png",
     "og_type": "website",
     "twitter_card": "summary_large_image",
-    "robots": "index,follow"
+    "robots": "index,follow",
+    "locale": "en_US"
   },
   "favicon": "images/full_logo.png",
   "stylesheet": "css/site.css",

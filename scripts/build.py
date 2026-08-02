@@ -1,5 +1,5 @@
 from jinja2 import Environment, FileSystemLoader, select_autoescape
-import json, os
+import json, os, re
 from datetime import datetime
 import shutil
 
@@ -10,6 +10,88 @@ with open("content/site.json", encoding="utf-8") as f:
     site_content = json.load(f)
 
 base_site_url = site_content.get("meta", {}).get("site_url", "").rstrip("/")
+
+_DAY_ORDER = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+_DAY_NAMES = {
+    "Mon": "Monday", "Tue": "Tuesday", "Wed": "Wednesday", "Thu": "Thursday",
+    "Fri": "Friday", "Sat": "Saturday", "Sun": "Sunday"
+}
+
+
+def _expand_day_range(key):
+    """Turn 'Wed-Thu' into ['Wednesday', 'Thursday'] and 'Fri' into ['Friday']."""
+    if "-" in key:
+        start, end = [p.strip() for p in key.split("-", 1)]
+        start_i, end_i = _DAY_ORDER.index(start), _DAY_ORDER.index(end)
+        return [_DAY_NAMES[_DAY_ORDER[i]] for i in range(start_i, end_i + 1)]
+    return [_DAY_NAMES[key.strip()]]
+
+
+def _to_24h(time_str):
+    """Turn '5pm' or '10:30am' into '17:00' / '10:30' for schema.org time values."""
+    m = re.match(r"(\d{1,2})(?::(\d{2}))?\s*(am|pm)", time_str.strip(), re.IGNORECASE)
+    if not m:
+        return None
+    hour, minute, ampm = int(m.group(1)), m.group(2) or "00", m.group(3).lower()
+    if ampm == "pm" and hour != 12:
+        hour += 12
+    if ampm == "am" and hour == 12:
+        hour = 0
+    return f"{hour:02d}:{minute}"
+
+
+def build_restaurant_schema(site_content, base_site_url):
+    """Build a schema.org Restaurant JSON-LD payload from footer contact info already in site.json."""
+    contact = site_content.get("footer", {}).get("contact", {})
+    address_str = contact.get("address", "")
+    parts = [p.strip() for p in address_str.split(",")]
+    street = parts[0] if len(parts) > 0 else ""
+    locality = parts[1] if len(parts) > 1 else ""
+    region, _, postal = (parts[2] if len(parts) > 2 else "").strip().partition(" ")
+
+    opening_hours = []
+    for key, val in contact.get("hours", {}).items():
+        try:
+            days = _expand_day_range(key)
+            start_str, end_str = [p.strip() for p in val.split("-", 1)]
+            opens, closes = _to_24h(start_str), _to_24h(end_str)
+        except Exception:
+            continue
+        if opens and closes:
+            opening_hours.append({
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": days,
+                "opens": opens,
+                "closes": closes
+            })
+
+    same_as = [s.get("url") for s in site_content.get("footer", {}).get("socials", []) if s.get("url")]
+    og_image = site_content.get("meta", {}).get("og_image", "")
+    image_url = og_image if og_image.startswith("http") else f"{base_site_url}/{og_image.lstrip('/')}"
+
+    return {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": contact.get("name") or site_content.get("title"),
+        "image": image_url,
+        "url": base_site_url,
+        "telephone": contact.get("phone"),
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": street,
+            "addressLocality": locality,
+            "addressRegion": region,
+            "postalCode": postal,
+            "addressCountry": "US"
+        },
+        "openingHoursSpecification": opening_hours,
+        "sameAs": same_as,
+        "menu": f"{base_site_url}/menu.html" if base_site_url else "menu.html",
+        "acceptsReservations": True
+    }
+
+
+schema_json = json.dumps(build_restaurant_schema(site_content, base_site_url)) if base_site_url else ""
 
 def enrich_events(events):
     """Extract month, day, and day of week from date field. Skip events without a valid date."""
@@ -97,7 +179,8 @@ for page in page_files:
             "happy_hour": page_content.get("happy_hour", {}),
             "reviews": page_content.get("reviews", []),
             "holiday_hours": page_content.get("holiday_hours", []),
-            "hide_footer": True if page['json'] == 'index.json' else False
+            "hide_footer": True if page['json'] == 'index.json' else False,
+            "schema_json": schema_json
         }
     })
 
@@ -115,3 +198,22 @@ for page in pages:
 shutil.copytree("static/css", "dist/css", dirs_exist_ok=True)
 shutil.copytree("static/js", "dist/js", dirs_exist_ok=True)
 shutil.copytree("static/images", "dist/images", dirs_exist_ok=True)
+
+# Generate robots.txt and sitemap.xml so search engines can discover all pages
+if base_site_url:
+    with open(os.path.join("dist", "robots.txt"), "w", encoding="utf-8") as f:
+        f.write(f"User-agent: *\nAllow: /\n\nSitemap: {base_site_url}/sitemap.xml\n")
+
+    today = datetime.now().strftime("%Y-%m-%d")
+    urls = []
+    for page in pages:
+        loc = base_site_url if page["output"] == "index.html" else f"{base_site_url}/{page['output']}"
+        urls.append(f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{today}</lastmod>\n  </url>")
+    sitemap = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "\n".join(urls) +
+        "\n</urlset>\n"
+    )
+    with open(os.path.join("dist", "sitemap.xml"), "w", encoding="utf-8") as f:
+        f.write(sitemap)
