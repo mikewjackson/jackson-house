@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+<main id="main" class="container">
+  <section class="contact-hero container">
+    <h1>{{ hero.title }}</h1>
+    {% for paragraph in hero.paragraphs %}
+      <p class="lead">{{ paragraph }}</p>
+    {% endfor %}
+  </section>
+
+  <section class="contact-form-section container">
+    <!--
+      Netlify Forms: the form is detected at deploy time because this static
+      HTML (built into dist/) is what actually gets published. data-netlify
+      enables Netlify's form handling; netlify-honeypot adds a hidden field
+      that real visitors never see or fill in - bots that fill it in get
+      silently rejected (not even logged as spam).
+    -->
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact-thanks.html" class="contact-form">
+      <input type="hidden" name="form-name" value="contact">
+
+      <p class="hp-field" aria-hidden="true">
+        <label>Leave this field blank if you're human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+      </p>
+
+      <div class="form-row">
+        <label for="contact-name">Name</label>
+        <input type="text" id="contact-name" name="name" autocomplete="name" required>
+      </div>
+
+      <div class="form-row">
+        <label for="contact-email">Email</label>
+        <input type="email" id="contact-email" name="email" autocomplete="email" required>
+      </div>
+
+      <div class="form-row">
+        <label for="contact-phone">Phone (optional)</label>
+        <input type="tel" id="contact-phone" name="phone" autocomplete="tel">
+      </div>
+
+      <div class="form-row">
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" rows="6" required></textarea>
+      </div>
+
+      <button type="submit" class="join-btn">Send Message</button>
+    </form>
+
+    <p class="contact-alt">
+      Prefer email or phone? Reach us directly at
+      <a href="mailto:{{ footer.contact.email }}">{{ footer.contact.email }}</a>
+      or <a href="tel:{{ footer.contact.phone_link }}">{{ footer.contact.phone }}</a>.
+    </p>
+  </section>
+</main>
+{% endblock %}

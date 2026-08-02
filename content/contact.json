@@ -1,0 +1,16 @@
+{
+  "title": "Contact",
+  "seo": {
+    "title": "Contact Us | Jackson House Woodinville",
+    "description": "Get in touch with Jackson House in Woodinville, WA. Send us a message about reservations, private events, or general questions."
+  },
+  "extra_styles": [
+    "css/contact.css"
+  ],
+  "hero": {
+    "title": "Get in Touch",
+    "paragraphs": [
+      "Have a question, feedback, or want to plan something special? Send us a message and our team will get back to you."
+    ]
+  }
+}

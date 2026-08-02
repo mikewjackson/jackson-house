@@ -130,7 +130,9 @@ page_files = [
     {"json": "team.json", "template": "team.html", "output": "team.html"},
     {"json": "private-events.json", "template": "private-events.html", "output": "private-events.html"},
     {"json": "membership.json", "template": "membership.html", "output": "membership.html"},
-    {"json": "events.json", "template": "events.html", "output": "events.html"}
+    {"json": "events.json", "template": "events.html", "output": "events.html"},
+    {"json": "contact.json", "template": "contact.html", "output": "contact.html"},
+    {"json": "contact-thanks.json", "template": "contact-thanks.html", "output": "contact-thanks.html", "sitemap": False}
 ]
 
 pages = []
@@ -156,6 +158,7 @@ for page in page_files:
     pages.append({
         "template": page["template"],   # use the template you want
         "output": page["output"],       # use the output you defined
+        "sitemap": page.get("sitemap", True),
         "context": {
             "site": site_content,
             "meta": site_content["meta"],
@@ -207,6 +210,8 @@ if base_site_url:
     today = datetime.now().strftime("%Y-%m-%d")
     urls = []
     for page in pages:
+        if not page.get("sitemap", True):
+            continue
         loc = base_site_url if page["output"] == "index.html" else f"{base_site_url}/{page['output']}"
         urls.append(f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{today}</lastmod>\n  </url>")
     sitemap = (

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<main id="main" class="container">
+  <section class="contact-hero container">
+    <h1>{{ hero.title }}</h1>
+    {% for paragraph in hero.paragraphs %}
+      <p class="lead">{{ paragraph }}</p>
+    {% endfor %}
+    <p><a href="index.html" class="join-btn">Back to Home</a></p>
+  </section>
+</main>
+{% endblock %}

@@ -1,0 +1,17 @@
+{
+  "title": "Thank You",
+  "seo": {
+    "title": "Thank You | Jackson House Woodinville",
+    "description": "Thanks for reaching out to Jackson House - we'll be in touch soon.",
+    "robots": "noindex,follow"
+  },
+  "extra_styles": [
+    "css/contact.css"
+  ],
+  "hero": {
+    "title": "Thank You!",
+    "paragraphs": [
+      "Your message has been sent. We appreciate you reaching out and will get back to you as soon as possible."
+    ]
+  }
+}
