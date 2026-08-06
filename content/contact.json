@@ -7,6 +7,9 @@
   "extra_styles": [
     "css/contact.css"
   ],
+  "extra_scripts": [
+    "js/contact-form.js"
+  ],
   "hero": {
     "title": "Get in Touch",
     "paragraphs": [

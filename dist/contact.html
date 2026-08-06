@@ -43,6 +43,7 @@
   
   <script src="js/site-header.js" defer></script>
   <script src="js/events-filter.js" defer></script>
+  <script src="js/contact-form.js" defer></script>
 </head>
 <body class="team-page">
 <header class="site-header" role="banner" aria-label="Primary site header">
@@ -125,6 +126,14 @@
     -->
     <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact-thanks.html" class="contact-form">
       <input type="hidden" name="form-name" value="contact">
+      <!--
+        Netlify's static "subject" value is fixed at deploy time and only
+        supports its own predefined variables (%{formName}, %{siteName},
+        %{submissionId}) - it can't interpolate a submitter's name. contact-form.js
+        rewrites this value to include the submitter's name right before
+        submit; this fallback covers submissions with JS disabled.
+      -->
+      <input type="hidden" id="contact-subject" name="subject" data-remove-prefix value="Jackson House Contact Request">
 
       <p class="hp-field" aria-hidden="true">
         <label>Leave this field blank if you're human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
