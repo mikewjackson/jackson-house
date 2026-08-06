@@ -8,7 +8,8 @@
       <article class="team-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="{{ member.name }}"
           data-title="{{ member.title }}" 
           data-bio="{{ member.bio }}">        
-        <img class="team-media" src="{{ member.image }}" alt="{{ member.alt }}" loading="lazy">
+        <img class="team-media" src="{{ member.image }}" alt="{{ member.alt }}"
+          {% if loop.first %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}>
         <div class="team-body">
           <h3>{{ member.name }}</h3>
           <p class="muted">{{ member.title }}</p>
