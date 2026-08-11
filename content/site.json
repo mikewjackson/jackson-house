@@ -25,6 +25,11 @@
     { "label": "Membership", "href": "membership.html" },
     { "label": "Contact", "href": "mailto:info@jacksonhousewoodinville.com" }
   ],
+  "rating": {
+    "value": 4.8,
+    "count": 78,
+    "source": "Google"
+  },
   "footer": {
     "tagline": "Craft Pours • Seasonal Menus • Locally Sourced",
     "contact": {

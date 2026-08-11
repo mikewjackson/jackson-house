@@ -86,7 +86,7 @@ def build_restaurant_schema(site_content, base_site_url):
     og_image = site_content.get("meta", {}).get("og_image", "")
     image_url = og_image if og_image.startswith("http") else f"{base_site_url}/{og_image.lstrip('/')}"
 
-    return {
+    schema = {
         "@type": "Restaurant",
         "@id": f"{base_site_url}/#restaurant" if base_site_url else "#restaurant",
         "name": contact.get("name") or site_content.get("title"),
@@ -107,6 +107,20 @@ def build_restaurant_schema(site_content, base_site_url):
         "menu": f"{base_site_url}/menu.html" if base_site_url else "menu.html",
         "acceptsReservations": True
     }
+
+    # Real aggregate rating sourced from content/site.json (e.g. Google Business Profile).
+    # Do not fabricate these values - Google's structured data guidelines require
+    # aggregateRating to reflect an actual, verifiable rating and count.
+    rating = site_content.get("rating") or {}
+    if rating.get("value") is not None and rating.get("count") is not None:
+        schema["aggregateRating"] = {
+            "@type": "AggregateRating",
+            "ratingValue": rating["value"],
+            "reviewCount": rating["count"],
+            "bestRating": rating.get("best_rating", 5)
+        }
+
+    return schema
 
 
 def _menu_item_offers(item):
