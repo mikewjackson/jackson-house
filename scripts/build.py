@@ -233,6 +233,88 @@ def _render_schema_graph(schemas):
     return json.dumps({"@context": "https://schema.org", "@graph": schemas})
 
 
+def build_llms_txt(site_content, content_by_json, future_events, base_site_url):
+    """Build a plain-text llms.txt summary (per llmstxt.org) so AI assistants and chatbots
+    can quickly find accurate facts about the business without parsing rendered HTML/JS."""
+    footer = site_content.get("footer", {})
+    contact = footer.get("contact", {})
+    meta = site_content.get("meta", {})
+    title = site_content.get("title", "")
+
+    def _url(path):
+        return f"{base_site_url}/{path}" if base_site_url else path
+
+    lines = [f"# {title}", "", f"> {meta.get('description', '')}", ""]
+
+    hours = contact.get("hours", {})
+    if hours:
+        lines.append("Hours: " + "; ".join(f"{day} {time}" for day, time in hours.items()))
+    happy_hour = content_by_json.get("index.json", {}).get("happy_hour", {}).get("hours", {})
+    if happy_hour:
+        lines.append("Happy Hour: " + "; ".join(f"{day} {time}" for day, time in happy_hour.items()))
+    if contact.get("address"):
+        lines.append(f"Address: {contact['address']}")
+    if contact.get("phone"):
+        lines.append(f"Phone: {contact['phone']}")
+    if contact.get("email"):
+        lines.append(f"Email: {contact['email']}")
+    lines.append("")
+
+    hero_paragraphs = content_by_json.get("index.json", {}).get("hero", {}).get("paragraphs", [])
+    if hero_paragraphs:
+        lines.append("## About")
+        lines.extend(hero_paragraphs)
+        lines.append("")
+
+    panels = content_by_json.get("menu.json", {}).get("panels", {})
+    if panels:
+        lines.append("## Menu")
+        lines.append(f"- [Full menu]({_url('menu.html')}): {', '.join(panels.values())} menus with dishes and prices.")
+        lines.append("")
+
+    if future_events:
+        lines.append("## Upcoming Events")
+        lines.append(f"- [All events]({_url('events.html')})")
+        for event in future_events[:10]:
+            lines.append(f"- {event.get('date')}: {event.get('title')} ({event.get('time')})")
+        lines.append("")
+
+    private_events = content_by_json.get("private-events.json", {}).get("events", [])
+    if private_events:
+        lines.append("## Private Events")
+        lines.append(f"- [Private events]({_url('private-events.html')})")
+        for pe in private_events:
+            lines.append(f"- {pe.get('type')}: {pe.get('best_for')}")
+        lines.append("")
+
+    memberships = content_by_json.get("membership.json", {}).get("memberships", [])
+    if memberships:
+        lines.append("## Membership")
+        lines.append(f"- [Membership]({_url('membership.html')})")
+        for m in memberships:
+            lines.append(f"- {m.get('name')} ({m.get('price')}): {'; '.join(m.get('benefits', []))}")
+        lines.append("")
+
+    team = content_by_json.get("team.json", {}).get("team", [])
+    if team:
+        lines.append("## Team")
+        lines.append(f"- [Meet the team]({_url('team.html')})")
+        for member in team:
+            lines.append(f"- {member.get('name')}, {member.get('title')}")
+        lines.append("")
+
+    lines.append("## Contact")
+    lines.append(f"- [Contact us]({_url('contact.html')})")
+    same_as = [s.get("url") for s in footer.get("socials", []) if s.get("url")]
+    if same_as:
+        lines.append("")
+        lines.append("## Optional")
+        for url in same_as:
+            lines.append(f"- {url}")
+
+    return "\n".join(lines).rstrip() + "\n"
+
+
 restaurant_schema = build_restaurant_schema(site_content, base_site_url)
 
 def enrich_events(events):
@@ -286,10 +368,12 @@ page_files = [
 ]
 
 pages = []
+content_by_json = {}
 
 for page in page_files:
     with open(f"content/{page['json']}", encoding="utf-8") as f:
         page_content = json.load(f)
+    content_by_json[page["json"]] = page_content
 
     # Include all events in pages (client-side JS will hide expired events)
     page_events = page_content.get("events", [])
@@ -364,10 +448,15 @@ shutil.copytree("static/css", "dist/css", dirs_exist_ok=True)
 shutil.copytree("static/js", "dist/js", dirs_exist_ok=True)
 shutil.copytree("static/images", "dist/images", dirs_exist_ok=True)
 
-# Generate robots.txt and sitemap.xml so search engines can discover all pages
+# Generate robots.txt, sitemap.xml, and llms.txt so search engines and AI assistants
+# can discover and accurately summarize all pages
 if base_site_url:
     with open(os.path.join("dist", "robots.txt"), "w", encoding="utf-8") as f:
-        f.write(f"User-agent: *\nAllow: /\n\nSitemap: {base_site_url}/sitemap.xml\n")
+        f.write(
+            f"User-agent: *\nAllow: /\n\n"
+            f"Sitemap: {base_site_url}/sitemap.xml\n\n"
+            f"# AI assistant summary: {base_site_url}/llms.txt\n"
+        )
 
     today = datetime.now().strftime("%Y-%m-%d")
     urls = []
@@ -384,3 +473,7 @@ if base_site_url:
     )
     with open(os.path.join("dist", "sitemap.xml"), "w", encoding="utf-8") as f:
         f.write(sitemap)
+
+    llms_txt = build_llms_txt(site_content, content_by_json, future_events_all, base_site_url)
+    with open(os.path.join("dist", "llms.txt"), "w", encoding="utf-8") as f:
+        f.write(llms_txt)

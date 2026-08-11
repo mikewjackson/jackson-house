@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.jacksonhousewoodinville.com/sitemap.xml
+
+# AI assistant summary: https://www.jacksonhousewoodinville.com/llms.txt
