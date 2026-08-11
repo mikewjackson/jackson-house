@@ -40,14 +40,31 @@ def _to_24h(time_str):
     return f"{hour:02d}:{minute}"
 
 
-def build_restaurant_schema(site_content, base_site_url):
-    """Build a schema.org Restaurant JSON-LD payload from footer contact info already in site.json."""
-    contact = site_content.get("footer", {}).get("contact", {})
-    address_str = contact.get("address", "")
+# Geocoded once for the physical address in content/site.json (OpenStreetMap/Nominatim).
+# Update this if the business ever changes location.
+_RESTAURANT_GEO = {"latitude": 47.7538836, "longitude": -122.1620827}
+
+
+def _parse_address(address_str):
+    """Split a 'street, city, ST zip' string into schema.org PostalAddress parts."""
     parts = [p.strip() for p in address_str.split(",")]
     street = parts[0] if len(parts) > 0 else ""
     locality = parts[1] if len(parts) > 1 else ""
     region, _, postal = (parts[2] if len(parts) > 2 else "").strip().partition(" ")
+    return {
+        "@type": "PostalAddress",
+        "streetAddress": street,
+        "addressLocality": locality,
+        "addressRegion": region,
+        "postalCode": postal,
+        "addressCountry": "US"
+    }
+
+
+def build_restaurant_schema(site_content, base_site_url):
+    """Build a schema.org Restaurant JSON-LD payload from footer contact info already in site.json."""
+    contact = site_content.get("footer", {}).get("contact", {})
+    address = _parse_address(contact.get("address", ""))
 
     opening_hours = []
     for key, val in contact.get("hours", {}).items():
@@ -70,19 +87,20 @@ def build_restaurant_schema(site_content, base_site_url):
     image_url = og_image if og_image.startswith("http") else f"{base_site_url}/{og_image.lstrip('/')}"
 
     return {
-        "@context": "https://schema.org",
         "@type": "Restaurant",
+        "@id": f"{base_site_url}/#restaurant" if base_site_url else "#restaurant",
         "name": contact.get("name") or site_content.get("title"),
         "image": image_url,
         "url": base_site_url,
         "telephone": contact.get("phone"),
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": street,
-            "addressLocality": locality,
-            "addressRegion": region,
-            "postalCode": postal,
-            "addressCountry": "US"
+        "priceRange": "$$$",
+        "servesCuisine": ["Pacific Northwest", "American", "Small Plates", "Craft Cocktails"],
+        "currenciesAccepted": "USD",
+        "address": address,
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": _RESTAURANT_GEO["latitude"],
+            "longitude": _RESTAURANT_GEO["longitude"]
         },
         "openingHoursSpecification": opening_hours,
         "sameAs": same_as,
@@ -91,7 +109,131 @@ def build_restaurant_schema(site_content, base_site_url):
     }
 
 
-schema_json = json.dumps(build_restaurant_schema(site_content, base_site_url)) if base_site_url else ""
+def _menu_item_offers(item):
+    """Build one or more schema.org Offer entries from an item's various price fields."""
+    def _num(value):
+        try:
+            return float(value)
+        except (TypeError, ValueError):
+            return None
+
+    named_prices = [
+        (None, item.get("price")),
+        ("Glass", item.get("price_glass")),
+        ("Bottle", item.get("price_bottle")),
+        ("1oz", item.get("price_1oz")),
+        ("2oz", item.get("price_2oz")),
+    ]
+    offers = []
+    for name, raw_price in named_prices:
+        price = _num(raw_price)
+        if price is None:
+            continue
+        offer = {"@type": "Offer", "price": price, "priceCurrency": "USD"}
+        if name:
+            offer["name"] = name
+        offers.append(offer)
+    return offers
+
+
+def build_menu_schema(menu_content, panels, base_site_url):
+    """Build a schema.org Menu JSON-LD payload from the menu page content (panels/groups/items)."""
+    sections = []
+    for panel_key, panel_label in panels.items():
+        panel_data = menu_content.get(panel_key, {})
+        tagline = panel_data.get("tagline")
+        if isinstance(tagline, list):
+            tagline = " ".join(tagline)
+
+        menu_items = []
+        for group in panel_data.get("groups", []):
+            for item in group.get("items", []):
+                dish = item.get("dish")
+                if not dish:
+                    continue
+                menu_item = {"@type": "MenuItem", "name": dish}
+                if item.get("description"):
+                    menu_item["description"] = item["description"]
+                offers = _menu_item_offers(item)
+                if len(offers) == 1:
+                    menu_item["offers"] = offers[0]
+                elif offers:
+                    menu_item["offers"] = offers
+                menu_items.append(menu_item)
+
+        if not menu_items:
+            continue
+        section = {"@type": "MenuSection", "name": panel_label, "hasMenuItem": menu_items}
+        if tagline:
+            section["description"] = tagline
+        sections.append(section)
+
+    return {
+        "@type": "Menu",
+        "@id": f"{base_site_url}/menu.html#menu" if base_site_url else "#menu",
+        "name": "Jackson House Menu",
+        "url": f"{base_site_url}/menu.html" if base_site_url else "menu.html",
+        "hasMenuSection": sections
+    }
+
+
+def build_event_schema(events, site_content, base_site_url):
+    """Build schema.org Event JSON-LD entries from enriched event dicts."""
+    contact = site_content.get("footer", {}).get("contact", {})
+    location = {
+        "@type": "Place",
+        "name": contact.get("name") or site_content.get("title"),
+        "address": _parse_address(contact.get("address", ""))
+    }
+
+    schemas = []
+    for event in events:
+        date_str = event.get("date")
+        if not date_str:
+            continue
+        time_parts = [p.strip() for p in (event.get("time") or "").split("-", 1)]
+        start_24h = _to_24h(time_parts[0]) if time_parts and time_parts[0] else None
+        end_24h = _to_24h(time_parts[1]) if len(time_parts) > 1 else None
+
+        event_schema = {
+            "@type": "Event",
+            "name": event.get("title"),
+            "startDate": f"{date_str}T{start_24h}" if start_24h else date_str,
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "location": location,
+            "description": event.get("description") or event.get("title"),
+        }
+        if end_24h:
+            event_schema["endDate"] = f"{date_str}T{end_24h}"
+        if event.get("reserve_url"):
+            offer = {
+                "@type": "Offer",
+                "url": event["reserve_url"],
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock"
+            }
+            if event.get("price"):
+                offer["price"] = event["price"]
+            event_schema["offers"] = offer
+        elif event.get("price"):
+            event_schema["offers"] = {"@type": "Offer", "price": event["price"], "priceCurrency": "USD"}
+
+        schemas.append(event_schema)
+    return schemas
+
+
+def _render_schema_graph(schemas):
+    """Wrap one or more schema.org node dicts into valid JSON-LD (single object or @graph)."""
+    schemas = [s for s in schemas if s]
+    if not schemas:
+        return ""
+    if len(schemas) == 1:
+        return json.dumps({"@context": "https://schema.org", **schemas[0]})
+    return json.dumps({"@context": "https://schema.org", "@graph": schemas})
+
+
+restaurant_schema = build_restaurant_schema(site_content, base_site_url)
 
 def enrich_events(events):
     """Extract month, day, and day of week from date field. Skip events without a valid date."""
@@ -122,6 +264,14 @@ with open("content/events.json", encoding="utf-8") as f:
 all_events["events"] = enrich_events(all_events.get("events", []))
 # Sort all events by date ascending (closest date first)
 all_events["events"] = sorted(all_events["events"], key=lambda e: datetime.strptime(e.get("date"), "%Y-%m-%d"))
+
+# Future/today events only, matching what client-side JS ultimately leaves visible -
+# used to keep Event structured data in sync with on-page content.
+_today_midnight = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+future_events_all = [
+    e for e in all_events["events"]
+    if datetime.strptime(e["date"], "%Y-%m-%d") >= _today_midnight
+]
 
 # Pages to render
 page_files = [
@@ -155,6 +305,18 @@ for page in page_files:
         if page_events:
             page_events = sorted(enrich_events(page_events), key=lambda e: datetime.strptime(e.get("date"), "%Y-%m-%d"))
 
+    # Add page-specific structured data alongside the sitewide Restaurant schema:
+    # full Menu schema on the menu page, Event schema matching whichever events are
+    # actually shown on index (next 3 upcoming) vs the events page (all upcoming).
+    page_schema_extra = []
+    if page["json"] == "menu.json":
+        page_schema_extra = [build_menu_schema(page_content, page_content.get("panels", {}), base_site_url)]
+    elif page["json"] == "index.json":
+        page_schema_extra = build_event_schema(future_events_all[:3], site_content, base_site_url)
+    elif page["json"] == "events.json":
+        page_schema_extra = build_event_schema(future_events_all, site_content, base_site_url)
+    page_schema_json = _render_schema_graph([restaurant_schema] + page_schema_extra) if base_site_url else ""
+
     pages.append({
         "template": page["template"],   # use the template you want
         "output": page["output"],       # use the output you defined
@@ -183,7 +345,7 @@ for page in page_files:
             "reviews": page_content.get("reviews", []),
             "holiday_hours": page_content.get("holiday_hours", []),
             "hide_footer": True if page['json'] == 'index.json' else False,
-            "schema_json": schema_json
+            "schema_json": page_schema_json
         }
     })
 
