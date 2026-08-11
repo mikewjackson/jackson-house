@@ -23,7 +23,7 @@
     { "label": "Events", "href": "events.html" },
     { "label": "Team", "href": "team.html" },
     { "label": "Membership", "href": "membership.html" },
-    { "label": "Contact", "href": "mailto:info@jacksonhousewoodinville.com" }
+    { "label": "Contact", "href": "contact.html" }
   ],
   "rating": {
     "value": 4.8,
