@@ -27,8 +27,8 @@
   },
   "happy_hour": {
     "hours": {
-      "Wed-Thur": "5pm-6pm",
-      "Fri:": "4pm-6pm",
+      "Wed-Thu": "5pm-6pm",
+      "Fri": "4pm-6pm",
       "Sat-Sun": "2pm-4pm"
     }
   },

@@ -2,8 +2,35 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 import json, os, re
 from datetime import datetime
 import shutil
+import subprocess
 
 env = Environment(loader=FileSystemLoader('templates'), autoescape=select_autoescape(["html", "xml"]))
+
+_PREFORMATTED_OUTPUT_BLOCKS = re.compile(
+    r"(<(?:pre|script|style|textarea)\b[^>]*>.*?</(?:pre|script|style|textarea)\s*>)",
+    re.IGNORECASE | re.DOTALL
+)
+
+
+def _collapse_duplicate_blank_lines(text):
+    """Keep rendered HTML readable without changing preformatted content."""
+    def _collapse(segment):
+        collapsed = []
+        previous_blank = False
+        for line in segment.splitlines(keepends=True):
+            is_blank = not line.strip()
+            if is_blank and previous_blank:
+                continue
+            collapsed.append("\n" if is_blank else line)
+            previous_blank = is_blank
+        return "".join(collapsed)
+
+    parts = _PREFORMATTED_OUTPUT_BLOCKS.split(text)
+    return "".join(
+        part if index % 2 else _collapse(part)
+        for index, part in enumerate(parts)
+    )
+
 
 # Load global site metadata
 with open("content/site.json", encoding="utf-8") as f:
@@ -38,6 +65,31 @@ def _to_24h(time_str):
     if ampm == "am" and hour == 12:
         hour = 0
     return f"{hour:02d}:{minute}"
+
+
+def _source_last_modified(paths):
+    """Return the latest source change date for accurate sitemap lastmod values."""
+    try:
+        dirty = subprocess.run(
+            ["git", "diff", "--quiet", "HEAD", "--", *paths],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            check=False
+        )
+        if dirty.returncode == 1:
+            return datetime.now().strftime("%Y-%m-%d")
+
+        result = subprocess.run(
+            ["git", "log", "-1", "--format=%cs", "--", *paths],
+            capture_output=True,
+            text=True,
+            check=False
+        )
+    except OSError:
+        return None
+
+    last_modified = result.stdout.strip()
+    return last_modified if re.fullmatch(r"\d{4}-\d{2}-\d{2}", last_modified) else None
 
 
 # Geocoded once for the physical address in content/site.json (OpenStreetMap/Nominatim).
@@ -92,7 +144,7 @@ def build_restaurant_schema(site_content, base_site_url):
         "name": contact.get("name") or site_content.get("title"),
         "image": image_url,
         "url": base_site_url,
-        "telephone": contact.get("phone"),
+        "telephone": contact.get("phone_link") or contact.get("phone"),
         "priceRange": "$$$",
         "servesCuisine": ["Pacific Northwest", "American", "Small Plates", "Craft Cocktails"],
         "currenciesAccepted": "USD",
@@ -107,18 +159,6 @@ def build_restaurant_schema(site_content, base_site_url):
         "menu": f"{base_site_url}/menu.html" if base_site_url else "menu.html",
         "acceptsReservations": True
     }
-
-    # Real aggregate rating sourced from content/site.json (e.g. Google Business Profile).
-    # Do not fabricate these values - Google's structured data guidelines require
-    # aggregateRating to reflect an actual, verifiable rating and count.
-    rating = site_content.get("rating") or {}
-    if rating.get("value") is not None and rating.get("count") is not None:
-        schema["aggregateRating"] = {
-            "@type": "AggregateRating",
-            "ratingValue": rating["value"],
-            "reviewCount": rating["count"],
-            "bestRating": rating.get("best_rating", 5)
-        }
 
     return schema
 
@@ -191,52 +231,6 @@ def build_menu_schema(menu_content, panels, base_site_url):
     }
 
 
-def build_event_schema(events, site_content, base_site_url):
-    """Build schema.org Event JSON-LD entries from enriched event dicts."""
-    contact = site_content.get("footer", {}).get("contact", {})
-    location = {
-        "@type": "Place",
-        "name": contact.get("name") or site_content.get("title"),
-        "address": _parse_address(contact.get("address", ""))
-    }
-
-    schemas = []
-    for event in events:
-        date_str = event.get("date")
-        if not date_str:
-            continue
-        time_parts = [p.strip() for p in (event.get("time") or "").split("-", 1)]
-        start_24h = _to_24h(time_parts[0]) if time_parts and time_parts[0] else None
-        end_24h = _to_24h(time_parts[1]) if len(time_parts) > 1 else None
-
-        event_schema = {
-            "@type": "Event",
-            "name": event.get("title"),
-            "startDate": f"{date_str}T{start_24h}" if start_24h else date_str,
-            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-            "eventStatus": "https://schema.org/EventScheduled",
-            "location": location,
-            "description": event.get("description") or event.get("title"),
-        }
-        if end_24h:
-            event_schema["endDate"] = f"{date_str}T{end_24h}"
-        if event.get("reserve_url"):
-            offer = {
-                "@type": "Offer",
-                "url": event["reserve_url"],
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock"
-            }
-            if event.get("price"):
-                offer["price"] = event["price"]
-            event_schema["offers"] = offer
-        elif event.get("price"):
-            event_schema["offers"] = {"@type": "Offer", "price": event["price"], "priceCurrency": "USD"}
-
-        schemas.append(event_schema)
-    return schemas
-
-
 def _render_schema_graph(schemas):
     """Wrap one or more schema.org node dicts into valid JSON-LD (single object or @graph)."""
     schemas = [s for s in schemas if s]
@@ -254,11 +248,19 @@ def build_llms_txt(site_content, content_by_json, future_events, base_site_url):
     contact = footer.get("contact", {})
     meta = site_content.get("meta", {})
     title = site_content.get("title", "")
+    socials = [social for social in footer.get("socials", []) if social.get("url")]
 
     def _url(path):
         return f"{base_site_url}/{path}" if base_site_url else path
 
-    lines = [f"# {title}", "", f"> {meta.get('description', '')}", ""]
+    lines = [
+        f"# {title}",
+        "",
+        f"> {meta.get('description', '')}",
+        "",
+        f"Last updated: {datetime.now().strftime('%Y-%m-%d')}",
+        ""
+    ]
 
     hours = contact.get("hours", {})
     if hours:
@@ -276,7 +278,6 @@ def build_llms_txt(site_content, content_by_json, future_events, base_site_url):
 
     hero_paragraphs = content_by_json.get("index.json", {}).get("hero", {}).get("paragraphs", [])
     if hero_paragraphs:
-        lines.append("## About")
         lines.extend(hero_paragraphs)
         lines.append("")
 
@@ -286,45 +287,58 @@ def build_llms_txt(site_content, content_by_json, future_events, base_site_url):
         lines.append(f"- [Full menu]({_url('menu.html')}): {', '.join(panels.values())} menus with dishes and prices.")
         lines.append("")
 
-    if future_events:
-        lines.append("## Upcoming Events")
-        lines.append(f"- [All events]({_url('events.html')})")
-        for event in future_events[:10]:
-            lines.append(f"- {event.get('date')}: {event.get('title')} ({event.get('time')})")
-        lines.append("")
+    lines.append("## Events")
+    event_summaries = [
+        f"{event.get('date')}: {event.get('title')} ({event.get('time')})"
+        for event in future_events[:20]
+    ]
+    if len(future_events) > 20:
+        event_summaries.append(f"{len(future_events) - 20} additional upcoming events")
+    event_details = "; ".join(event_summaries) or "Current event calendar."
+    lines.append(f"- [All upcoming events]({_url('events.html')}): {event_details}")
+    lines.append("")
 
     private_events = content_by_json.get("private-events.json", {}).get("events", [])
     if private_events:
+        details = "; ".join(
+            f"{event.get('type')}: {event.get('best_for')}"
+            for event in private_events
+            if event.get("type") and event.get("best_for")
+        )
         lines.append("## Private Events")
-        lines.append(f"- [Private events]({_url('private-events.html')})")
-        for pe in private_events:
-            lines.append(f"- {pe.get('type')}: {pe.get('best_for')}")
+        lines.append(f"- [Private events]({_url('private-events.html')}): {details}")
         lines.append("")
 
     memberships = content_by_json.get("membership.json", {}).get("memberships", [])
     if memberships:
+        details = "; ".join(
+            f"{membership.get('name')} ({membership.get('price')}): "
+            f"{'; '.join(membership.get('benefits', []))}"
+            for membership in memberships
+            if membership.get("name")
+        )
         lines.append("## Membership")
-        lines.append(f"- [Membership]({_url('membership.html')})")
-        for m in memberships:
-            lines.append(f"- {m.get('name')} ({m.get('price')}): {'; '.join(m.get('benefits', []))}")
+        lines.append(f"- [Membership]({_url('membership.html')}): {details}")
         lines.append("")
 
     team = content_by_json.get("team.json", {}).get("team", [])
     if team:
+        details = "; ".join(
+            f"{member.get('name')}, {member.get('title')}"
+            for member in team
+            if member.get("name") and member.get("title")
+        )
         lines.append("## Team")
-        lines.append(f"- [Meet the team]({_url('team.html')})")
-        for member in team:
-            lines.append(f"- {member.get('name')}, {member.get('title')}")
+        lines.append(f"- [Meet the team]({_url('team.html')}): {details}")
         lines.append("")
 
     lines.append("## Contact")
     lines.append(f"- [Contact us]({_url('contact.html')})")
-    same_as = [s.get("url") for s in footer.get("socials", []) if s.get("url")]
-    if same_as:
+    if socials:
         lines.append("")
         lines.append("## Optional")
-        for url in same_as:
-            lines.append(f"- {url}")
+        for social in socials:
+            lines.append(f"- [{social.get('platform') or social['url']}]({social['url']})")
 
     return "\n".join(lines).rstrip() + "\n"
 
@@ -352,6 +366,7 @@ def enrich_events(events):
         })
     return enriched
 
+
 # Load all events once
 with open("content/events.json", encoding="utf-8") as f:
     all_events = json.load(f)
@@ -361,8 +376,7 @@ all_events["events"] = enrich_events(all_events.get("events", []))
 # Sort all events by date ascending (closest date first)
 all_events["events"] = sorted(all_events["events"], key=lambda e: datetime.strptime(e.get("date"), "%Y-%m-%d"))
 
-# Future/today events only, matching what client-side JS ultimately leaves visible -
-# used to keep Event structured data in sync with on-page content.
+# Future/today events only for the AI-friendly event summary.
 _today_midnight = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
 future_events_all = [
     e for e in all_events["events"]
@@ -380,6 +394,27 @@ page_files = [
     {"json": "contact.json", "template": "contact.html", "output": "contact.html"},
     {"json": "contact-thanks.json", "template": "contact-thanks.html", "output": "contact-thanks.html", "sitemap": False}
 ]
+
+_SHARED_PAGE_SOURCES = [
+    "content/site.json",
+    "scripts/build.py",
+    "templates/base.html",
+    "templates/head.html",
+    "templates/header.html",
+    "templates/footer.html",
+]
+
+
+def _page_last_modified(page):
+    """Return the latest significant source change for a rendered page."""
+    sources = _SHARED_PAGE_SOURCES + [
+        f"content/{page['json']}",
+        f"templates/{page['template']}"
+    ]
+    if page["json"] == "index.json":
+        sources.append("content/events.json")
+    return _source_last_modified(sources)
+
 
 pages = []
 content_by_json = {}
@@ -403,22 +438,16 @@ for page in page_files:
         if page_events:
             page_events = sorted(enrich_events(page_events), key=lambda e: datetime.strptime(e.get("date"), "%Y-%m-%d"))
 
-    # Add page-specific structured data alongside the sitewide Restaurant schema:
-    # full Menu schema on the menu page, Event schema matching whichever events are
-    # actually shown on index (next 3 upcoming) vs the events page (all upcoming).
     page_schema_extra = []
     if page["json"] == "menu.json":
         page_schema_extra = [build_menu_schema(page_content, page_content.get("panels", {}), base_site_url)]
-    elif page["json"] == "index.json":
-        page_schema_extra = build_event_schema(future_events_all[:3], site_content, base_site_url)
-    elif page["json"] == "events.json":
-        page_schema_extra = build_event_schema(future_events_all, site_content, base_site_url)
     page_schema_json = _render_schema_graph([restaurant_schema] + page_schema_extra) if base_site_url else ""
 
     pages.append({
         "template": page["template"],   # use the template you want
         "output": page["output"],       # use the output you defined
         "sitemap": page.get("sitemap", True),
+        "lastmod": _page_last_modified(page),
         "context": {
             "site": site_content,
             "meta": site_content["meta"],
@@ -453,7 +482,7 @@ os.makedirs("dist", exist_ok=True)
 
 for page in pages:
     template = env.get_template(page["template"])
-    html = template.render(page["context"])
+    html = _collapse_duplicate_blank_lines(template.render(page["context"]))
     with open(os.path.join("dist", page["output"]), "w", encoding="utf-8") as f:
         f.write(html)
 
@@ -472,13 +501,14 @@ if base_site_url:
             f"# AI assistant summary: {base_site_url}/llms.txt\n"
         )
 
-    today = datetime.now().strftime("%Y-%m-%d")
     urls = []
     for page in pages:
         if not page.get("sitemap", True):
             continue
         loc = base_site_url if page["output"] == "index.html" else f"{base_site_url}/{page['output']}"
-        urls.append(f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{today}</lastmod>\n  </url>")
+        lastmod = page.get("lastmod")
+        lastmod_element = f"\n    <lastmod>{lastmod}</lastmod>" if lastmod else ""
+        urls.append(f"  <url>\n    <loc>{loc}</loc>{lastmod_element}\n  </url>")
     sitemap = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'

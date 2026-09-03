@@ -82,6 +82,7 @@
   align-items: center;
   gap: .4rem;
 }
+
 .hp-tl-pills {
   display: flex;
   flex-wrap: wrap;
@@ -97,6 +98,7 @@
   background: rgb(203 175 124 / 6%);
   line-height: 1.4;
 }
+
 .hp-tl-cta {
   margin-top: .1rem;
 }
@@ -127,6 +129,7 @@
   outline: 3px solid rgb(255 255 255 / 18%);
   outline-offset: 3px;
 }
+
 .badge-members-tl {
   display: inline-block;
   background: rgb(203 175 124 / 12%);

@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.jacksonhousewoodinville.com/sitemap.xml
+Sitemap: https://jacksonhousewoodinville.com/sitemap.xml
 
-# AI assistant summary: https://www.jacksonhousewoodinville.com/llms.txt
+# AI assistant summary: https://jacksonhousewoodinville.com/llms.txt
