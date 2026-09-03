@@ -7,9 +7,6 @@ In the content folder:
   private-events.json -> The text that appears on the private events page
   team.json -> The text that appears on the team page. 
 
-In the data folder:
-  menu.csv -> The items that appear on the menu page.
-
 To make a change run the following commands in Windows Terminal:
 
 cd \jackson-house

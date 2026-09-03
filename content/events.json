@@ -13,89 +13,14 @@
   },
   "events": [
 
-        {
-      "title": "FAKE EVENT",
-      "date": "2026-06-20",
-      "time": "6:30pm - 10:00pm",
-      "capacity": 28,
-      "price": 135,
-      "members_only": false,
-      "description": "Our Summer Solstice Dinner features a five-course seasonal menu inspired by the peak of the Pacific Northwest harvest, highlighting beautiful produce from Blue Glass Farm and thoughtfully paired wines from Darby Winery.",
-      "reserve_url": "https://www.exploretock.com/jacksonhousewoodinville/event/606484/summer-solstice-dinner-featuring-darby-winery"
-    },
-
-
-
     {
-      "title": "Summer Solstice Dinner - Featuring Darby Winery",
-      "date": "2026-06-21",
-      "time": "6:30pm - 10:00pm",
-      "capacity": 28,
-      "price": 135,
-      "members_only": false,
-      "description": "Our Summer Solstice Dinner features a five-course seasonal menu inspired by the peak of the Pacific Northwest harvest, highlighting beautiful produce from Blue Glass Farm and thoughtfully paired wines from Darby Winery.",
-      "reserve_url": "https://www.exploretock.com/jacksonhousewoodinville/event/606484/summer-solstice-dinner-featuring-darby-winery"
-    },
-    {
-      "title": "Sunday Sessions - Summer Gin + Botanicals",
-      "date": "2026-07-05",
-      "time": "4:30pm",
-      "capacity": 12,
-      "price": 30,
-      "members_only": true,
-      "description": "Fresh herbs, citrus, flowers, spice, and the spirits that bring them together. Join us for a guided tasting featuring a selection of summer-ready gins paired with seasonal bites from the kitchen. We'll explore the botanicals behind each pour, discuss how gin styles differ around the world, and celebrate one of the most versatile spirits behind the bar.",
-      "reserve_url": "https://www.opentable.com/booking/experiences-availability?rid=1496320&restref=1496320&experienceId=749160&utm_source=external&utm_medium=referral&utm_campaign=shared"
-    },
-    {
-      "title": "Sunday Sessions - Team Favorites Wine Night",
-      "date": "2026-07-19",
-      "time": "4:30pm",
-      "capacity": 20,
-      "price": 50,
-      "members_only": false,
-      "description": "For one evening, the Jackson House team is opening the wines we return to again and again—the bottles we recommend to friends, bring to dinner parties, and keep on our own tables. Throughout the evening, each team member will share a favorite selection and the story behind it, creating a tasting built around personal connection rather than scores, regions, or trends.",
-      "reserve_url": "https://www.opentable.com/booking/experiences-availability?rid=1496320&restref=1496320&experienceId=749167&utm_source=external&utm_medium=referral&utm_campaign=shared"
-    },
-
-    {
-      "title": "Sunday Sessions - PNW Boilermakers",
-      "date": "2026-08-02",
-      "time": "4:30pm",
-      "capacity": 12,
-      "price": 45,
-      "members_only": true,
-      "description": "This Monocle Club gathering explores one of the most enduring traditions in drinking culture through the lens of the Pacific Northwest. A curated lineup of regional whiskeys and craft beers will be thoughtfully paired and served alongside seasonal bites from the kitchen, highlighting how grain, oak, hops, and time work together to create memorable combinations.",
-      "reserve_url": "https://www.opentable.com/booking/experiences-availability?rid=1496320&restref=1496320&experienceId=749172&utm_source=external&utm_medium=referral&utm_campaign=shared"
-    },
-    {
-      "title": "Sunday Sessions - Tequila vs Mezcal",
-      "date": "2026-08-16",
-      "time": "4:30pm",
-      "capacity": 20,
-      "price": 55,
-      "members_only": false,
-      "description": "While tequila and mezcal share a common origin, the methods, regions, and philosophies behind them create remarkably different spirits. This tasting explores the history, production, and flavor profiles that distinguish each category, from the bright citrus and herbal notes often found in tequila to the layered, earthy complexity mezcal is known for.",
-      "reserve_url": "https://www.opentable.com/booking/experiences-availability?rid=1496320&restref=1496320&experienceId=749184&utm_source=external&utm_medium=referral&utm_campaign=shared"
-    },
-    {
-      "title": "Midsummer Feast - Coursed + Paired",
-      "date": "2026-08-30",
-      "time": "6:30pm",
-      "capacity": 28,
-      "price": 145,
-      "members_only": false,
-      "description": "Midsummer Feast is a multi-course dinner celebrating the flavors of the season through thoughtfully paired food and wine. Built around the best ingredients we can find, each course highlights the abundance of late summer while exploring the relationship between what is on the plate and what is in the glass.",
-      "reserve_url": "https://www.opentable.com/booking/experiences-availability?rid=1496320&restref=1496320&experienceId=749188&utm_source=external&utm_medium=referral&utm_campaign=shared"
-    },
-
-    {
-      "title": "Sunday Sessions - Blind Whiskey Challenge",
+      "title": "Sunday Sessions - Weller vs. Taylor",
       "date": "2026-09-06",
       "time": "4:30pm",
       "capacity": 12,
-      "price": 55,
+      "price": 40,
       "members_only": true,
-      "description": "Taste through a curated lineup of whiskeys served completely blind and put your palate to the test. Can you identify bourbon from rye? Spot a finished whiskey? Pick out age, proof, or region? Along the way, we'll explore the aromas, flavors, and characteristics that define each pour while discovering how much—or how little—the bottle influences what we think we're tasting.",
+      "description": "Taste through 4 different bourbons from 2 different, but very famous producers: E.H. Taylor and Weller. See what makes them unique, what they have in common, and of course, what makes them delicious!",
       "reserve_url": "https://www.opentable.com/booking/experiences-availability?rid=1496320&restref=1496320&experienceId=749196&utm_source=external&utm_medium=referral&utm_campaign=shared"
     },
     {
