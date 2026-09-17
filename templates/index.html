@@ -35,7 +35,7 @@
       {% for event in events %}
         <div class="upcoming-event-card event-item" data-date="{{ event.date }}">
           <div class="event-date">
-            <span class="event-month">{{ event.month }}</span>
+            <span class="event-month">{% if event.month|length > 5 %}{{ event.month[:3] }}{% else %}{{ event.month }}{% endif %}</span>
             <span class="event-day">{{ event.day }}</span>
           </div>
           <div class="event-details">
