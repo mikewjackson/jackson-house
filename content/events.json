@@ -12,36 +12,26 @@
     "description": "From intimate guided tastings to festive holiday gatherings, our curated events are designed to make every occasion feel memorable. Secure your seat early - these experiences tend to go fast."
   },
   "events": [
-
     {
-      "title": "Sunday Sessions - Weller vs. Taylor",
-      "date": "2026-09-06",
-      "time": "4:30pm",
-      "capacity": 12,
-      "price": 40,
-      "members_only": true,
-      "description": "Taste through 4 different bourbons from 2 different, but very famous producers: E.H. Taylor and Weller. See what makes them unique, what they have in common, and of course, what makes them delicious!",
-      "reserve_url": "https://www.opentable.com/booking/experiences-availability?rid=1496320&restref=1496320&experienceId=749196&utm_source=external&utm_medium=referral&utm_campaign=shared"
-    },
-    {
-      "title": "Sunday Sessions - His + Hers - Whiskey + Bubbles Tastings",
+      "title": "Sunday Sessions - Cocktails Through History",
       "date": "2026-09-20",
       "time": "4:30pm",
       "capacity": 20,
-      "price": 55,
+      "price": 40,
       "members_only": false,
-      "description": "",
-      "reserve_url": ""
+      "description": "This tasting explores the drinks that helped shape cocktail culture, from timeless classics to the recipes that inspired many of the modern cocktails we enjoy today. Along the way, we'll discuss the stories, techniques, and ingredients that allowed these drinks to stand the test of time.",
+      "reserve_url": "https://www.opentable.com/booking/experiences-availability?rid=1496320&restref=1496320&experienceId=797358&utm_source=external&utm_medium=referral&utm_campaign=shared"
     },
+
     {
-      "title": "Fall Harvest Paring Dinner",
+      "title": "Fall Harvest Dinner - Featuring L'Ecole No. 41",
       "date": "2026-09-27",
       "time": "6:30pm",
       "capacity": 28,
       "price": 145,
       "members_only": false,
-      "description": "",
-      "reserve_url": ""
+      "description": "This multi-course dinner celebrates the arrival of fall through seasonal ingredients sourced from local farms and thoughtfully paired with wines from L'Ecole No. 41. Throughout the evening, members of the L'Ecole team and participating local farmers will share the stories behind the wines, produce, and practices that make each course possible.",
+      "reserve_url": "https://www.opentable.com/booking/experiences-availability?rid=1496320&experienceId=749916&shareReferrer=web"
     },
 
     {
@@ -54,16 +44,7 @@
       "description": "From the windswept islands off Scotland's coast to the rolling hills of Speyside, every region tells a different story through its whisky. This guided tasting explores the characteristics that define Scotland's most celebrated whisky-producing regions, highlighting how geography, tradition, and production methods shape what ends up in the glass.",
       "reserve_url": "https://www.opentable.com/booking/experiences-availability?rid=1496320&restref=1496320&experienceId=749199&utm_source=external&utm_medium=referral&utm_campaign=shared"
     },
-    {
-      "title": "Sunday Sessions - Cocktails Through History",
-      "date": "2026-09-20",
-      "time": "4:30pm",
-      "capacity": 20,
-      "price": 40,
-      "members_only": false,
-      "description": "This tasting explores the drinks that helped shape cocktail culture, from timeless classics to the recipes that inspired many of the modern cocktails we enjoy today. Along the way, we'll discuss the stories, techniques, and ingredients that allowed these drinks to stand the test of time.",
-      "reserve_url": "https://www.opentable.com/booking/experiences-availability?rid=1496320&restref=1496320&experienceId=797358&utm_source=external&utm_medium=referral&utm_campaign=shared"
-    },
+
     {
       "title": "Haunted Distilleries + Forgotten Wineries Event",
       "date": "2026-10-25",

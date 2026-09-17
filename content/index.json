@@ -34,9 +34,19 @@
   },
   "reviews": [
     {
+      "author": "Nancy S.",
+      "site": "Google Reviews",
+      "text": "This restaurant was our favorite dining experience in Woodinville and we highly recommend it!"
+    },
+    {
       "author": "Katy T.",
       "site": "Google Reviews",
       "text": "We celebrate our 19th anniversary here and if we could give 10/5 stars, we would."
+    },
+    {
+      "author": "K I.",
+      "site": "Yelp",
+      "text": "The food was exquisite. They thought of all the details. Very good ambience, great date night spot in Woodinville."
     },
     {
       "author": "Mindy L.",
@@ -44,9 +54,9 @@
       "text": "Food AMAZING! Service spectacular! We came in for our first wedding anniversary and the staff made it very special for us."
     },
     {
-      "author": "K I.",
+      "author": "Joanne S.",
       "site": "Yelp",
-      "text": "The food was exquisite. They thought of all the details. Very good ambience, great date night spot in Woodinville."
+      "text": "Top-notch gastronomic experience from start to finish. "
     },
     {
       "author": "Pierre S.",
