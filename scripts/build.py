@@ -281,6 +281,13 @@ def build_llms_txt(site_content, content_by_json, future_events, base_site_url):
         lines.extend(hero_paragraphs)
         lines.append("")
 
+    visit_questions = content_by_json.get("index.json", {}).get("visit_questions", [])
+    if visit_questions:
+        lines.append("## Planning Your Visit")
+        for item in visit_questions:
+            lines.append(f"- {item['question']} {item['answer']}")
+        lines.append("")
+
     panels = content_by_json.get("menu.json", {}).get("panels", {})
     if panels:
         lines.append("## Menu")
@@ -297,17 +304,6 @@ def build_llms_txt(site_content, content_by_json, future_events, base_site_url):
     event_details = "; ".join(event_summaries) or "Current event calendar."
     lines.append(f"- [All upcoming events]({_url('events.html')}): {event_details}")
     lines.append("")
-
-    private_events = content_by_json.get("private-events.json", {}).get("events", [])
-    if private_events:
-        details = "; ".join(
-            f"{event.get('type')}: {event.get('best_for')}"
-            for event in private_events
-            if event.get("type") and event.get("best_for")
-        )
-        lines.append("## Private Events")
-        lines.append(f"- [Private events]({_url('private-events.html')}): {details}")
-        lines.append("")
 
     memberships = content_by_json.get("membership.json", {}).get("memberships", [])
     if memberships:
@@ -388,7 +384,7 @@ page_files = [
     {"json": "index.json", "template": "index.html", "output": "index.html"},
     {"json": "menu.json", "template": "menu.html", "output": "menu.html"},
     {"json": "team.json", "template": "team.html", "output": "team.html"},
-    {"json": "private-events.json", "template": "private-events.html", "output": "private-events.html"},
+    {"json": "private-events.json", "template": "private-events.html", "output": "private-events.html", "sitemap": False},
     {"json": "membership.json", "template": "membership.html", "output": "membership.html"},
     {"json": "events.json", "template": "events.html", "output": "events.html"},
     {"json": "contact.json", "template": "contact.html", "output": "contact.html"},

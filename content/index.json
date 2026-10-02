@@ -10,7 +10,7 @@
     "js/index.js"
   ],
   "hero": {
-    "title": "Welcome to Jackson House",
+    "title": "Seasonal Dining & Craft Cocktails in Woodinville",
     "paragraphs": [
       "Jackson House is a beautifully appointed dining room and whiskey-driven bar and lounge. We celebrate the best of the Pacific Northwest through intricately crafted cocktails, seasonally driven cuisine, and warm hospitality.",
       "Our Dining Room offers a full-service restaurant experience with locally inspired, chef-driven artisanal plates designed to be shared (or not).",
@@ -25,14 +25,39 @@
       { "src": "images/bar-shelf.avif", "alt": "Bar" }
     ]
   },
+  "visit_questions": [
+    {
+      "question": "Can I visit without a reservation?",
+      "answer": "Yes. Walk-ins are welcome in our Bar & Lounge without a reservation. Reservations are available for the full-service Dining Room."
+    },
+    {
+      "question": "How does lounge service work?",
+      "answer": "Our Bar & Lounge offers a relaxed, self-service format with small plates and craft cocktails. Our team is on hand to help."
+    },
+    {
+      "question": "Where can I park?",
+      "answer": "Parking is in the District Flats Apartments parking garage, with free parking validation."
+    },
+    {
+      "question": "What if I have dietary restrictions or food allergies?",
+      "answer": "Please contact our team before your visit to discuss your dietary needs or food allergies and ask what options are available on the current seasonal menu.",
+      "link": "contact.html",
+      "link_label": "Contact our team"
+    }
+  ],
   "happy_hour": {
     "hours": {
       "Wed-Thu": "5pm-6pm",
       "Fri": "4pm-6pm",
-      "Sat-Sun": "2pm-4pm"
+      "Sat-Sun": "3pm-4pm"
     }
   },
   "reviews": [
+    {
+      "author": "Michelle P.",
+      "site": "Google Reviews",
+      "text": "This is the best new restaurant in the area!"
+    },
     {
       "author": "Nancy S.",
       "site": "Google Reviews",
@@ -42,6 +67,16 @@
       "author": "Katy T.",
       "site": "Google Reviews",
       "text": "We celebrate our 19th anniversary here and if we could give 10/5 stars, we would."
+    },
+    {
+      "author": "Machias E.",
+      "site": "Google Reviews",
+      "text": "The lamb is amazing!"
+    },
+    {
+      "author": "Sara M.",
+      "site": "Google Reviews",
+      "text": "Such a great restaurant! The food and service were both wonderful!"
     },
     {
       "author": "K I.",
@@ -72,23 +107,11 @@
       "author": "Jeff K.",
       "site": "Google Reviews",
       "text": "One of the best craft cocktail programs in the area."
-    },
-    {
-      "author": "Dana S.",
-      "site": "Google Reviews",
-      "text": "The food was some of the most unique and delicious food we’ve had in the area. The lamb chops, caesar salad, and mushrooms were our favorites, but everything was so good. Highly highly recommend!"
-    },
-    {
-      "author": "Tanner E.",
-      "site": "Google Reviews",
-      "text": "Food, service and atmosphere were fantastic. I have been here twice now and both times I feel right at home."
-    },
-    {
-      "author": "Megan T.",
-      "site": "Yelp",
-      "text": "The food is excellent. The vibe is very cute and moody in the best way, almost like a modern speakeasy, and the staff made my time very special."
     }
   ],
   "holiday_hours": {
+    "Thanksgiving": "Closed",
+    "Christmas Day": "Closed",
+    "New Years Day": "Closed"
   }
 }

@@ -2,10 +2,10 @@
 
 > Jackson House is an elevated restaurant and craft cocktail bar in Woodinville, WA serving seasonal small plates, curated spirits, and memorable hospitality.
 
-Last updated: 2026-09-17
+Last updated: 2026-10-02
 
-Hours: Wed-Thu 5pm-10pm; Fri 4pm-10pm; Sat-Sun 2pm-10pm
-Happy Hour: Wed-Thu 5pm-6pm; Fri 4pm-6pm; Sat-Sun 2pm-4pm
+Hours: Wed-Thu 5pm-10pm; Fri 4pm-10pm; Sat-Sun 3pm-10pm
+Happy Hour: Wed-Thu 5pm-6pm; Fri 4pm-6pm; Sat-Sun 3pm-4pm
 Address: 17409 133rd Ave NE #1203, Woodinville, WA 98072
 Phone: (425) 364-4544
 Email: info@jacksonhousewoodinville.com
@@ -15,14 +15,17 @@ Our Dining Room offers a full-service restaurant experience with locally inspire
 Our Bar & Lounge features a relaxed, small-bite-focused, self-service format, with approachable team members ensuring a smooth experience. Join us midweek for gathering nights, including Vinyl Night on Thursdays. Visit on Wednesdays for Mystery Flight Night (guess all three pours correctly for a bonus pour) and half-price bottled wine.
 Reservations are available in the dining room, or stop by and enjoy our lounge experience without a reservation.
 
+## Planning Your Visit
+- Can I visit without a reservation? Yes. Walk-ins are welcome in our Bar & Lounge without a reservation. Reservations are available for the full-service Dining Room.
+- How does lounge service work? Our Bar & Lounge offers a relaxed, self-service format with small plates and craft cocktails. Our team is on hand to help.
+- Where can I park? Parking is in the District Flats Apartments parking garage, with free parking validation.
+- What if I have dietary restrictions or food allergies? Please contact our team before your visit to discuss your dietary needs or food allergies and ask what options are available on the current seasonal menu.
+
 ## Menu
 - [Full menu](https://jacksonhousewoodinville.com/menu.html): Dining, Lounge, After Dinner, Whiskey, Cocktails, Beer & Cider, Wine, Happy Hour menus with dishes and prices.
 
 ## Events
-- [All upcoming events](https://jacksonhousewoodinville.com/events.html): 2026-09-20: Sunday Sessions - Cocktails Through History (4:30pm); 2026-09-27: Fall Harvest Dinner - Featuring L'Ecole No. 41 (6:30pm); 2026-10-04: Sunday Sessions - Scotch Through the Regions (4:30pm); 2026-10-25: Haunted Distilleries + Forgotten Wineries Event (6:30pm); 2026-11-01: Sunday Sessions - Rare + Allocated Whiskey (4:30pm); 2026-11-15: Sunday Sessions - Martini Society (4:30pm); 2026-11-22: Friendsgiving at Jackson House (6:30pm); 2026-12-06: Sunday Sessions - Monocle Club Holiday Party (4:30pm); 2026-12-13: Holiday Pairing Dinner (6:30pm); 2026-12-20: Sunday Sessions - Big Reds, Big Glasses (4:30pm); 2026-12-31: Before Midnight: New Year's Eve Prix (6:30pm)
-
-## Private Events
-- [Private events](https://jacksonhousewoodinville.com/private-events.html): Private Gatherings: Birthdays, business dinners, and social gatherings that want a private touch within regular service hours.; Curated Gatherings: Chef-driven, elevated formats designed for memorable evenings - from refined multi-course dinners to lively social experiences.
+- [All upcoming events](https://jacksonhousewoodinville.com/events.html): 2026-10-04: Sunday Sessions - Scotch Through the Regions (4:30pm); 2026-10-25: Haunted Distilleries + Forgotten Wineries Event (6:30pm); 2026-11-01: Sunday Sessions - Rare + Allocated Whiskey (4:30pm); 2026-11-15: Sunday Sessions - Martini Society (4:30pm); 2026-11-22: Friendsgiving at Jackson House (6:30pm); 2026-12-06: Sunday Sessions - Monocle Club Holiday Party (4:30pm); 2026-12-13: Holiday Pairing Dinner (6:30pm); 2026-12-20: Sunday Sessions - Big Reds, Big Glasses (4:30pm); 2026-12-31: Before Midnight: New Year's Eve Prix (6:30pm)
 
 ## Membership
 - [Membership](https://jacksonhousewoodinville.com/membership.html): Top Shelf Club ($250 quarterly): Curated tastings and elevated experiences; Rare and local spirits; 5% food discounts; Priority access to reservations and ticketed events; Cocktail Club ($100 quarterly): Perks and previews for regulars; Craft cocktails and seasonal menus; Exclusive cocktail menu access; Priority access to reservations and ticketed events
