@@ -1,7 +1,43 @@
 {
   "seo": {
-    "title": "Jackson House | Woodinville Restaurant & Craft Cocktail Bar",
-    "description": "Discover Jackson House in Woodinville, WA: seasonal dining, craft cocktails, weekly events, and memberships. Reserve your table today."
+    "title": "Seattle Restaurant Week | Jackson House Woodinville",
+    "description": "Celebrate Seattle Restaurant Week at Jackson House in Woodinville, October 18-31, 2026. Enjoy $65 Pacific Northwest menus and reserve your table today.",
+    "og_title": "Seattle Restaurant Week at Jackson House | October 18-31",
+    "og_description": "Join Jackson House in Woodinville for Seattle Restaurant Week and $65 Pacific Northwest menus from October 18 through 31, 2026."
+  },
+  "restaurant_week": {
+    "title": "Seattle Restaurant Week",
+    "season": "Fall 2026",
+    "dates": "October 18-31, 2026",
+    "start_date": "2026-10-18",
+    "end_date": "2026-10-31",
+    "price": 65,
+    "summary": "Celebrate Seattle Restaurant Week at Jackson House with menus that showcase Pacific Northwest ingredients and signature dishes.",
+    "booking_note": "Restaurant Week is expected to be busiest Friday and Saturday. For more availability, please consider a weekday or Sunday. Walk-in seating may be limited during peak times.",
+    "promo_image": "images/seattle-restaurant-week-fall-2026.webp",
+    "promo_image_alt": "Seattle Restaurant Week Fall 2026 at Jackson House, October 18 through 31",
+    "menu_image": "images/seattle-restaurant-week-menu-fall-2026.webp",
+    "menu_image_alt": "Seattle Restaurant Week $65 menu selections at Jackson House",
+    "menus": [
+      {
+        "name": "PNW Favorites",
+        "description": "local fare, done our way",
+        "items": [
+          "whipped labneh + pickled carrots with house chips",
+          "roast beets - skagit valley golden beets, hummus, toasted wild rice, feta",
+          "steak frites - 12 oz flat iron, maitre d' butter, hand-cut fries, house ketchup"
+        ]
+      },
+      {
+        "name": "Signature Picks",
+        "description": "dishes that define Jackson House",
+        "items": [
+          "dungeness cheesecake - caramelized onions, dungeness crab, lemon oil",
+          "bacon & egg caesar - 6-minute egg, local romaine, bacon, chili oil",
+          "charred lamb rib chops - charred green onion vin., sweet potato puree"
+        ]
+      }
+    ]
   },
   "extra_styles": [
     "css/index.css"

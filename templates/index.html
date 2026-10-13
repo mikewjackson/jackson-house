@@ -27,50 +27,55 @@
   </div>
 </header>
 
-<section class="upcoming-events" aria-labelledby="reviewsHeading" id="upcoming-events-section">
+{% if restaurant_week %}
+<section class="restaurant-week" aria-labelledby="restaurantWeekHeading" id="restaurant-week">
   <div class="container">
-    <h2>Upcoming Events</h2>
-    <p class="lead">Join us for special tastings, dinners, and celebrations.</p>
-    <div class="upcoming-events-grid" id="upcoming-events-grid">
-      {% for event in events %}
-        <div class="upcoming-event-card event-item" data-date="{{ event.date }}">
-          <div class="event-date">
-            <span class="event-month">{% if event.month|length > 5 %}{{ event.month[:3] }}{% else %}{{ event.month }}{% endif %}</span>
-            <span class="event-day">{{ event.day }}</span>
-          </div>
-          <div class="event-details">
-            <h3>{{ event.title }}</h3>
-            <p>
-            {% if event.members_only %}
-              <span class="badge-members">Members Only</span>
-            {% endif %}
-            </p>
-            <div class="hp-tl-pills">
-              <span class="hp-tl-pill">{{ event.time }}</span>
-              {%- if event.description and event.reserve_url %}
-              <span class="hp-tl-pill">{{ event.capacity }} guests</span>
-              <span class="hp-tl-pill">${{ event.price }} / guest</span>
-              {%- endif %}
-            </div>
-            {%- if event.reserve_url and not event.members_only %}
-            <p>
-              <a class="reservations-cta"
-                href="{{ event.reserve_url }}"
-                target="_blank"
-                rel="noopener"
-                aria-label="Reserve a spot">Reserve a spot</a>
-            </p>
-            {%- endif %}
+    <div class="restaurant-week-layout">
+      <figure class="restaurant-week-art">
+        <img
+          src="{{ restaurant_week.promo_image }}"
+          alt="{{ restaurant_week.promo_image_alt }}"
+          width="480"
+          height="600"
+          loading="lazy">
+      </figure>
 
-          </div>
+      <div class="restaurant-week-content">
+        <p class="restaurant-week-kicker">{{ restaurant_week.season }}</p>
+        <h2 id="restaurantWeekHeading">{{ restaurant_week.title }}</h2>
+        <p class="restaurant-week-dates">{{ restaurant_week.dates }}</p>
+        <p class="lead">{{ restaurant_week.summary }}</p>
+
+        <div class="restaurant-week-menus">
+          {% for restaurant_week_menu in restaurant_week.get("menus", []) %}
+            <article class="restaurant-week-menu">
+              <h3>{{ restaurant_week_menu.name }} <span>${{ restaurant_week.price }}</span></h3>
+              <p>{{ restaurant_week_menu.description }}</p>
+              <ul>
+                {% for item in restaurant_week_menu.get("items", []) %}
+                  <li>{{ item }}</li>
+                {% endfor %}
+              </ul>
+            </article>
+          {% endfor %}
         </div>
-      {% endfor %}
-    </div>
-    <div class="events-cta">
-      <a href="events.html" class="btn-view-all">View All Events →</a>
+
+        <a class="reservations-cta" href="{{ site.reservations_url }}" aria-label="Reserve a table for Seattle Restaurant Week">Reserve your table</a>
+        <p class="restaurant-week-note">{{ restaurant_week.booking_note }}</p>
+      </div>
+
+      <figure class="restaurant-week-art">
+        <img
+          src="{{ restaurant_week.menu_image }}"
+          alt="{{ restaurant_week.menu_image_alt }}"
+          width="480"
+          height="600"
+          loading="lazy">
+      </figure>
     </div>
   </div>
 </section>
+{% endif %}
 
 <section class="reviews" aria-labelledby="reviewsHeading">
   <div class="reviews-wrapper">

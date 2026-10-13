@@ -269,6 +269,50 @@ def build_menu_schema(menu_content, panels, base_site_url):
     return menu_schema
 
 
+def build_restaurant_week_schema(restaurant_week, site_content, base_site_url):
+    """Build Event JSON-LD for the current Seattle Restaurant Week promotion."""
+    title = restaurant_week.get("title")
+    if not title:
+        return None
+
+    event_url = f"{base_site_url}/#restaurant-week"
+    restaurant_id = f"{base_site_url}/#restaurant"
+    schema = {
+        "@type": "Event",
+        "@id": event_url,
+        "name": f"{title} at {site_content.get('title', 'Jackson House')}",
+        "url": event_url,
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {"@id": restaurant_id},
+        "organizer": {"@id": restaurant_id}
+    }
+
+    if restaurant_week.get("summary"):
+        schema["description"] = restaurant_week["summary"]
+    if restaurant_week.get("start_date"):
+        schema["startDate"] = restaurant_week["start_date"]
+    if restaurant_week.get("end_date"):
+        schema["endDate"] = restaurant_week["end_date"]
+
+    image = restaurant_week.get("promo_image")
+    if image:
+        schema["image"] = image if image.startswith("http") else f"{base_site_url}/{image.lstrip('/')}"
+
+    reservation_url = site_content.get("reservations_url")
+    price = restaurant_week.get("price")
+    if reservation_url or price is not None:
+        offer = {"@type": "Offer"}
+        if reservation_url:
+            offer["url"] = reservation_url
+        if price is not None:
+            offer["price"] = price
+            offer["priceCurrency"] = "USD"
+        schema["offers"] = offer
+
+    return schema
+
+
 def _render_schema_graph(schemas):
     """Wrap one or more schema.org node dicts into valid JSON-LD (single object or @graph)."""
     schemas = [s for s in schemas if s]
@@ -372,6 +416,29 @@ def build_llms_txt(site_content, content_by_json, future_events, base_site_url):
         lines.append("## Planning Your Visit")
         for item in visit_questions:
             lines.append(f"- {item['question']} {item['answer']}")
+        lines.append("")
+
+    restaurant_week = content_by_json.get("index.json", {}).get("restaurant_week", {})
+    if restaurant_week.get("title"):
+        lines.append(f"## {restaurant_week['title']}")
+        if restaurant_week.get("dates"):
+            lines.append(f"- Dates: {restaurant_week['dates']}")
+        if restaurant_week.get("summary"):
+            lines.append(f"- {restaurant_week['summary']}")
+        for menu in restaurant_week.get("menus", []):
+            if not menu.get("name"):
+                continue
+            price = restaurant_week.get("price")
+            price_label = f" (${price})" if price is not None else ""
+            description = f" - {menu['description']}" if menu.get("description") else ""
+            lines.append(f"### {menu['name']}{price_label}{description}")
+            for item in menu.get("items", []):
+                lines.append(f"- {item}")
+        reservation_url = site_content.get("reservations_url")
+        if reservation_url:
+            lines.append(f"- [Reserve a table]({reservation_url})")
+        if restaurant_week.get("booking_note"):
+            lines.append(f"- Booking note: {restaurant_week['booking_note']}")
         lines.append("")
 
     menu_content = content_by_json.get("menu.json", {})
@@ -555,6 +622,8 @@ for page in page_files:
     page_schema_extra = []
     if page["json"] == "menu.json":
         page_schema_extra = [build_menu_schema(page_content, page_content.get("panels", {}), base_site_url)]
+    elif page["json"] == "index.json" and page_content.get("restaurant_week"):
+        page_schema_extra = [build_restaurant_week_schema(page_content["restaurant_week"], site_content, base_site_url)]
     page_schema_json = _render_schema_graph([restaurant_schema] + page_schema_extra) if base_site_url else ""
 
     pages.append({
@@ -585,6 +654,7 @@ for page in page_files:
             "happy_hour": page_content.get("happy_hour", {}),
             "reviews": page_content.get("reviews", []),
             "holiday_hours": page_content.get("holiday_hours", []),
+            "restaurant_week": page_content.get("restaurant_week", {}),
             "hide_footer": True if page['json'] == 'index.json' else False,
             "schema_json": page_schema_json
         }

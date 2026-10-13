@@ -204,6 +204,151 @@
   }
 }
 
+.restaurant-week {
+  margin: 2rem 0;
+  padding: 2.5rem 1rem;
+  scroll-margin-top: 84px;
+  background: linear-gradient(135deg, rgb(36 36 36 / 72%), rgb(26 26 26 / 88%));
+  border-top: 1px solid rgb(203 175 124 / 20%);
+  border-bottom: 1px solid rgb(203 175 124 / 20%);
+}
+
+.restaurant-week .container {
+  max-width: var(--max-width);
+}
+
+.restaurant-week-layout {
+  display: grid;
+  grid-template-columns: minmax(200px, 0.75fr) minmax(360px, 1.4fr) minmax(200px, 0.75fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.restaurant-week-art {
+  margin: 0;
+}
+
+.restaurant-week-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgb(203 175 124 / 30%);
+  border-radius: 8px;
+  box-shadow: 0 12px 28px rgb(0 0 0 / 24%);
+}
+
+.restaurant-week-content {
+  text-align: center;
+}
+
+.restaurant-week-kicker {
+  margin: 0;
+  color: var(--link);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.restaurant-week h2 {
+  margin: 0.3rem 0;
+  color: var(--text-light);
+  font-size: 2rem;
+}
+
+.restaurant-week-dates {
+  margin: 0 0 1rem;
+  color: var(--link);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+}
+
+.restaurant-week-content > .lead {
+  margin: 0 auto 1.25rem;
+  color: var(--muted);
+}
+
+.restaurant-week-menus {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+.restaurant-week-menu {
+  padding: 1rem;
+  background: rgb(255 255 255 / 3%);
+  border: 1px solid rgb(203 175 124 / 16%);
+  border-radius: 8px;
+}
+
+.restaurant-week-menu h3 {
+  margin: 0;
+  color: var(--text-light);
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+}
+
+.restaurant-week-menu h3 span {
+  color: var(--link);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.restaurant-week-menu p {
+  margin: 0.3rem 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.restaurant-week .restaurant-week-menu ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.restaurant-week .restaurant-week-menu li + li {
+  margin-top: 0.45rem;
+}
+
+.restaurant-week-note {
+  max-width: 640px;
+  margin: 1rem auto 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+@media (width <= 999px) {
+  .restaurant-week-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .restaurant-week-art {
+    width: min(100%, 360px);
+    margin: 0 auto;
+  }
+}
+
+@media (width <= 640px) {
+  .restaurant-week {
+    padding: 2rem 1rem;
+  }
+
+  .restaurant-week-menus {
+    grid-template-columns: 1fr;
+  }
+
+  .restaurant-week h2 {
+    font-size: 1.65rem;
+  }
+}
+
 /* Upcoming Events Section
 .upcoming-events {
   padding: 2.5rem 1rem;
@@ -309,6 +454,7 @@
   flex-wrap: wrap;
   gap: .3rem;
 }
+
 .hp-tl-pill {
   display: inline-block;
   border: 1px solid rgb(203 175 124 / 25%);
