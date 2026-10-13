@@ -156,7 +156,7 @@ def build_restaurant_schema(site_content, base_site_url):
         },
         "openingHoursSpecification": opening_hours,
         "sameAs": same_as,
-        "menu": f"{base_site_url}/menu.html" if base_site_url else "menu.html",
+        "hasMenu": f"{base_site_url}/menu.html" if base_site_url else "menu.html",
         "acceptsReservations": True
     }
 
@@ -178,6 +178,10 @@ def _menu_item_offers(item):
         ("1oz", item.get("price_1oz")),
         ("2oz", item.get("price_2oz")),
     ]
+    for option in item.get("options", []) + item.get("add_ons", []):
+        if isinstance(option, dict):
+            named_prices.append((option.get("name"), option.get("price")))
+
     offers = []
     for name, raw_price in named_prices:
         price = _num(raw_price)
@@ -200,35 +204,69 @@ def build_menu_schema(menu_content, panels, base_site_url):
             tagline = " ".join(tagline)
 
         menu_items = []
+        menu_sections = []
         for group in panel_data.get("groups", []):
+            group_items = []
             for item in group.get("items", []):
                 dish = item.get("dish")
                 if not dish:
                     continue
                 menu_item = {"@type": "MenuItem", "name": dish}
-                if item.get("description"):
-                    menu_item["description"] = item["description"]
+                item_description = item.get("description", "")
+                tasting_notes = item.get("tasting_notes", "")
+                if tasting_notes:
+                    item_description = (
+                        f"{item_description}. Tasting notes: {tasting_notes}"
+                        if item_description else f"Tasting notes: {tasting_notes}"
+                    )
+                if item_description:
+                    menu_item["description"] = item_description
                 offers = _menu_item_offers(item)
                 if len(offers) == 1:
                     menu_item["offers"] = offers[0]
                 elif offers:
                     menu_item["offers"] = offers
-                menu_items.append(menu_item)
+                group_items.append(menu_item)
 
-        if not menu_items:
+            if not group_items:
+                continue
+
+            group_name = group.get("name") or group.get("description")
+            if group_name:
+                group_section = {
+                    "@type": "MenuSection",
+                    "name": group_name,
+                    "hasMenuItem": group_items
+                }
+                if group.get("name") and group.get("description"):
+                    group_section["description"] = group["description"]
+                menu_sections.append(group_section)
+            else:
+                menu_items.extend(group_items)
+
+        if not menu_items and not menu_sections:
             continue
-        section = {"@type": "MenuSection", "name": panel_label, "hasMenuItem": menu_items}
+        section = {"@type": "MenuSection", "name": panel_label}
         if tagline:
             section["description"] = tagline
+        if menu_items:
+            section["hasMenuItem"] = menu_items
+        if menu_sections:
+            section["hasMenuSection"] = menu_sections
         sections.append(section)
 
-    return {
+    menu_url = f"{base_site_url}/menu.html" if base_site_url else "menu.html"
+    season = menu_content.get("season")
+    menu_schema = {
         "@type": "Menu",
         "@id": f"{base_site_url}/menu.html#menu" if base_site_url else "#menu",
-        "name": "Jackson House Menu",
-        "url": f"{base_site_url}/menu.html" if base_site_url else "menu.html",
+        "name": f"Jackson House {season} Menu" if season else "Jackson House Menu",
+        "url": menu_url,
         "hasMenuSection": sections
     }
+    if base_site_url:
+        menu_schema["isPartOf"] = {"@id": f"{base_site_url}/#restaurant"}
+    return menu_schema
 
 
 def _render_schema_graph(schemas):
@@ -252,6 +290,54 @@ def build_llms_txt(site_content, content_by_json, future_events, base_site_url):
 
     def _url(path):
         return f"{base_site_url}/{path}" if base_site_url else path
+
+    def _format_price(value):
+        if isinstance(value, str) and value.lower() in {"mkt", "market price"}:
+            return "market price"
+        try:
+            amount = float(value)
+        except (TypeError, ValueError):
+            return None
+        return f"${amount:.0f}" if amount.is_integer() else f"${amount:.2f}"
+
+    def _menu_item_summary(item):
+        prices = []
+        for key, label in [
+            ("price", None),
+            ("price_glass", "glass"),
+            ("price_bottle", "bottle"),
+            ("price_1oz", "1 oz"),
+            ("price_2oz", "2 oz"),
+        ]:
+            formatted_price = _format_price(item.get(key))
+            if formatted_price:
+                prices.append(f"{formatted_price} {label}" if label else formatted_price)
+
+        details = []
+        if item.get("description"):
+            details.append(item["description"])
+        if item.get("tasting_notes"):
+            details.append(f"Tasting notes: {item['tasting_notes']}")
+
+        for field, label in [("options", "Options"), ("add_ons", "Add-ons")]:
+            choices = []
+            for choice in item.get(field, []):
+                if not isinstance(choice, dict) or not choice.get("name"):
+                    continue
+                choice_price = _format_price(choice.get("price"))
+                choices.append(
+                    f"{choice['name']} ({choice_price})"
+                    if choice_price else choice["name"]
+                )
+            if choices:
+                details.append(f"{label}: {', '.join(choices)}")
+
+        summary = item["dish"]
+        if prices:
+            summary += f" ({'; '.join(prices)})"
+        if details:
+            summary += f": {'; '.join(details)}"
+        return summary
 
     lines = [
         f"# {title}",
@@ -288,11 +374,43 @@ def build_llms_txt(site_content, content_by_json, future_events, base_site_url):
             lines.append(f"- {item['question']} {item['answer']}")
         lines.append("")
 
-    panels = content_by_json.get("menu.json", {}).get("panels", {})
+    menu_content = content_by_json.get("menu.json", {})
+    panels = menu_content.get("panels", {})
     if panels:
+        menu_season = menu_content.get("season")
+        season_prefix = f"{menu_season} " if menu_season else ""
         lines.append("## Menu")
-        lines.append(f"- [Full menu]({_url('menu.html')}): {', '.join(panels.values())} menus with dishes and prices.")
+        lines.append(
+            f"- [Full menu]({_url('menu.html')}): {season_prefix}menu featuring "
+            f"{', '.join(panels.values())}, with current dishes and prices."
+        )
         lines.append("")
+        lines.append("## Current Menu Details")
+        for panel_key, panel_label in panels.items():
+            panel_data = menu_content.get(panel_key, {})
+            lines.append(f"### {panel_label}")
+
+            tagline = panel_data.get("tagline")
+            if isinstance(tagline, list):
+                tagline = " ".join(tagline)
+            if tagline:
+                lines.append(tagline)
+
+            for group in panel_data.get("groups", []):
+                group_name = group.get("name") or group.get("description")
+                if group_name:
+                    group_description = (
+                        group.get("description")
+                        if group.get("name") and group.get("description") else ""
+                    )
+                    lines.append(
+                        f"#### {group_name}"
+                        + (f" - {group_description}" if group_description else "")
+                    )
+                for item in group.get("items", []):
+                    if item.get("dish"):
+                        lines.append(f"- {_menu_item_summary(item)}")
+            lines.append("")
 
     lines.append("## Events")
     event_summaries = [

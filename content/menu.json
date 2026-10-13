@@ -1,8 +1,11 @@
 {
   "title": "Menus",
+  "season": "Fall 2026",
   "seo": {
-    "title": "Menu | Jackson House Woodinville",
-    "description": "Explore Jackson House menus in Woodinville, including Dining, Lounge, After Dinner, Whiskey, Cocktails, Wine, Beer & Cider, and Happy Hour."
+    "title": "Fall 2026 Menus | Jackson House Woodinville",
+    "description": "Explore Jackson House's Fall 2026 menus in Woodinville: seasonal shared plates, craft cocktails, whiskey and spirits, wine, beer, cider, and happy hour.",
+    "og_title": "Fall 2026 Menus at Jackson House | Woodinville",
+    "og_description": "Seasonal Pacific Northwest plates, craft cocktails, whiskey and spirits, wine, beer, cider, and happy hour at Jackson House."
   },
   "extra_scripts": [
     "js/menu-tabs.js"
@@ -12,12 +15,11 @@
   ],
   "panels": {
     "dining": "Dining",
-    "lounge": "Lounge",
     "after_dinner": "After Dinner",
-    "whiskey": "Whiskey",
     "cocktail": "Cocktails",
-    "beer": "Beer & Cider",
+    "whiskey": "Whiskey & Spirits",
     "wine": "Wine",
+    "beer": "Beer & Cider",
     "happy-hour": "Happy Hour"
   },
   "dining": {
@@ -34,32 +36,30 @@
             "price": 8
           },
           {
+            "dish": "corn panna cotta",
+            "description": "Bob's corn, shrimp, chili oil",
+            "price": 15
+          },
+          {
             "dish": "labneh + caviar",
-            "description": "ossetra caviar, ellenos labneh, house made chips",
+            "description": "ossetra caviar, ellenos labneh, house chips",
             "price": 26
           },
           {
             "dish": "dungeness basque cheesecake",
-            "description": "carmalized onion, dungeness crab, lemon oil",
+            "description": "caramelized onion, dungeness crab, lemon oil",
             "price": 19
           },
           {
-            "dish": "shrimp + avocado salad",
-            "description": "champagne vinaigrette, basil, local greens",
+            "dish": "aussie sausage rolls",
+            "description": "veal, puff pastry, house made ketchup",
             "price": 16
           },
           {
-            "dish": "bacon + egg caesar",
-            "description": "6-minute egg, local romaine, hogstead bacon, house caesar",
-            "price": 14,
-            "add_ons": [
-              {
-                "name": "add king salmon medallion",
-                "price": 12
-              }
-            ]
+            "dish": "crispy mushrooms",
+            "description": "tempura local mushrooms, miso aioli",
+            "price": 14
           }
-
         ]
       },
       {
@@ -70,28 +70,39 @@
             "price": 14
           },
           {
-            "dish": "mushroom + barley risotto",
-            "description": "market mushroosm, skagit valley barley risotto",
+            "dish": "roast delicata",
+            "description": "roasted delicata, vadouvan curry sauce, pepitas",
+            "price": 18
+          },
+          {
+            "dish": "center cut squash + barley risotto",
+            "description": "brown butter, skagit valley barley risotto",
             "price": 18
           },
           {
             "dish": "hot honey carrots",
-            "description": "local hot honey, ralph's greenhouse carrots, carrot top pesto",
+            "description": "local hot honey, local carrots, carrot top pesto",
             "price": 16
           },
           {
-            "dish": "cauliflower steak",
-            "description": "sesame crusted, hazelnut dukkah, tahini + roasted apple cream",
-            "price": 18
+            "dish": "bacon + egg caesar",
+            "description": "6-minute egg, local romaine, hogstead bacon, chili oil",
+            "price": 14,
+            "add_ons": [
+              {
+                "name": "add king salmon medallion",
+                "price": 12
+              }
+            ]
           }
         ]
       },
       {
         "items": [
           {
-            "dish": "iberico pork skirt",
-            "description": "butternut squash puree, truffle powder, charred local onion",
-            "price": 39
+            "dish": "chef juan's fried chicken",
+            "description": "hot honey, kale chimi slaw, seared polenta",
+            "price": 35
           },
           {
             "dish": "charred lamb rib chops",
@@ -100,147 +111,116 @@
           },
           {
             "dish": "king salmon medallions",
-            "description": "shaved brussels, green goddess, lemon oil",
+            "description": "roasted fennel puree, lemony fingerlings",
             "price": 48
           },
           {
             "dish": "seared duck",
-            "description": "polenta, 5-spice, drunken cherry + pickled turnip relish",
+            "description": "creamy polenta, 5-spice, drunken cherry relish",
             "price": 38
           },
           {
-            "dish": "steak frites",
-            "description": "chef's cut, maitre 'd butter, house cut fries",
-            "price": 50
-          },
-          {
-            "dish": "bone-in ribeye",
-            "description": "23 oz ribeye, local herb chimichurri, smoked olive oil",
-            "price": 69
-          }
-        ]
-      }
-    ]
-  },
-  "lounge": {
-    "tagline": [
-      "small plates built for cocktails",
-      "wine, and whatever happens next"
-    ],
-    "groups": [
-      {
-        "items": [
-          {
-            "dish": "house focaccia",
-            "description": "with honey lavender butter",
-            "price": 8
-          },
-          {
-            "dish": "whipped golden beet dip",
-            "description": "skagit valley golden beet, labneh, house chips",
-            "price": 12
-          },
-          {
-            "dish": "labneh + caviar",
-            "description": "ossetra caviar, ellenos labneh, house made chips",
-            "price": 26
-          },
-          {
-            "dish": "caesar deviled eggs",
-            "description": "house caesar, hogstead bacon, breadcrumb",
-            "price": 8
-          },
-          {
-            "dish": "sausage rolls",
-            "description": "veal, puff pastry, house ketchup, an aussie tradition",
-            "price": 16
-          },
-          {
-            "dish": "walla walla fried onion",
-            "description": "pickled + fried walla walla onion, green goddess",
-            "price": 12
-          },
-          {
-            "dish": "white truffle fries",
-            "description": "house-cut fries, spiva white truffle powder, garlic aioli",
-            "price": 10
-          },
-          {
-            "dish": "crispy mushrooms",
-            "description": "market mushrooms, tempura batter, miso aioli",
-            "price": 14
-          },
-          {
-            "dish": "dungeness crab tartine",
-            "description": "sweet corn, garlic aioli, lemon, green onion, focaccia toast",
-            "price": 24
-          },
-          {
-            "dish": "charred lamb rib chops",
-            "description": "(3) rib chops, sweet potato puree, charred green onion vin.",
-            "price": 24
+            "dish": "market ribeye",
+            "description": "locally sourced ribeye, chimichurri, smoked olive oil",
+            "price": "mkt"
           },
           {
             "dish": "steak frites",
-            "description": "5oz chef's cut, maitre 'd butter, house cut fries",
-            "price": 26
+            "description": "12oz flat iron, maitre d' butter, house cut fries",
+            "price": 52,
+            "options": [
+              {
+                "name": "half order",
+                "price": 26
+              }
+            ]
           }
         ]
       }
     ]
   },
   "after_dinner": {
-    "tagline": [
-      "made for lingering"
-    ],
     "groups": [
       {
-        "items": [
+          "description": "worth saving room for",
+          "items": [
           {
             "dish": "whiskey brown sugar basque cheesecake",
-            "description": "seasonal \"burnt\" cheesecake",
             "price": 14
           },
           {
-            "dish": "honey & lemon tart",
-            "description": "brown sugar mascarpone, aperol-candied lemon peel",
-            "price": 10
+            "dish": "chocolate creme brulee",
+            "price": 12
           },
           {
-            "dish": "double espresso",
-            "description": "local roast, served with cream + sugar",
-            "price": 6
+            "dish": "apple crumble",
+            "description": "local honeycrisp apples, brown sugar mascarpone",
+            "price": 14
           },
           {
-            "dish": "french press service",
-            "description": "local roast, served with cream + sugar, serves two",
-            "price": 15
+            "dish": "espresso",
+            "description": "double shot, rock sugar, orange peel",
+            "price": 7
           },
           {
-            "dish": "espresso martini",
-            "description": "espresso, wohlfert coffee liqueur, outfitters vodka",
-            "price": 16
+            "dish": "espresso + tonic",
+            "description": "double shot, tonic, over ice, orange peel",
+            "price": 7
           },
           {
-            "dish": "filthy chai",
-            "description": "rhum barbancourt, local chai + espresso, orange bitters",
+            "dish": "shakerato",
+            "description": "local roast espresso, muscovado syrup, shaken with ice",
+            "price": 7
+          }
+        ]
+      },
+      {
+        "description": "liquid decadence",
+        "items": [
+          {
+            "dish": "amaro flight",
+            "description": "amaro nonino riserva, brovo amaro 01, brucato fields",
+            "price": 14
+          },
+          {
+            "dish": "arancello",
+            "description": "house made arancello",
+            "price": 8
+          },
+          {
+            "dish": "amaretto sour",
+            "description": "amaretto, cognac park, nonino, black walnut bitters, egg white, lemon cherry",
             "price": 18
           },
           {
-            "dish": "lemon myrtle limoncello",
-            "description": "served chilled",
-            "price": 10
+            "dish": "aviation",
+            "description": "gin, luxardo, creme de violette, lemon, simple",
+            "price": 18
+          },
+          {
+            "dish": "chai regards",
+            "description": "brandy, licor 43, bourbon, bitters blend, house chai syrup, whole egg",
+            "price": 18
+          },
+          {
+            "dish": "banana bread espresso martini",
+            "description": "santa teresa, banana liqueurs, brovo chocolate, orgeat, black walnut bitters, outfitters espresso",
+            "price": 18
+          },
+          {
+            "dish": "lil scotti",
+            "description": "biscotti liqueur, amaro nonino riserva, brovo boomerang, chocolate & coffee bitters",
+            "price": 16
           }
         ]
       }
     ]
   },
   "whiskey": {
-    "tagline": [
-      "locals, legends, and limited releases"
-    ],
     "groups": [
       {
+        "name": "The Whiskey List",
+        "description": "locals, legends, and limited releases",
         "items": [
           {
             "dish": "woodinville bourbon",
@@ -249,10 +229,10 @@
             "price_2oz": 18
           },
           {
-            "dish": "baby jane 91",
-            "description": "straight bourbon - kentucky",
-            "price_1oz": 12,
-            "price_2oz": 20
+            "dish": "woodinville port cask",
+            "description": "straight bourbon - washington",
+            "price_1oz": 10,
+            "price_2oz": 18
           },
           {
             "dish": "elijah craig toasted barrel",
@@ -261,10 +241,16 @@
             "price_2oz": 18
           },
           {
-            "dish": "redwood empire pipe dream toasted",
-            "description": "toasted bourbon - napa,ca",
-            "price_1oz": 14,
-            "price_2oz": 24
+            "dish": "weller special reserve",
+            "description": "wheated bourbon - kentucky",
+            "price_1oz": 12,
+            "price_2oz": 20
+          },
+          {
+            "dish": "weller antique 107",
+            "description": "wheated bourbon - kentucky",
+            "price_1oz": 12,
+            "price_2oz": 20
           },
           {
             "dish": "high west cask collection",
@@ -285,43 +271,41 @@
             "price_2oz": 18
           },
           {
-            "dish": "penelope 'f*ck cancer'",
-            "description": "straight blended bourbon - new jersey",
-            "price_1oz": 24,
-            "price_2oz": 42
+            "dish": "penelope architect",
+            "description": "straight bourbon blend - new jersey",
+            "price_1oz": 12,
+            "price_2oz": 20
           },
           {
             "dish": "john j. bowman single barrel",
             "description": "virginia straight bourbon - virginia",
             "price_1oz": 16,
             "price_2oz": 28
-          }
-        ]
-      },
-      {
-        "items": [
-          {
-            "dish": "copperworks maltsmith",
-            "description": "american single malt - washington",
-            "price_1oz": 10,
-            "price_2oz": 18
           },
           {
-            "dish": "redwood empire haystack needle",
-            "description": "american single malt - napa,ca",
-            "price_1oz": 28,
-            "price_2oz": 54
+            "dish": "stagg",
+            "description": "kentucky straight bourbon - kentucky",
+            "price_1oz": 24,
+            "price_2oz": 44
           },
           {
-            "dish": "bulleit american single malt",
-            "description": "american single malt - kentucky",
-            "price_1oz": 10,
-            "price_2oz": 18
-          }
-        ]
-      },
-      {
-        "items": [
+            "dish": "blanton's single barrel",
+            "description": "kentucky straight bourbon - kentucky",
+            "price_1oz": 24,
+            "price_2oz": 36
+          },
+          {
+            "dish": "old fitzgerald 7 year",
+            "description": "wheated straight bourbon - kentucky",
+            "price_1oz": 17,
+            "price_2oz": 32
+          },
+          {
+            "dish": "chicken cock bourbon",
+            "description": "straight bourbon - kentucky",
+            "price_1oz": 12,
+            "price_2oz": 20
+          },
           {
             "dish": "woodinville rye",
             "description": "straight rye - washington",
@@ -334,14 +318,12 @@
             "price_1oz": 10,
             "price_2oz": 18
           },
-
           {
             "dish": "raleigh rye",
             "description": "straight rye - washington",
             "price_1oz": 14,
             "price_2oz": 24
           },
-
           {
             "dish": "widow jane paradigm rye",
             "description": "straight rye - new york",
@@ -349,42 +331,49 @@
             "price_2oz": 24
           },
           {
-            "dish": "doc swinson's 7yr bib rye",
+            "dish": "doc swinson's 7-year bib rye",
             "description": "bottled in bond rye - washington",
             "price_1oz": 10,
             "price_2oz": 18
           },
           {
-            "dish": "doc swinson's 8yr rum cask rye",
+            "dish": "doc swinson's 8-year rum cask rye",
             "description": "rum cask finished rye - washington",
             "price_1oz": 14,
             "price_2oz": 24
-          }
-        ]
-      },
-      {
-        "items": [
+          },
           {
-            "dish": "aberlour 12yr",
+            "dish": "redwood empire 'rocket top'",
+            "description": "bottled in bond rye - california",
+            "price_1oz": 18,
+            "price_2oz": 34
+          },
+          {
+            "dish": "barrell seagrass rye",
+            "description": "finished rye whiskey - kentucky",
+            "price_1oz": 28,
+            "price_2oz": 54
+          },
+          {
+            "dish": "aberlour 12 year",
             "description": "single malt scotch - speyside",
             "price_1oz": 16,
             "price_2oz": 28
           },
           {
-            "dish": "signatory glenlivet 17 year",
+            "dish": "glenlivet provence 12 year",
             "description": "single malt scotch - speyside",
-            "price_1oz": 28,
-            "price_2oz": 54
+            "price_1oz": 14,
+            "price_2oz": 24
           },
           {
-            "dish": "dalwhinnie 15yr",
+            "dish": "dalwhinnie 15 year",
             "description": "highland single malt - highlands",
             "price_1oz": 14,
             "price_2oz": 26
           },
-
           {
-            "dish": "anCnoc 12yr",
+            "dish": "anCnoc 12 year",
             "description": "highland single malt - highlands",
             "price_1oz": 12,
             "price_2oz": 22
@@ -397,27 +386,279 @@
           },
           {
             "dish": "ardbeg 'wee beastie' 5 year",
-            "description": "peated single malt sotch - islay",
+            "description": "peated single malt scotch - islay",
             "price_1oz": 12,
             "price_2oz": 20
           },
           {
             "dish": "ardbeg uigeadail",
-            "description": "peated single malt sotch - islay",
+            "description": "peated single malt scotch - islay",
             "price_1oz": 18,
             "price_2oz": 34
           },
           {
-            "dish": "lagavulin 16yr",
-            "description": "peated single malt sotch - islay",
-            "price_1oz": 18,
-            "price_2oz": 34
+            "dish": "caol ila 12 year",
+            "description": "single malt scotch - islay",
+            "price_1oz": 16,
+            "price_2oz": 30
           },
           {
             "dish": "deacon blended",
             "description": "blended scotch whisky - scotland",
             "price_1oz": 12,
             "price_2oz": 20
+          },
+          {
+            "dish": "redbreast lustau",
+            "description": "irish whiskey - cork, ireland",
+            "price_1oz": 18,
+            "price_2oz": 34
+          },
+          {
+            "dish": "suntory ao",
+            "description": "world blended whiskey - japan",
+            "price_1oz": 14,
+            "price_2oz": 24
+          },
+          {
+            "dish": "nikka coffey grain",
+            "description": "japanese whisky - japan",
+            "price_1oz": 18,
+            "price_2oz": 34
+          },
+          {
+            "dish": "indri",
+            "description": "single malt - india",
+            "price_1oz": 12,
+            "price_2oz": 20
+          },
+          {
+            "dish": "kamet",
+            "description": "single malt - india",
+            "price_1oz": 12,
+            "price_2oz": 20
+          },
+          {
+            "dish": "bulleit american single malt",
+            "description": "american single malt - kentucky",
+            "price_1oz": 10,
+            "price_2oz": 18
+          },
+          {
+            "dish": "redwood empire haystack needle",
+            "description": "american single malt - napa, ca",
+            "price_1oz": 28,
+            "price_2oz": 54
+          }
+        ]
+      },
+      {
+        "name": "Vodka",
+        "items": [
+          {
+            "dish": "belvedere",
+            "description": "polish rye vodka - zyrardow, poland",
+            "price_1oz": 12
+          },
+          {
+            "dish": "ketel one",
+            "description": "dutch wheat vodka - schiedam, netherlands",
+            "price_1oz": 12
+          },
+          {
+            "dish": "weber ranch",
+            "description": "blue weber agave vodka - muenster, tx",
+            "price_1oz": 10
+          },
+          {
+            "dish": "wohlfert vanilla",
+            "description": "vanilla-infused wheat vodka - woodinville, wa",
+            "price_1oz": 14
+          },
+          {
+            "dish": "wohlfert lavender",
+            "description": "lavender-infused wheat vodka - woodinville, wa",
+            "price_1oz": 14
+          }
+        ]
+      },
+      {
+        "name": "Gin",
+        "items": [
+          {
+            "dish": "aviation",
+            "description": "american dry gin - portland, or",
+            "price_1oz": 12
+          },
+          {
+            "dish": "martin miller",
+            "description": "london dry gin - distilled in eng. + blended in iceland",
+            "price_1oz": 12
+          },
+          {
+            "dish": "mcqueen and the violet fog",
+            "description": "botanical gin - jundiai, brazil",
+            "price_1oz": 16
+          },
+          {
+            "dish": "big gin peated",
+            "description": "peated london dry gin - seattle, wa",
+            "price_1oz": 12
+          },
+          {
+            "dish": "monkey 47",
+            "description": "schwarzwald dry gin - black forest, germany",
+            "price_1oz": 16
+          },
+          {
+            "dish": "condesa clasica",
+            "description": "contemporary mexican gin - mexico city, mexico",
+            "price_1oz": 12
+          },
+          {
+            "dish": "freeland spirits",
+            "description": "forest gin - oregon",
+            "price_1oz": 12
+          },
+          {
+            "dish": "the botanist",
+            "description": "islay dry gin - scotland",
+            "price_1oz": 12
+          },
+          {
+            "dish": "monks mary jane",
+            "description": "dry gin - south africa",
+            "price_1oz": 12
+          }
+        ]
+      },
+      {
+        "name": "Rum",
+        "items": [
+          {
+            "dish": "appleton estate 8yr",
+            "description": "aged jamaican rum - nassau valley, jamaica",
+            "price_1oz": 12
+          },
+          {
+            "dish": "rhum barbancourt 8yr",
+            "description": "rhum agricole-style - port-au-prince, haiti",
+            "price_1oz": 12
+          },
+          {
+            "dish": "centenario 7yr",
+            "description": "aged costa rican rum - san jose, costa rica",
+            "price_1oz": 12
+          },
+          {
+            "dish": "santa teresa 1796",
+            "description": "solera aged rum - aragua, venezuela",
+            "price_1oz": 14
+          },
+          {
+            "dish": "mezan guyana 2005",
+            "description": "single distillery aged rum - diamond, guyana",
+            "price_1oz": 16
+          }
+        ]
+      },
+      {
+        "name": "Tequila + Mezcal",
+        "items": [
+          {
+            "dish": "cascabel blanco",
+            "description": "blanco tequila - jalisco, mexico",
+            "price_1oz": 8
+          },
+          {
+            "dish": "ocho plata",
+            "description": "single estate blanco tequila - jalisco, mexico",
+            "price_1oz": 16
+          },
+          {
+            "dish": "casa noble reposado",
+            "description": "reposado tequila - jalisco, mexico",
+            "price_1oz": 15
+          },
+          {
+            "dish": "el mexicano reposado",
+            "description": "reposado tequila - arandas, jalisco, mexico",
+            "price_1oz": 16
+          },
+          {
+            "dish": "olmecas altos anejo",
+            "description": "anejo tequila - los altos, jalisco, mexico",
+            "price_1oz": 21
+          },
+          {
+            "dish": "don julio 1942",
+            "description": "extra anejo tequila - atotonilco el alto, jalisco, mexico",
+            "price_1oz": 35
+          },
+          {
+            "dish": "clase azul reposado",
+            "description": "reposado tequila - jalisco, mexico",
+            "price_1oz": 50
+          },
+          {
+            "dish": "rosaluna",
+            "description": "espadin mezcal - santiago matatlan, oaxaca, mexico",
+            "price_1oz": 12
+          },
+          {
+            "dish": "union mezcal",
+            "description": "espadin + cirial mezcal - oaxaca, mexico",
+            "price_1oz": 12
+          },
+          {
+            "dish": "montelobos",
+            "description": "espadin mezcal - santiago matatlan, oaxaca, mexico",
+            "price_1oz": 14
+          },
+          {
+            "dish": "malbien",
+            "description": "lemongrass mezcal - mexico",
+            "price_1oz": 14
+          }
+        ]
+      },
+      {
+        "name": "Herbal Liqueurs",
+        "items": [
+          {
+            "dish": "green chartreuse",
+            "description": "herbal liqueur - voiron, france",
+            "price_1oz": 18
+          },
+          {
+            "dish": "yellow chartreuse",
+            "description": "herbal liqueur - voiron, france",
+            "price_1oz": 18
+          },
+          {
+            "dish": "chartreuse cuvee des meilleurs ouvriers de france sommeliers",
+            "description": "herbal liqueur - voiron, france",
+            "price_1oz": 30
+          },
+          {
+            "dish": "chartreuse 1605",
+            "description": "herbal liqueur - voiron, france",
+            "price_1oz": 30
+          },
+          {
+            "dish": "brovo gen p",
+            "description": "herbal liqueur - woodinville, wa",
+            "price_1oz": 18
+          },
+          {
+            "dish": "brovo unchartered",
+            "description": "herbal liqueur - woodinville, wa",
+            "price_1oz": 18
+          },
+          {
+            "dish": "jeppson's malort",
+            "description": "bitter wormwood liqueur - chicago, il",
+            "price_1oz": 6
           }
         ]
       }
@@ -430,28 +671,28 @@
         "description": "seasonal & locally sourced",
         "items": [
           {
-            "dish": "saint enzo",
-            "description": "aviation, campari, st. germain, lemon, grape syrup, rhubarb + orange bitters, saline",
+            "dish": "good corn harvest",
+            "description": "mezcal, elote liqueur, bitters blend, sage tincture",
             "price": 18,
-            "tasting_notes": "a summery negroni. tart, bitter, refreshing"
+            "tasting_notes": "a mezcal old fashioned with a seasonally savory touch"
           },
           {
-            "dish": "mule's gold",
-            "description": "weber ranch vodka, lime, canton ginger liqueur, golden milk + ginger-honey syrup, bundaberg",
+            "dish": "steep dreams",
+            "description": "reposado, american single malt, yellow chartreuse, marigold amaro, chamomile bitters, lemon",
             "price": 18,
-            "tasting_notes": "punchy take on a moscow mule + aussie ginger beer"
+            "tasting_notes": "easy-going herbal remedy"
           },
           {
-            "dish": "kirby main",
-            "description": "spearmint-infused outfitters rum, aperol, lemon, watermelon mceration, plum bitters, soda",
+            "dish": "consider the parrot",
+            "description": "kamet, wohlfert apple liqueur, molasses bitters, sparkling wine",
             "price": 18,
-            "tasting_notes": "smash bros + watermelon mojitos, anyone?"
+            "tasting_notes": "tall's fruit & tall's spice, stirred, then served on ice"
           },
           {
-            "dish": "mainlander mai tai",
-            "description": "house rum blend, orange curacao house orgeat, blackberry, lime, sour cherry bitters, soda",
+            "dish": "soothe criminal",
+            "description": "south african gin, ginger liqueur, brovo boomerang, house chai syrup, bitters blend",
             "price": 18,
-            "tasting_notes": "our take on the tiki standard. fruity + not overly sweet"
+            "tasting_notes": "chai time - served warm"
           }
         ]
       },
@@ -463,55 +704,115 @@
             "dish": "violet fog",
             "description": "house gin blend, amaricano viola, lemon, egg white, earl grey syrup, butterfly pea",
             "price": 16,
-            "tasting_notes": "takes like purple"
+            "tasting_notes": "tastes like purple"
           },
           {
-            "dish": "sling theory",
-            "description": "gran centenario reposado, brovo curacao, lime, grapefruit, spiced agave, chili bitters",
-            "price": 18,
-            "tasting_notes": "a seasonally rotating sling"
+            "dish": "tallyman",
+            "description": "costa rican rum, falernum, creme de banane, amontillado, nocino, orgeat, rye, lemon, bitters",
+            "price": 20,
+            "tasting_notes": "a tiki-influenced smooth drinker"
           },
           {
-            "dish": "squeaky tiki*",
-            "description": "passionfruit, blood orange, house orgeat",
-            "price": 12,
-            "tasting_notes": "Zero proof. full tiki flavor"
-          },
-          {
-            "dish": "lemon lime & bitters",
-            "description": "sweetened lim, lemon-lime soda, bitters",
-            "price": 12,
-            "tasting_notes": "low abv, an aussie classic"
+            "dish": "milk & cigarettes",
+            "description": "old granddad 114, sfumato, turkish tobacco bitters, diet coke, lemon",
+            "price": 20,
+            "tasting_notes": "clarified milk punch, tobacco bitters, daddy issues"
           },
           {
             "dish": "sage against the ravine",
             "description": "big gin peated, green chartreuse, gentian amaro, brovo douglas fir, mezcal union, lime, sage syrup",
             "price": 21,
-            "tasting_notes": "like a drive through the dessert"
+            "tasting_notes": "like a drive through the desert"
           }
         ]
       },
       {
-        "name": "Spritzes",
-        "description": "refreshing + crushable",
+        "name": "The Reserve",
+        "description": "curated for our Monocle Club members",
         "items": [
           {
-            "dish": "aperol spritz",
-            "description": "aperol, orange, csm sparkling, san pellegrino",
-            "price": 14,
-            "tasting_notes": "the standard. nothing added. nothing missing"
+            "dish": "matt the knife",
+            "description": "mcqueen gin, costa rican rum, spicy agave, orgeat, chili bitters",
+            "price": 15,
+            "tasting_notes": "inspired by mr. butcher"
           },
           {
-            "dish": "golden hour",
-            "description": "outfitters vodka, 'golden syrup' , lemon, ginger beer",
-            "price": 14,
-            "tasting_notes": "a charged summer crusher"
+            "dish": "ponderosa",
+            "description": "lemongrass mezcal, brovo douglas fir liqueur, brovo unchartered rhapsody, sage syrup, tincture",
+            "price": 15,
+            "tasting_notes": "a walk through the pnw forest"
+          }
+        ]
+      },
+      {
+        "name": "Sans Spirits",
+        "description": "not to be mocked",
+        "items": [
+          {
+            "dish": "mezcal no-groni",
+            "description": "st agrestis mezcal nogroni, sage syrup, lime juice",
+            "price": 12,
+            "add_ons": [
+              {
+                "name": "add a shot of mezcal union",
+                "price": 6
+              }
+            ]
           },
           {
-            "dish": "phony negroni lemonade",
-            "description": "st agrestis phony negroni, fresh lemon, tonic",
-            "price": 14,
-            "tasting_notes": "non-alcoholic and fully refreshing"
+            "dish": "yuzu hopwater",
+            "description": "fort george hopwater",
+            "price": 6,
+            "add_ons": [
+              {
+                "name": "ranch water: add weber ranch agave vodka",
+                "price": 6
+              }
+            ]
+          },
+          {
+            "dish": "lemon lime & bitters",
+            "description": "an australian mocktail: lemon, lime cordial, soda, bitters",
+            "price": 8,
+            "add_ons": [
+              {
+                "name": "add a shot of local gin",
+                "price": 6
+              }
+            ]
+          },
+          {
+            "dish": "house chai",
+            "description": "seedlip and house chai, served warm",
+            "price": 10,
+            "add_ons": [
+              {
+                "name": "add a shot of brandy",
+                "price": 6
+              }
+            ]
+          },
+          {
+            "dish": "squeaky tiki",
+            "description": "a tropical tiki concoction",
+            "price": 12,
+            "add_ons": [
+              {
+                "name": "add a shot of local rum & falernum",
+                "price": 8
+              }
+            ]
+          },
+          {
+            "dish": "phony negroni",
+            "description": "st agrestis phony negroni, lemon",
+            "price": 12,
+            "add_ons": [
+              {
+                "name": "add a shot of condesa gin & rhubarb bitters",
+                "price": 6
+              }
+            ]
           }
         ]
       },
@@ -520,21 +821,21 @@
         "description": "our creative interpretations",
         "items": [
           {
-            "dish": "olive oil",
-            "description": "olive oil washed martin miller's london dry, brovo dry vermouth, orange bitters, olive oil",
+            "dish": "vesper",
+            "description": "the botanist, agave vodka, brovo pretty vermouth, orange bitters, lemon oil",
             "price": 22,
-            "tasting_notes": "a silky smooth riff on a classic gin martini"
+            "tasting_notes": "a dangerous martini using strictly premium spirits & technique"
           },
           {
-            "dish": "especially dirty",
-            "description": "choice of vodka or gin, brovo dry vermouth, olive brine, saline",
-            "price": 22,
-            "tasting_notes": "Some like it filthy. You know who you are"
+            "dish": "dirty",
+            "description": "choice of vodka or gin, brovo witty dry vermouth, olive brine, saline",
+            "price": 20,
+            "tasting_notes": "some like it filthy. you know who you are"
           },
           {
             "dish": "espresso",
             "description": "wohlfert espresso liqueur, outfitters vodka, local bean espresso pulled-to-order",
-            "price": 16,
+            "price": 18,
             "tasting_notes": "as local as it gets. you deserve this"
           },
           {
@@ -546,32 +847,73 @@
         ]
       },
       {
+        "name": "Monocle",
+        "description": "the finer things",
+        "items": [
+          {
+            "dish": "black forest negroni",
+            "description": "monkey 47, krauter",
+            "price": 25,
+            "tasting_notes": "using ingredients sourced from the black forest"
+          },
+          {
+            "dish": "rocket top manhattan",
+            "description": "redwood empire rocket top rye, brovo jammy vermouth, amaro nonino riserva, bitters blend",
+            "price": 30,
+            "tasting_notes": "exemplary rye, luxurious aged amaro, local vermouth, fall forward bitters"
+          },
+          {
+            "dish": "cigars on the patio reloaded",
+            "description": "indri single malt, amaro nonino riserva, cueva nueva, turkish tobacco bitters",
+            "price": 30,
+            "tasting_notes": "an old JH favorite with a smoked approach"
+          },
+          {
+            "dish": "proof of concept",
+            "description": "barrell seagrass, fig maceration, bitters blend, tobacco",
+            "price": 50,
+            "tasting_notes": "a premium old fashioned, inspired technique & seasonal flair"
+          }
+        ]
+      },
+      {
         "name": "The Barrel Room",
         "description": "whiskey-forward originals + classics",
         "items": [
           {
             "dish": "jackson house old fashioned",
-            "description": "woodinville rye + bourbon, muscavado simple, house bitters blend",
+            "description": "woodinville port-finished bourbon, muscovado, bitters blend",
             "price": 16,
             "tasting_notes": "not rocking the boat, but paddling hard"
           },
           {
             "dish": "o's black manhattan",
-            "description": "pikesville rye, jammy vermouth, cynar 70, sfumato, angostura + orange bitters",
+            "description": "pikesville rye, jammy vermouth, cynar 70, sfumato, bitters blend",
             "price": 18,
-            "tasting_notes": "brooding, complex and harmonized"
+            "tasting_notes": "brooding, complex, and harmonized"
           },
           {
-            "dish": "barrel-aged boulevardier",
-            "description": "woodinville rye, campari, gentian amaro, red wine, aged 1 month in woodinville whiskey barrel",
-            "price": 24,
+            "dish": "the house sour",
+            "description": "doc swinson's bib rye, brovo orange curacao, creme de cassis, sour cherry bitters, egg white",
+            "price": 20,
             "tasting_notes": "a labor of love with a serious finish"
           },
           {
             "dish": "the penicillin",
-            "description": "deacon blended, canton ginger, 'golden syrup', lemon, black walnut + ginger bitters",
+            "description": "blended peated scotch, ginger liqueur, honey syrup, bitters blend, lemon",
             "price": 22,
             "tasting_notes": "a classic, built owenuma's way"
+          },
+          {
+            "dish": "the rudolph valentino",
+            "description": "aberlour 12, heering, spanish vermouth, blood orange, bitters, orange juice",
+            "price": 20,
+            "tasting_notes": "a less sweetened take on the blood & sand"
+          },
+          {
+            "dish": "barrel-aged boulevardier",
+            "description": "woodinville rye, brovo jammy vermouth, campari, red wine, rhubarb bitters",
+            "price": 24
           }
         ]
       }
@@ -580,8 +922,6 @@
   "beer": {
     "groups": [
       {
-        "name": "Beer & Cider",
-        "description": "craft pours and local favorites",
         "items": [
           {
             "dish": "icicle premium pilsner",
@@ -595,33 +935,18 @@
           },
           {
             "dish": "bitburger drive n/a",
-            "description": "16oz",
-            "price": 11
-          },
-          {
-            "dish": "yonder mazama cider",
-            "description": "16oz",
-            "price": 14
-          },
-          {
-            "dish": "incline POG cider",
             "description": "12oz",
             "price": 11
           },
           {
-            "dish": "black raven origins ipa",
+            "dish": "rotating incline cider",
             "description": "12oz",
-            "price": 10
+            "price": 11
           },
           {
             "dish": "boundary bay scotch ale",
             "description": "12oz",
             "price": 12
-          },
-          {
-            "dish": "black raven moontower lager",
-            "description": "12oz",
-            "price": 10
           },
           {
             "dish": "scuttlebutt brewing big dumper",
@@ -631,7 +956,12 @@
           {
             "dish": "rotating draft beer",
             "description": "market price",
-            "price": null
+            "price": "mkt"
+          },
+          {
+            "dish": "rotating draft cider",
+            "description": "market price",
+            "price": "mkt"
           }
         ]
       }
@@ -640,131 +970,165 @@
   "wine": {
     "groups": [
       {
+        "name": "Wine by the Glass",
         "items": [
           {
-            "dish": "domaine du fiefaux dames - muscadet sevre-et-maine",
-            "description": "2025 - loire valley",
-            "tasting_notes": "lemon zest, green apple, brioche, sea salt",
-            "price_glass": 15,
-            "price_bottle": 48
-          },
-          {
-            "dish": "pardevalles - albarin blanco",
-            "description": "2024 - leon, spain",
-            "tasting_notes": "citrus, white orchard fruit, wild herbs, and a stony minerality",
-            "price_glass": 15,
-            "price_bottle": 48
-          },
-          {
-            "dish": "love & squalor 'mothershucker' - blend",
-            "description": "2024 - willamette valley",
-            "tasting_notes": "saline, citrus blossom, white peach, wet stone, bright minerality",
-            "price_glass": 16,
-            "price_bottle": 55
-          },
-          {
-            "dish": "domaine de coron - grenache blanc",
-            "description": "2023 - rhone valley, fr",
-            "tasting_notes": "pear, honeysuckle, and almond",
-            "price_glass": 15,
-            "price_bottle": 48
-          },
-
-          {
-            "dish": "dossier - flagship viognier",
-            "description": "2023 - columbia valley, wa",
-            "tasting_notes": "apricot, jasmine, and a hint of spice",
-            "price_bottle": 105
-          },
-
-          {
-            "dish": "valdemar estates - french creek chardonnay",
-            "description": "2022 - wa",
-            "tasting_notes": "lemon curd, brioche, and a touch of minerality",
-            "price_glass": 17,
-            "price_bottle": 75
-          },
-          {
-            "dish": "domaine galantin rosé - 'gsm'",
-            "description": "2024 - bandol, provence, fr",
-            "tasting_notes": "strawberry blossom, blood orange zest, saline, and white pepper",
-            "price_glass": 16,
-            "price_bottle": 67
-          },
-          {
-            "dish": "tirriddis blanc de gris - sparkling pinot gris",
-            "description": "n/v - wa",
-            "tasting_notes": "pear tart, fresh sage, brioche, and bold acidity",
+            "dish": "tirriddis 'house gris' - sparkling pinot gris",
+            "description": "n/v - columbia valley, wa",
+            "tasting_notes": "pear tart, fresh sage, brioche, and enough acidity to keep things interesting",
             "price_glass": 15,
             "price_bottle": 50
           },
           {
-            "dish": "dom perignon - champagne",
+            "dish": "pardevalles - albarin blanco",
+            "description": "2024 - leon, sp",
+            "tasting_notes": "who needs sauvignon blanc when you can have this? pair with hot honey carrots",
+            "price_glass": 15,
+            "price_bottle": 48
+          },
+          {
+            "dish": "landauer-gisperg - gruner veltliner",
+            "description": "2024 - tattendorf, austria",
+            "tasting_notes": "the best thing out of austria since mozart. pair with crispy mushrooms",
+            "price_glass": 13,
+            "price_bottle": 52
+          },
+          {
+            "dish": "domaine boutet saulnier - vouvray",
+            "description": "2024 - chenin blanc - loire, fr",
+            "tasting_notes": "golden apple, honey, and a little mineral mischief. chenin does what chenin wants",
+            "price_glass": 17,
+            "price_bottle": 68
+          },
+          {
+            "dish": "maison brotte 'bord elegance' - laudun blanc",
+            "description": "2025 - grenache blanc, marsanne, roussanne - rhone, fr",
+            "tasting_notes": "tastes like the french countryside without paying for the airfare",
+            "price_glass": 14,
+            "price_bottle": 56
+          },
+          {
+            "dish": "fossil & fawn - chardonnay",
+            "description": "2024 - willamette valley, or",
+            "tasting_notes": "chardonnay with a sense of humor. not your granny's chardonnay",
+            "price_glass": 16,
+            "price_bottle": 64
+          },
+          {
+            "dish": "gilbert cellars 'tv wine' - rose",
+            "description": "2025 - tempranillo, verdelho - yak valley, wa",
+            "tasting_notes": "is it rose? is it red? who cares! it's delicious",
+            "price_glass": 16,
+            "price_bottle": 64
+          },
+          {
+            "dish": "domaine dupre 'chai d'oevre' - morgon",
+            "description": "2023 - gamay noir - beaujolais, fr",
+            "tasting_notes": "crunchy cherry, violets, & pepper. basically pinot noir after two espressos. pair with seared duck",
+            "price_glass": 17,
+            "price_bottle": 68
+          },
+          {
+            "dish": "domaine de couron - cotes du rhone",
+            "description": "2024 - grenache, syrah - rhone, fr",
+            "tasting_notes": "if comfort food came in wine form",
+            "price_glass": 15,
+            "price_bottle": 50
+          },
+          {
+            "dish": "result of a crush 'unnamed' - syrah",
+            "description": "2022 - walla walla, wa",
+            "tasting_notes": "dark fruit, pepper, savory herbs, smoked meat, and a little rustic swagger. pair with charred lamb chops",
+            "price_glass": 18,
+            "price_bottle": 72
+          },
+          {
+            "dish": "cadence winery 'coda' - red blend",
+            "description": "2023 - merlot, petit verdot, cab franc, cab sauv - columbia valley, wa",
+            "tasting_notes": "big enough to make an entrance, civilized enough to not offend",
+            "price_glass": 16,
+            "price_bottle": 64
+          },
+          {
+            "dish": "ethos - cabernet sauvignon",
+            "description": "2022 - columbia valley, wa",
+            "tasting_notes": "dark berries, and a long velvety finish. like putting on a tuxedo and refusing to explain yourself. pair with steak frites",
+            "price_glass": 15,
+            "price_bottle": 50
+          }
+        ]
+      },
+      {
+        "name": "Wine by the Bottle",
+        "description": "Bubbles",
+        "items": [
+          {
+            "dish": "domaine ste michelle - brut rose",
+            "description": "n/v - columbia valley, wa",
+            "tasting_notes": "so pink it's basically the lead in legally blonde",
+            "price_bottle": 40
+          },
+          {
+            "dish": "moet & chandon 'imperial' - rose",
+            "description": "n/v - champagne, fr",
+            "tasting_notes": "red fruit, crisp, and ready to celebrate",
+            "price_bottle": 150
+          },
+          {
+            "dish": "dom perignon brut",
             "description": "2015 - champagne, fr",
-            "tasting_notes": "baked apple, toasted hazelnut, citrus cream, and delicate bubbles",
+            "tasting_notes": "bubbles with a trust fund. pair with everything. literally everything",
             "price_bottle": 595
           }
         ]
       },
       {
+        "description": "White",
         "items": [
           {
-            "dish": "las jaras 'glou glou' - chilled red blend",
-            "description": "2024 - mendocino county, ca",
-            "tasting_notes": "juicy raspberry, tart cherry, violet, cracked pepper, bright acidity",
-            "price_glass": 17,
-            "price_bottle": 68
-          },
-          {
-            "dish": "big table farm - pinot noir",
-            "description": "2023 - willamette valley, or",
-            "tasting_notes": "red cherry, savory spice, soft tannins, tea-leaf finish",
+            "dish": "dossier wine collective 'flagship' - viognier",
+            "description": "2023 - columbia valley, wa",
+            "tasting_notes": "apricot, jasmine, spice, & enough perfume to enter the room before you do",
             "price_bottle": 105
           },
           {
-            "dish": "gaacina disa ello sandri - nebbiolo",
-            "description": "2022 - piedmont, it",
-            "tasting_notes": "wild cherry, tobacco leaf, and subtle cedar",
+            "dish": "domaine du brusquie 'biais' - blanc",
+            "description": "2024 - sauvignon blanc - occitanie, fr",
+            "tasting_notes": "bright, herbal, citrusy, & so french it will judge your pronunciation",
+            "price_bottle": 75
+          }
+        ]
+      },
+      {
+        "description": "Red",
+        "items": [
+          {
+            "dish": "big table farm winery - pinot noir",
+            "description": "2023 - willamette valley, or",
+            "tasting_notes": "elegant enough for dinner, weird enough to keep things interesting",
+            "price_bottle": 105
+          },
+          {
+            "dish": "upsidedown 'birds+things+flowers' - syrah",
+            "description": "2023 - yakima valley, wa",
+            "tasting_notes": "a syrah with the soul of a pinot noir",
+            "price_bottle": 105
+          },
+          {
+            "dish": "cottanera - etna rosso",
+            "description": "2022 - nerello mascalese - sicily, it",
+            "tasting_notes": "volcanic, savory, and dangerously elegant. pair with bone-in ribeye",
+            "price_bottle": 84
+          },
+          {
+            "dish": "anonimas 'os dunares atlantico' - rojo",
+            "description": "2022 - caino tinto - rias baixas, sp",
+            "tasting_notes": "bright, crunchy, & savory. the cool friend who refuses to tell you where they got their jacket",
             "price_bottle": 95
           },
           {
-            "dish": "brun-avril rouge - grenache + syrah",
-            "description": "2024 - cotes du rhône, fr",
-            "tasting_notes": "lush red fruit, soft tannin, warm spice, and an elegant finish",
-            "price_glass": 18,
-            "price_bottle": 70
-          },
-
-          {
-            "dish": "upsidedown 'birds+things+flowers' - syrah",
-            "description": "2023 - col. valley, wa",
-            "tasting_notes": "blackberry, violet, pepper, tea-leaf, and soft tannins",
-            "price_glass": 24,
-            "price_bottle": 105
-          },
-          {
-            "dish": "amos rome - estate concrete malbec",
-            "description": "2022 - lake chelan, wa",
-            "tasting_notes": "black plum, pomegranate, graphite, and dried herbs",
-            "price_bottle": 120
-          },
-          {
-            "dish": "spring valley - estate blend",
-            "description": "2019 - walla walla valley",
-            "tasting_notes": "black cherry, roasted coffee, wild herbs, and floral oak",
-            "price_glass": 22,
-            "price_bottle": 85
-          },
-          {
-            "dish": "ethos - cabernet sauvignon blend",
-            "description": "2022 - columbia valley",
-            "tasting_notes": "dark berries, mocha, and cedar with a long + velvety finish",
-            "price_glass": 15,
-            "price_bottle": 50
-          },
-          {
-            "dish": "horsepower 'the tribe' - syrah",
-            "description": "2022 - walla walla valley, wa",
+            "dish": "cayuse horsepower 'the tribe' - syrah",
+            "description": "2022 - columbia valley, wa",
             "tasting_notes": "blackberry, smoked herbs, black pepper, savory earth",
             "price_bottle": 325
           }
@@ -783,53 +1147,41 @@
             "price": 5
           },
           {
-            "dish": "whipped golden beet dip",
-            "description": "skagit valley golden beet, labneh, house chips",
-            "price": 9
-          },
-          {
             "dish": "caesar deviled eggs",
-            "description": "house caesar, hogstead bacon, breadcrumb",
+            "description": "hogstead bacon, house caesar, panko",
             "price": 6
           },
           {
-            "dish": "walla walla fried onion",
-            "description": "pickled + fried walla walla onion, green goddess",
-            "price": 9
-          },
-          {
             "dish": "white truffle fries",
-            "description": "house-cut fries, spiva white truffle powder, garlic aioli",
+            "description": "hand-cut fries, spiva white truffle powder, garlic aioli",
             "price": 7
           },
           {
-            "dish": "sausage rolls",
-            "description": "veal, puff pastry, house ketchup, an aussie delicacy",
-            "price": 13
+            "dish": "roast beets",
+            "description": "house hummus, blood orange vin, feta, crispy rice",
+            "price": 11
+          },
+          {
+            "dish": "half steak frites",
+            "description": "6oz flat iron, hand-cut fries, house ketchup",
+            "price": 25
           }
         ]
       },
       {
         "name": "Cellar",
+        "description": "rotating bottles seasonally",
         "items": [
           {
-            "dish": "pardevalles - albarin blanco",
-            "description": "2024 - leon, sp",
-            "price": 8
-          },
-          {
-            "dish": "tirriddis blanc de gris - sparkling pinot gris",
-            "description": "n/v - yakima valley, wa",
-            "price": 8
-          },
-          {
-            "dish": "domaine rimbert 'le petit cochon bronze",
-            "description": "'csm' rose - languedoc, fr",
+            "dish": "house red",
             "price": 10
           },
           {
-            "dish": "ethos - cabernet sauvignon blend",
-            "description": "2022 - columbia valley, wa",
+            "dish": "house white",
+            "price": 10
+          },
+          {
+            "dish": "house bubbles",
             "price": 10
           }
         ]
@@ -839,22 +1191,22 @@
         "items": [
           {
             "dish": "jackson house old fashioned",
-            "description": "ancient ancient age, muscavado, house bitters",
+            "description": "ancient ancient age, muscovado, house bitters",
             "price": 10
           },
           {
             "dish": "espresso martini",
-            "description": "wohlfert espresso liqueur, outlands espresso, outfitters vodka",
+            "description": "wohlfert decaf espresso liqueur, espresso, outfitters vodka",
             "price": 10
           },
           {
-            "dish": "pink drink",
-            "description": "grn centenario reposado, grapefruit, spiced agave, csm brut",
+            "dish": "school house marg",
+            "description": "blanco, brovo orange curacao, lime",
             "price": 10
           },
           {
-            "dish": "aperol spritz",
-            "description": "aperol, orange, csm brut, san pellegrino",
+            "dish": "violet 75",
+            "description": "gin, violet fog syrup, lemon, sparkling",
             "price": 10
           },
           {

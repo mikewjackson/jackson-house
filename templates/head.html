@@ -13,9 +13,31 @@
 {% set site_url = site.meta.site_url.rstrip("/") if site.meta.site_url else "" %}
 {% set og_image_url = raw_og_image if raw_og_image.startswith("http") else (site_url ~ "/" ~ raw_og_image.lstrip("/")) %}
   <title>{{ page_title }}</title>
+  <style>
+    html.fonts-loading,
+    html.fonts-loading body {
+      background: #1a1a1a;
+    }
+
+    html.fonts-loading body {
+      visibility: hidden;
+    }
+  </style>
+  <script>
+    document.documentElement.classList.add("fonts-loading");
+    document.addEventListener("DOMContentLoaded", () => {
+      const revealPage = () => document.documentElement.classList.remove("fonts-loading");
+
+      if ("fonts" in document) {
+        document.fonts.ready.then(revealPage, revealPage);
+      } else {
+        revealPage();
+      }
+    }, { once: true });
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=block" rel="stylesheet">
   <link rel="icon" href="{{ site.favicon }}">
   <link rel="stylesheet" href="{{ site.stylesheet }}">
 {%- if extra_styles -%}

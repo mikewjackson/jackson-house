@@ -5,9 +5,32 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <title>Jackson House | Woodinville Restaurant &amp; Craft Cocktail Bar</title>
+
+<style>
+    html.fonts-loading,
+    html.fonts-loading body {
+      background: #1a1a1a;
+    }
+
+    html.fonts-loading body {
+      visibility: hidden;
+    }
+  </style>
+<script>
+    document.documentElement.classList.add("fonts-loading");
+    document.addEventListener("DOMContentLoaded", () => {
+      const revealPage = () => document.documentElement.classList.remove("fonts-loading");
+
+      if ("fonts" in document) {
+        document.fonts.ready.then(revealPage, revealPage);
+      } else {
+        revealPage();
+      }
+    }, { once: true });
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=block" rel="stylesheet">
   <link rel="icon" href="images/full_logo.png">
   <link rel="stylesheet" href="css/site.css">
   <link rel="stylesheet" href="css/index.css">
@@ -34,7 +57,7 @@
   <meta name="twitter:image" content="https://jacksonhousewoodinville.com/images/full_logo.png">
   <meta name="twitter:image:alt" content="Jackson House logo">
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Restaurant", "@id": "https://jacksonhousewoodinville.com/#restaurant", "name": "Jackson House", "image": "https://jacksonhousewoodinville.com/images/full_logo.png", "url": "https://jacksonhousewoodinville.com", "telephone": "+14253644544", "priceRange": "$$$", "servesCuisine": ["Pacific Northwest", "American", "Small Plates", "Craft Cocktails"], "currenciesAccepted": "USD", "address": {"@type": "PostalAddress", "streetAddress": "17409 133rd Ave NE #1203", "addressLocality": "Woodinville", "addressRegion": "WA", "postalCode": "98072", "addressCountry": "US"}, "geo": {"@type": "GeoCoordinates", "latitude": 47.7538836, "longitude": -122.1620827}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday", "Thursday"], "opens": "17:00", "closes": "22:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday"], "opens": "16:00", "closes": "22:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday"], "opens": "15:00", "closes": "22:00"}], "sameAs": ["https://www.instagram.com/jacksonhousewoodinville", "https://www.facebook.com/jacksonhousewoodinville"], "menu": "https://jacksonhousewoodinville.com/menu.html", "acceptsReservations": true}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Restaurant", "@id": "https://jacksonhousewoodinville.com/#restaurant", "name": "Jackson House", "image": "https://jacksonhousewoodinville.com/images/full_logo.png", "url": "https://jacksonhousewoodinville.com", "telephone": "+14253644544", "priceRange": "$$$", "servesCuisine": ["Pacific Northwest", "American", "Small Plates", "Craft Cocktails"], "currenciesAccepted": "USD", "address": {"@type": "PostalAddress", "streetAddress": "17409 133rd Ave NE #1203", "addressLocality": "Woodinville", "addressRegion": "WA", "postalCode": "98072", "addressCountry": "US"}, "geo": {"@type": "GeoCoordinates", "latitude": 47.7538836, "longitude": -122.1620827}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday", "Thursday"], "opens": "17:00", "closes": "22:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday"], "opens": "16:00", "closes": "22:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday"], "opens": "15:00", "closes": "22:00"}], "sameAs": ["https://www.instagram.com/jacksonhousewoodinville", "https://www.facebook.com/jacksonhousewoodinville"], "hasMenu": "https://jacksonhousewoodinville.com/menu.html", "acceptsReservations": true}</script>
 <script src="js/site-header.js" defer></script>
 <script src="js/events-filter.js" defer></script>
 <script src="js/index.js" defer></script>
@@ -161,132 +184,6 @@
     <p class="lead">Join us for special tastings, dinners, and celebrations.</p>
     <div class="upcoming-events-grid" id="upcoming-events-grid">
 
-        <div class="upcoming-event-card event-item" data-date="2026-09-20">
-          <div class="event-date">
-            <span class="event-month">Sep</span>
-            <span class="event-day">20</span>
-          </div>
-          <div class="event-details">
-            <h3>Sunday Sessions - Cocktails Through History</h3>
-            <p>
-
-            </p>
-            <div class="hp-tl-pills">
-              <span class="hp-tl-pill">4:30pm</span>
-              <span class="hp-tl-pill">20 guests</span>
-              <span class="hp-tl-pill">$40 / guest</span>
-            </div>
-            <p>
-              <a class="reservations-cta"
-                href="https://www.opentable.com/booking/experiences-availability?rid=1496320&amp;restref=1496320&amp;experienceId=797358&amp;utm_source=external&amp;utm_medium=referral&amp;utm_campaign=shared"
-                target="_blank"
-                rel="noopener"
-                aria-label="Reserve a spot">Reserve a spot</a>
-            </p>
-
-          </div>
-        </div>
-
-        <div class="upcoming-event-card event-item" data-date="2026-09-27">
-          <div class="event-date">
-            <span class="event-month">Sep</span>
-            <span class="event-day">27</span>
-          </div>
-          <div class="event-details">
-            <h3>Fall Harvest Dinner - Featuring L&#39;Ecole No. 41</h3>
-            <p>
-
-            </p>
-            <div class="hp-tl-pills">
-              <span class="hp-tl-pill">6:30pm</span>
-              <span class="hp-tl-pill">28 guests</span>
-              <span class="hp-tl-pill">$145 / guest</span>
-            </div>
-            <p>
-              <a class="reservations-cta"
-                href="https://www.opentable.com/booking/experiences-availability?rid=1496320&amp;experienceId=749916&amp;shareReferrer=web"
-                target="_blank"
-                rel="noopener"
-                aria-label="Reserve a spot">Reserve a spot</a>
-            </p>
-
-          </div>
-        </div>
-
-        <div class="upcoming-event-card event-item" data-date="2026-10-04">
-          <div class="event-date">
-            <span class="event-month">Oct</span>
-            <span class="event-day">4</span>
-          </div>
-          <div class="event-details">
-            <h3>Sunday Sessions - Scotch Through the Regions</h3>
-            <p>
-
-              <span class="badge-members">Members Only</span>
-
-            </p>
-            <div class="hp-tl-pills">
-              <span class="hp-tl-pill">4:30pm</span>
-              <span class="hp-tl-pill">12 guests</span>
-              <span class="hp-tl-pill">$65 / guest</span>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="upcoming-event-card event-item" data-date="2026-10-25">
-          <div class="event-date">
-            <span class="event-month">Oct</span>
-            <span class="event-day">25</span>
-          </div>
-          <div class="event-details">
-            <h3>Haunted Distilleries + Forgotten Wineries Event</h3>
-            <p>
-
-            </p>
-            <div class="hp-tl-pills">
-              <span class="hp-tl-pill">6:30pm</span>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="upcoming-event-card event-item" data-date="2026-11-01">
-          <div class="event-date">
-            <span class="event-month">Nov</span>
-            <span class="event-day">1</span>
-          </div>
-          <div class="event-details">
-            <h3>Sunday Sessions - Rare + Allocated Whiskey</h3>
-            <p>
-
-              <span class="badge-members">Members Only</span>
-
-            </p>
-            <div class="hp-tl-pills">
-              <span class="hp-tl-pill">4:30pm</span>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="upcoming-event-card event-item" data-date="2026-11-15">
-          <div class="event-date">
-            <span class="event-month">Nov</span>
-            <span class="event-day">15</span>
-          </div>
-          <div class="event-details">
-            <h3>Sunday Sessions - Martini Society</h3>
-            <p>
-
-            </p>
-            <div class="hp-tl-pills">
-              <span class="hp-tl-pill">4:30pm</span>
-            </div>
-
-          </div>
-        </div>
-
         <div class="upcoming-event-card event-item" data-date="2026-11-22">
           <div class="event-date">
             <span class="event-month">Nov</span>
@@ -310,7 +207,7 @@
             <span class="event-day">6</span>
           </div>
           <div class="event-details">
-            <h3>Sunday Sessions - Monocle Club Holiday Party</h3>
+            <h3>Monocle Club Holiday Party</h3>
             <p>
 
               <span class="badge-members">Members Only</span>
@@ -335,23 +232,6 @@
             </p>
             <div class="hp-tl-pills">
               <span class="hp-tl-pill">6:30pm</span>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="upcoming-event-card event-item" data-date="2026-12-20">
-          <div class="event-date">
-            <span class="event-month">Dec</span>
-            <span class="event-day">20</span>
-          </div>
-          <div class="event-details">
-            <h3>Sunday Sessions - Big Reds, Big Glasses</h3>
-            <p>
-
-            </p>
-            <div class="hp-tl-pills">
-              <span class="hp-tl-pill">4:30pm</span>
             </div>
 
           </div>

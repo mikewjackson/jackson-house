@@ -39,13 +39,13 @@
           {%- set ns.group_index = ns.group_index + 1 -%}
           
           {# Only show header if group has a name #}
-          {% if group.get("name") -%}
+          {% if group.get("name") or group.get("description") -%}
             <header class="menu-header {% if ns.group_index > 1 %}spacing-top{% endif %}">
-              <h2 class="menu-title"><span>{{ group.name }}</span></h2>
+              {% if group.get("name") %}<h2 class="menu-title"><span>{{ group.name }}</span></h2>{% endif %}
               {% if group.get("description") %}<p class="menu-sub">{{ group.description }}</p>{% endif %}
             </header>
           {%- else -%}
-            {# If no name, show separator (but not for first group) #}
+            {# If no group header content, show a separator (but not for first group) #}
             {%- if ns.group_index > 1 -%}
               <hr class="menu-decorative-sep" aria-hidden="true" />
             {%- endif -%}
@@ -81,6 +81,13 @@
                   <div class="add-ons">
                     {%- for addon in item.add_ons %}
                       <span class="add-on">{{ addon.name }} <span class="add-on-price">+{{ addon.price }}</span></span>{% if not loop.last %}<span class="add-on-sep"> • </span>{% endif %}
+                    {%- endfor %}
+                  </div>
+                {%- endif %}
+                {%- if item.get("options") %}
+                  <div class="add-ons">
+                    {%- for option in item.options %}
+                      <span class="add-on">{{ option.name }} <span class="add-on-price">{{ option.price }}</span></span>{% if not loop.last %}<span class="add-on-sep"> • </span>{% endif %}
                     {%- endfor %}
                   </div>
                 {%- endif %}
